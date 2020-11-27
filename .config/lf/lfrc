@@ -1,0 +1,60 @@
+
+# unmap some stuff
+map d
+
+
+
+set icons true
+set hidden true
+map . set hidden!
+
+set shell sh
+set shellopts '-eu'
+set ifs "\n"
+
+# leave some space at the top and the bottom of the screen
+set scrolloff 10
+
+# use enter for shell commands
+map <enter> shell
+
+map dd delete
+
+# =-=-=-=-= custom 'go to' commands
+
+# school
+map gs. cd ~/School
+map gsc cd ~/School/cs145
+map gsm5 cd ~/School/math135
+map gsm7 cd ~/School/math137
+map gsp cd ~/School/phys121
+map gss cd ~/School/spcom223
+
+# config
+map gc. cd ~/.config
+
+# music
+map gm. cd ~/Music
+map gd. cd ~/Downloads
+
+# install
+map gi. cd ~/installs
+
+# repos
+map gr. cd ~/Repos
+
+# define a custom 'open' command
+# This command is called when current file is not a directory. You may want to
+# use either file extensions and/or mime types here. Below uses an editor for
+# text files and a file opener for the rest.
+cmd open ${{
+    case $(file --mime-type $f -b) in
+        text/*) $EDITOR $fx;;
+        *) for f in $fx; do setsid $OPENER $f > /dev/null 2> /dev/null & done;;
+    esac
+}}
+
+cmd mkdir % echo "New directory name:"; read dirname; mkdir $dirname
+
+cmd touch %echo  "New file name:"; read filename; touch $filename
+

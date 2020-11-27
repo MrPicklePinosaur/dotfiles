@@ -1,0 +1,21 @@
+#!/bin/sh
+
+# This is a simple launcher script for Taskell
+
+boards_path="$HOME/.config/taskell/boards/"
+
+#also look into autocomplete and pressing esc to quit this script 
+# todo: check to see if name is taken, also append .md 
+
+(
+    cd "$boards_path"
+    board="new_board"
+    mode=$(echo -e "o\nn" | dmenu -i -p "Open board (O) or create new board (N)?")
+
+    [ $mode = "n" ] && board=$(dmenu -p "Choose a name for the board") || \
+    [ $mode = "o" ] && board=$(ls -1 | dmenu -i -p "Choose board to open") 
+    
+    [ -z "$board" ] && exit 1
+
+    st -e taskell "$board"
+)

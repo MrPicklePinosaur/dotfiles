@@ -1,0 +1,9 @@
+#!/bin/sh
+
+wifi="$(nmcli device wifi | grep -F '*')"
+
+#not exactly sure why, but u nede || instead of &&
+output=""
+[ -z "$wifi" ] || output="$(echo "$wifi" | awk '{printf "%s %s", $3, $6}')" 
+
+echo "$output"

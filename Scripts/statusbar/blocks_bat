@@ -1,0 +1,11 @@
+#!/bin/sh
+
+bat="$(cat /sys/class/power_supply/BAT0/capacity)"
+
+icon=""
+[ $bat -gt "13" ] && icon=""
+[ $bat -gt "38" ] && icon=""
+[ $bat -gt "63" ] && icon=""
+[ $bat -gt "88" ] && icon=""
+
+echo -e "$icon $bat%"

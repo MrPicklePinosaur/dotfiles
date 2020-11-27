@@ -1,0 +1,13 @@
+#!/bin/sh
+
+fuzzy_dirs="$HOME/Scripts/* $HOME/School/* $HOME/.vim/mysnippets/* $HOME/.bashrc $HOME/.xinitrc $HOME/.Xresources $HOME/.Xmodmap $HOME/.config/*"
+
+fzs() {
+    fname="$(find $fuzzy_dirs -type f | fzf)"
+    [ -z $fname ] || $EDITOR $fname # make sure a file was selected 
+}
+
+fcd() {
+    dname="$(find $fuzzy_dirs -type d | fzf)"
+    [ -z $dname ] || cd $dname
+}
