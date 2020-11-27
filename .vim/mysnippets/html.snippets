@@ -1,0 +1,17 @@
+snippet `<[a-z]+[0-9]*` "HTML tag expand" r
+<`!p snip.rv = match.group()[1:]`>$0</`!p snip.rv = match.group()[1:]`>
+endsnippet
+
+snippet html "html template" w
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+
+	<body>
+
+	</body>
+</html>
+endsnippet

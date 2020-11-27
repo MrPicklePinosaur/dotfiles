@@ -1,0 +1,125 @@
+# Enviros
+snippet \begin "enviroment" bA
+\begin{$1}
+	$0
+\end{$1}
+endsnippet
+
+
+snippet enum "enumerate" w
+\begin{enumerate}[$1]
+	$0
+\end{enumerate}
+endsnippet
+
+
+snippet align "align" w
+\begin{align*}
+	$0
+\end{align*}
+endsnippet
+
+
+snippet center "center" w
+\begin{center}
+	$0
+\end{center}
+endsnippet
+
+# FRACTIONS
+snippet // "frac" iA
+\\frac{$1}{$2}$0
+endsnippet
+
+
+# LIMITS
+snippet lim "limit" w
+\lim\limits_{$1 \to $2}$3
+endsnippet
+
+
+snippet inflim "limit to infinity" w
+\lim\limits_{n \to \infty}
+endsnippet
+
+
+# SUMMATION
+snippet sum "Summation" w
+\sum\limits_{$1}^{$2}$3
+endsnippet
+
+snippet prod "Product" w
+\prod\limits_{$1}^{$2}$3
+endsnippet
+
+# MATH MODES
+priority 10
+snippet im "inline math" w
+$$1$$0
+endsnippet
+
+
+snippet bm "block math" w
+\[
+	$1
+\]$0
+endsnippet
+
+
+# SETS
+snippet set "Set" w
+\\{ $0 \\}
+endsnippet
+
+
+snippet reals "Set of Reals" w
+\mathbb{R}
+endsnippet
+
+
+snippet integers "Set of Integers" w
+\mathbb{Z}
+endsnippet
+
+
+snippet naturals "Set of Naturals" w
+\mathbb{N}
+endsnippet
+
+
+# OTHERS
+snippet implies "Implies" w
+\Rightarrow
+endsnippet
+
+
+snippet mod "Mod" w
+{\ (\textrm{mod}\ $1)}
+endsnippet
+
+
+snippet eea "Extended Euclidian Algorithm" w
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+	\hline
+	x & y & r & q\\\\
+	\hline
+	1 & 0 & $1 & 0\\\\
+	0 & 1 & $2 & 0\\\\
+	$3
+	\hline
+\end{tabular}
+\end{center}
+endsnippet
+
+
+snippet lemma "Lemma" w
+\textbf{Lemma $1}
+
+\fbox{%
+    \parbox{\textwidth}{
+		$0
+    }%
+}
+
+endsnippet
