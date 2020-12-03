@@ -3,9 +3,10 @@
 # CORMACKSCRIPT 
 # written by daniel
 #
+# Usage: cormackscript [cmks file] [output file]
+#
 # IMPORTANT!
-# Make sure you change the 'scriptfile' and 'targetfile' variables as you see fit.
-# In addition, place the comments:
+# Place the comments:
 # ; CMKS START
 # ; CMKS END
 # into your racket program, the 'compiled' code will be injected here.
@@ -16,18 +17,13 @@
 # Here's some sample code
 #
 # mov 20 30
-# inc 01
+# inc 1
 # read 21
 # print 21
 # quit
 #
 # Note, for commands that only need one param you don't need to add empty columns
-# However, you do need leading zeros (you must put 01 not 1)
-#
-# oh yeah, you can comment with ;
-
-scriptfile="A12d.cmks" # cormackscript file
-targetfile="A12d.rkt" # destination file
+# oh yeah, you can also comment with ;
 
 # You can redefine these to whatever you want
 
@@ -44,19 +40,17 @@ inst9="quit"  # halt
 
 # Config ends here =-=-=-=-=-=-=-=-=
 
-sub() {
-    cat "$scriptfile" |\
-        sed -r "s/\s*;.*//g; /^\s*$/ d; s/$inst0/0/; s/$inst1/1/; s/$inst2/2/; s/$inst3/3/; s/$inst4/4/; s/$inst5/5/; s/$inst6/6/; s/$inst7/700/; s/$inst8/8/; s/$inst9/9/; s/\s+//g" |\
-        sed -e :a -e 's/^.\{1,4\}$/&0/;ta' |\
-        sed 's/![0-9]//g'
-}
+[ "$#" -ne 2 ] && { echo "Usage: cormackscript [cmks file] [output file]" && exit 1; }
+scriptfile="$1"; targetfile="$2"
+[ -f "$scriptfile" ] && [ -f "$targetfile" ] || { echo "Either $scriptfile or $targetfile do not exist" && exit 1; }
 
-[ -f "$scriptfile" ] && [ -f "$targetfile" ] || { echo "You are missing a file, please check that the current directory contains $scriptfile and $targetfile" && exit 1; }
+tmp="$(mktemp 'tempXXX')"
+cat "$scriptfile" |\
+    sed -r "s/\s*;.*//g; /^\s*$/ d; s/\s+/ /g; s/^\s+//; s/ [0-9]{1} / 0&/; s/ [0-9]{1}\$/ 0&/; s/$inst0/0/; s/$inst1/1/; s/$inst2/2/; s/$inst3/3/; s/$inst4/4/; s/$inst5/5/; s/$inst6/6/; s/$inst7/700/; s/$inst8/8/; s/$inst9/9/; s/ //g" |\
+    sed -e :a -e 's/^.\{1,4\}$/&0/;ta' |\
+    sed 's/![0-9]//g' >> "$tmp"
+sed -i "/\; CMKS START/,/\; CMKS END/{/\; CMKS START/!{/\; CMKS END/!d}}; /\; CMKS START/r $tmp" "$targetfile"
+rm "$tmp"
 
 # If racket is installed run it directly
 [ ! -z "$(command -v racket)" ] && racket "$targetfile" && echo ""
-
-tmp="$(mktemp 'tempXXX')"
-sub >> "$tmp"
-sed -i "/\; CMKS START/,/\; CMKS END/{/\; CMKS START/!{/\; CMKS END/!d}}; /\; CMKS START/r $tmp" "$targetfile"
-rm "$tmp"
