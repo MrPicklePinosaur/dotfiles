@@ -1,27 +1,30 @@
 #!/bin/sh
 
-# CORMACKSCRIPT General Syntax
+# CORMACKSCRIPT 
+# written by daniel
 #
 # IMPORTANT!
 # Make sure you change the 'scriptfile' and 'targetfile' variables as you see fit.
-# In addition, place  
+# In addition, place the comments:
+# ; CMKS START
+# ; CMKS END
+# into your racket program, the 'compiled' code will be injected here.
 #
 # For extra niceness, if you have the racket program installed it will auto execute it.
 #
+# A CormackScript file contains 3 columns separated by whitespace in the format [opcode|target|source]  
+# Here's some sample code
 #
-# Example:
+# mov 20 30
+# inc 01
+# read 21
+# print 21
+# quit
 #
-# A CormackScript file contains 3 columns separated by whitespace in the format
-# opcode target source
+# Note, for commands that only need one param you don't need to add empty columns
+# However, you do need leading zeros (you must put 01 not 1)
 #
-#
-#
-# You can comment with ;
-#
-#
-# Sample code
-# 
-#
+# oh yeah, you can comment with ;
 
 scriptfile="A12d.cmks" # cormackscript file
 targetfile="A12d.rkt" # destination file
@@ -32,9 +35,9 @@ inst0="inc"   # [tt] = [tt] + 1
 inst1="add"   # [tt] = [tt] + [ss]
 inst2="sub"   # [tt] = max([tt] - [ss], 0)
 inst3="mov"   # [tt] = [ss]
-inst4=""      # [tt] = [tt] + 1, if [ss] = 0
-inst5=""      # [tt] = [[ss]]
-inst6=""      # [[tt]] = [ss]
+inst4="addeq" # [tt] = [tt] + 1, if [ss] = 0
+inst5="fetch" # [tt] = [[ss]]
+inst6="store" # [[tt]] = [ss]
 inst7="print" # display [ss]
 inst8="read"  # read [tt]
 inst9="quit"  # halt
@@ -43,23 +46,17 @@ inst9="quit"  # halt
 
 sub() {
     cat "$scriptfile" |\
-        sed 's/\s*;.*//g; /^\s*$/ d;' |\
-        sed "s/$inst0/0/"
-
-        # finally removes any non alphanumerics in case sm breaks
+        sed -r "s/\s*;.*//g; /^\s*$/ d; s/$inst0/0/; s/$inst1/1/; s/$inst2/2/; s/$inst3/3/; s/$inst4/4/; s/$inst5/5/; s/$inst6/6/; s/$inst7/700/; s/$inst8/8/; s/$inst9/9/; s/\s+//g" |\
+        sed -e :a -e 's/^.\{1,4\}$/&0/;ta' |\
+        sed 's/![0-9]//g'
 }
-
-inject() {
-    tmp="$(mktemp 'tempXXX')"
-    sub >> "$tmp"
-    sed -i "/\; CMKS START/,/\; CMKS END/{/\; CMKS START/!{/\; CMKS END/!d}}; /\; CMKS START/r $tmp" "$targetfile"
-    rm "$tmp"
-}    
-
 
 [ -f "$scriptfile" ] && [ -f "$targetfile" ] || { echo "You are missing a file, please check that the current directory contains $scriptfile and $targetfile" && exit 1; }
 
 # If racket is installed run it directly
-# [ ! -z "$(command -v racket)" ] && racket "$targetfile"
+[ ! -z "$(command -v racket)" ] && racket "$targetfile" && echo ""
 
-inject
+tmp="$(mktemp 'tempXXX')"
+sub >> "$tmp"
+sed -i "/\; CMKS START/,/\; CMKS END/{/\; CMKS START/!{/\; CMKS END/!d}}; /\; CMKS START/r $tmp" "$targetfile"
+rm "$tmp"
