@@ -42,7 +42,8 @@ Plug 'lervag/vimtex'
 Plug 'jiangmiao/auto-pairs'
 Plug 'PietroPate/vim-tex-conceal'
 Plug 'vim-airline/vim-airline'
-Plug 'habamax/vim-godot'
+ " Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'habamax/vim-godot'
 Plug 'tpope/vim-commentary'
 
 call plug#end()

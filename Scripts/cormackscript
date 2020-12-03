@@ -1,0 +1,65 @@
+#!/bin/sh
+
+# CORMACKSCRIPT General Syntax
+#
+# IMPORTANT!
+# Make sure you change the 'scriptfile' and 'targetfile' variables as you see fit.
+# In addition, place  
+#
+# For extra niceness, if you have the racket program installed it will auto execute it.
+#
+#
+# Example:
+#
+# A CormackScript file contains 3 columns separated by whitespace in the format
+# opcode target source
+#
+#
+#
+# You can comment with ;
+#
+#
+# Sample code
+# 
+#
+
+scriptfile="A12d.cmks" # cormackscript file
+targetfile="A12d.rkt" # destination file
+
+# You can redefine these to whatever you want
+
+inst0="inc"   # [tt] = [tt] + 1
+inst1="add"   # [tt] = [tt] + [ss]
+inst2="sub"   # [tt] = max([tt] - [ss], 0)
+inst3="mov"   # [tt] = [ss]
+inst4=""      # [tt] = [tt] + 1, if [ss] = 0
+inst5=""      # [tt] = [[ss]]
+inst6=""      # [[tt]] = [ss]
+inst7="print" # display [ss]
+inst8="read"  # read [tt]
+inst9="quit"  # halt
+
+# Config ends here =-=-=-=-=-=-=-=-=
+
+sub() {
+    cat "$scriptfile" |\
+        sed 's/\s*;.*//g; /^\s*$/ d;' |\
+        sed "s/$inst0/0/"
+
+        # finally removes any non alphanumerics in case sm breaks
+}
+
+inject() {
+    tmp="$(mktemp 'tempXXX')"
+    sub >> "$tmp"
+    sed -i "/\; CMKS START/,/\; CMKS END/{/\; CMKS START/!{/\; CMKS END/!d}}; /\; CMKS START/r $tmp" "$targetfile"
+    rm "$tmp"
+}    
+
+
+[ -f "$scriptfile" ] && [ -f "$targetfile" ] || { echo "You are missing a file, please check that the current directory contains $scriptfile and $targetfile" && exit 1; }
+
+# If racket is installed run it directly
+# [ ! -z "$(command -v racket)" ] && racket "$targetfile"
+
+inject

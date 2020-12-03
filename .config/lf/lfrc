@@ -23,6 +23,8 @@ map dd delete
 # =-=-=-=-= custom 'go to' commands
 
 # school
+map gd cd ~/Downloads
+map gS cd ~/Scripts
 map gs. cd ~/School
 map gsc cd ~/School/cs145
 map gsm5 cd ~/School/math135

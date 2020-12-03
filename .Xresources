@@ -53,6 +53,7 @@ dmenu.selbackground: nord8
 
 # herbe
 herbe.background_color: nord0
+# herbe.font_pattern: Source Code Pro:size=10,Symbols Nerd Font:style=2048-em
 herbe.font_pattern: Source Code Pro:size=10
 herbe.width: 300
 herbe.pos_x: 20
