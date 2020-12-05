@@ -6,7 +6,7 @@
 # Usage: cormackscript [cmks file] [output file]
 #
 # IMPORTANT!
-# Place the comments:
+# Place the comments (important to get spaces right too):
 # ; CMKS START
 # ; CMKS END
 # into your racket program, the 'compiled' code will be injected here.
@@ -14,6 +14,9 @@
 # For extra niceness, if you have the racket program installed it will auto execute it.
 #
 # A CormackScript file contains 3 columns separated by whitespace in the format [opcode|target|source]  
+# The inc, print and read instructions read from the first column
+# The quit instruction can be standalone
+#
 # Here's some sample code
 #
 # mov 20 30
@@ -46,9 +49,20 @@ scriptfile="$1"; targetfile="$2"
 
 tmp="$(mktemp 'tempXXX')"
 cat "$scriptfile" |\
-    sed -r "s/\s*;.*//g; /^\s*$/ d; s/\s+/ /g; s/^\s+//; s/ [0-9]{1} / 0&/; s/ [0-9]{1}\$/ 0&/; s/$inst0/0/; s/$inst1/1/; s/$inst2/2/; s/$inst3/3/; s/$inst4/4/; s/$inst5/5/; s/$inst6/6/; s/$inst7/700/; s/$inst8/8/; s/$inst9/9/; s/ //g" |\
-    sed -e :a -e 's/^.\{1,4\}$/&0/;ta' |\
-    sed 's/![0-9]//g' >> "$tmp"
+    sed -r "s/\s*;.*//g; /^\s*$/ d; s/\s+/ /g; s/^\s+//" |\
+        awk "
+                /^$inst0\s/ {printf \"0%02d00 ; [%02d] = [%02d] + 1\n\",\$2,\$2,\$2}
+                /^$inst1\s/ {printf \"1%02d%02d ; [%02d] = [%02d] + [%02d]\n\",\$2,\$3,\$2,\$2,\$3}
+                /^$inst2\s/ {printf \"2%02d%02d ; [%02d] = max([%02d] - [%02d], 0)\n\",\$2,\$3,\$2,\$2,\$3}
+                /^$inst3\s/ {printf \"3%02d%02d ; [%02d] = [%02d]\n\",\$2,\$3,\$2,\$3}
+                /^$inst4\s/ {printf \"4%02d%02d ; [%02d] = [%02d] + 1, if [%02d] = 0\n\",\$2,\$3,\$2,\$2,\$3}
+                /^$inst5\s/ {printf \"5%02d%02d ; [%02d] = [[%02d]]\n\",\$2,\$3,\$2,\$3}
+                /^$inst6\s/ {printf \"6%02d%02d ; [[%02d]] = [%02d]\n\",\$2,\$3,\$2,\$3}
+                /^$inst7\s/ {printf \"700%02d ; display [%02d]\n\",\$2,\$2}
+                /^$inst8\s/ {printf \"8%02d00 ; read [%02d]\n\",\$2,\$2}
+                /^$inst9/ {print \"90000 ; halt\"}
+                !/^$inst0\s|^$inst1\s|^$inst2\s|^$inst3\s|^$inst4\s|^$inst5\s|^$inst6\s|^$inst7\s|^$inst8\s|^$inst9/
+            " >> "$tmp"
 sed -i "/\; CMKS START/,/\; CMKS END/{/\; CMKS START/!{/\; CMKS END/!d}}; /\; CMKS START/r $tmp" "$targetfile"
 rm "$tmp"
 
