@@ -9,25 +9,37 @@
 # Place the comments (important to get spaces right too):
 # ; CMKS START
 # ; CMKS END
-# into your racket program, the 'compiled' code will be injected here.
+# into your racket program, the 'assembled' code will be injected here.
 #
-# For extra niceness, if you have the racket program installed it will auto execute it.
+# For extra niceness, if you have the racket program installed it will auto execute it your file.
 #
 # A CormackScript file contains 3 columns separated by whitespace in the format [opcode|target|source]  
-# The inc, print and read instructions read from the first column
-# The quit instruction can be standalone
+# - The inc, print and read instructions read from the first column
+# - The quit instruction can be standalone
+# - you can comment with ;
+# - extraneous whitespace is ignored
 #
 # Here's some sample code
+# =-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+# ; setting up memory
+# 6     ; [0]: first instruction
+# 1     ; [1]: literal 1
+# 2     ; [2]: literal 2
+# 7     ; [3]: literal 7
+# 0     ; [4]: n
+# 0     ; [5]: acc
 #
-# mov 20 30
-# inc 1
-# read 21
-# print 21
+# ; actual instructions 
+# read 4 ; input n
+# addeq 00 4 ; skip next if n = 0
+# add 00 2 ; skip next 2 instructions
+# print 5 ; out acc
 # quit
+# add 05 04 ; acc = acc + n
+# sub 04 01 ; n = n - 1
+# sub 00 03 ; go back 7 (from next instr)
+# =-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 #
-# Note, for commands that only need one param you don't need to add empty columns
-# oh yeah, you can also comment with ;
-
 # You can redefine these to whatever you want
 
 inst0="inc"   # [tt] = [tt] + 1
