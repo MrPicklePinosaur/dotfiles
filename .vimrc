@@ -37,7 +37,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'sirver/ultisnips'
+" Plug 'sirver/ultisnips'
 Plug 'lervag/vimtex'
 Plug 'jiangmiao/auto-pairs'
 Plug 'PietroPate/vim-tex-conceal'

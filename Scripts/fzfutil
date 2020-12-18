@@ -1,6 +1,6 @@
 #!/bin/sh
 
-fuzzy_dirs="$HOME/Scripts/* $HOME/School/* $HOME/.vim/mysnippets/* $HOME/.bashrc $HOME/.xinitrc $HOME/.Xresources $HOME/.Xmodmap $HOME/.config/*"
+fuzzy_dirs="$HOME/Scripts/* $HOME/School/* $HOME/.vim/mysnippets/* $HOME/.bashrc $HOME/.xinitrc $HOME/.Xresources $HOME/.Xmodmap $HOME/.config/* $HOME/Repos/* $HOME/installs/*"
 
 ffi() { # standard fzf on files
     fname="$(find $fuzzy_dirs -type f | fzf)"

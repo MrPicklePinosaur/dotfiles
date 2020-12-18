@@ -21,7 +21,7 @@ export QT_IM_MODULE=ibus
 #ibus-daemon -drx
 
 # Enivormentals
-export PATH=$HOME/Scripts:$HOME/Scripts/dmenu:$HOME/Scripts/statusbar:$PATH
+export PATH=$HOME/Scripts:$HOME/Scripts/dmenu:$HOME/Scripts/statusbar:$HOME/Scripts/acpi:$PATH
 
 export XDG_CONFIG_HOME=$HOME/.config
 export EDITOR="vim"
@@ -34,7 +34,7 @@ export WM="dwm"
 alias ls='ls --color=auto'
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 alias suckless-clean='make clean && rm -rf config.h && git reset --hard home/master'
-alias musicdl="youtube-dl -f bestaudio -o ~/Music/%(title)s.%(ext)s"
+alias musicdl="youtube-dl -f bestaudio"
 alias mpv="mpv --no-input-default-bindings"
 alias slock='slock -m "$(figlet locked xd | cowsay -f cheese -n)"'
 
