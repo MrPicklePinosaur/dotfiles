@@ -25,6 +25,9 @@ set conceallevel=2
 hi Conceal ctermbg=Black
 hi SpellBad ctermfg=Red ctermbg=Black cterm=underline
 
+" Bindings
+nnoremap <C-[> <C-t>
+
 " Some macros
 
 " vim plug
@@ -37,12 +40,13 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 
 call plug#begin('~/.vim/plugged')
 
-" Plug 'sirver/ultisnips'
+Plug 'sirver/ultisnips'
 Plug 'lervag/vimtex'
 Plug 'jiangmiao/auto-pairs'
 Plug 'PietroPate/vim-tex-conceal'
 Plug 'vim-airline/vim-airline'
- " Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'ctrlpvim/ctrlp.vim'
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'habamax/vim-godot'
 Plug 'tpope/vim-commentary'
 
@@ -68,3 +72,5 @@ let g:vimtex_compiler_latexmk = {
 "let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts=1
 
+" Ctrlp
+let g:ctrlp_cmd='CtrlPTag'

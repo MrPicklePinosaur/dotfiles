@@ -2,21 +2,13 @@
 
 fuzzy_dirs="$HOME/Scripts/* $HOME/School/* $HOME/.vim/mysnippets/* $HOME/.bashrc $HOME/.xinitrc $HOME/.Xresources $HOME/.Xmodmap $HOME/.config/* $HOME/Repos/* $HOME/installs/*"
 
-ffi() { # standard fzf on files
-    fname="$(find $fuzzy_dirs -type f | fzf)"
-    [ -z "$fname" ] && exit 1
-    echo "$fname"
+fvi() { 
+    [ -z "$1" ] && search="$fuzzy_dirs" || search="$1"
+    fname="$(find $search -type f | fzf)"
+    [ -z "$fname" ] || $EDITOR "$fname"
 }
-fdi() { # standard fzf on dirs
-    dname="$(find $fuzzy_dirs -type d | fzf)"
-    [ -z "$dname" ] && exit 1
-    echo "$dname"
-}
-
-fvi() { # shortcut ffi for editor
-    ffi && $EDITOR "$fname"
-}
-
-fcd() { # shortcuz fdi for cding
-    fdi && cd "$dname"
+fcd() {
+    [ -z "$1" ] && search="$fuzzy_dirs" || search="$1"
+    dname="$(find $search -type d | fzf)"
+    [ -z "$dname" ] || cd "$dname"
 }

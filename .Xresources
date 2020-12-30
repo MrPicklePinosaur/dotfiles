@@ -1,5 +1,5 @@
-*.font: Source Code Pro:size=12
 
+/* nord */
 #define nord0 #2E3440
 #define nord1 #3B4252
 #define nord2 #434C5E
@@ -12,49 +12,68 @@
 #define nord9 #81A1C1
 #define nord10 #5E81AC
 #define nord11 #BF616A
-#define nord12 #D08770
+#define nord12 #D08770 
 #define nord13 #EBCB8B
 #define nord14 #A3BE8C
 #define nord15 #B48EAD
 
-*.foreground:   nord4
-*.background:   nord0
-*.cursorColor:  nord4
+#define theme0  nord0
+#define theme1  nord1
+#define theme2  nord2
+#define theme3  nord3
+#define theme4  nord4
+#define theme5  nord5
+#define theme6  nord6
+#define theme7  nord7
+#define theme8  nord8
+#define theme9  nord9
+#define theme10 nord10
+#define theme11 nord11
+#define theme12 nord12
+#define theme13 nord13
+#define theme14 nord14
+#define theme15 nord15
+
+*.font: Source Code Pro:size=12
+
+*.foreground:   theme4
+*.background:   theme0
+*.cursorColor:  theme4
 *.termname: st-256color
 
 *.borderpx: 5
-*.normbordercolor: nord0
-*.selbordercolor: nord6
+*.normbordercolor: theme0
+*.selbordercolor: theme6
 
-*.normbgcolor: nord0
-*.selbgcolor: nord8
+*.normbgcolor: theme0
+*.selbgcolor: theme8
 
-*.selfgcolor: nord0
+*.selfgcolor: theme0
 
-*.color0: nord1
-*.color1: nord11
-*.color2: nord14
-*.color3: nord13
-*.color4: nord9
-*.color5: nord15
-*.color6: nord8
-*.color7: nord5
-*.color8: nord3
-*.color9: nord11
-*.color10: nord14
-*.color11: nord13
-*.color12: nord9
-*.color13: nord15
-*.color14: nord7
-*.color15: nord6
+*.color0: theme1
+*.color1: theme11
+*.color2: theme14
+*.color3: theme13
+*.color4: theme9
+*.color5: theme15
+*.color6: theme8
+*.color7: theme5
+*.color8: theme3
+*.color9: theme11
+*.color10: theme14
+*.color11: theme13
+*.color12: theme9
+*.color13: theme15
+*.color14: theme7
+*.color15: theme6
 
-# dmenu
-dmenu.selbackground: nord8
+/* dmenu */
+dmenu.selbackground: theme8
 
-# herbe
-herbe.background_color: nord0
-# herbe.font_pattern: Source Code Pro:size=10,Symbols Nerd Font:style=2048-em
+/* herbe */
+herbe.background_color: theme0
 herbe.font_pattern: Source Code Pro:size=10
+/* herbe.font_pattern: Symbols Nerd Font:style=2048-em */ 
 herbe.width: 300
 herbe.pos_x: 20
 herbe.pos_y: 50
