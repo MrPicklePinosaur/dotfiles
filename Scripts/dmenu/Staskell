@@ -10,7 +10,7 @@ boards_path="$HOME/.config/taskell/boards/"
 (
     cd "$boards_path"
     board="new_board"
-    mode=$(echo -e "o\nn" | dmenu -i -p "Open board (O) or create new board (N)?")
+    mode=$(printf "o\nn" | dmenu -i -p "Open board (O) or create new board (N)?")
 
     [ $mode = "n" ] && board=$(dmenu -p "Choose a name for the board") || \
     [ $mode = "o" ] && board=$(ls -1 | dmenu -i -p "Choose board to open") 

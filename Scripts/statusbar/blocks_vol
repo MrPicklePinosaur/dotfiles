@@ -1,10 +1,14 @@
 #!/bin/sh
 
-volume="$(amixer sget Master | grep 'Mono:' | awk -F'[][]' '{ print $2  }')"
+# Audio status for pulseaudio with pulsemixer
+
+volume="$(pulsemixer --get-volume | awk '{ print $1 }')"
 
 icon=""
-[ ${volume%\%} -gt "0" ] && icon="" 
-[ ${volume%\%} -gt "50" ] && icon="" 
-[ ${volume%\%} -gt "75" ] && icon="" 
-echo -e "$icon $volume"
+[ "$volume" -gt "0" ] && icon="" 
+[ "$volume" -gt "50" ] && icon="" 
+[ "$volume" -gt "75" ] && icon="" 
 
+[ "$(pulsemixer --get-mute)" = 1 ] && icon="ﱝ" && volume="XX"
+
+printf "$icon $volume%%"

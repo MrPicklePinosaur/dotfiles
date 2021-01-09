@@ -1,6 +1,10 @@
-XF86Audio{Mute,LowerVolume,RaiseVolume}
-    amixer sset Master {0,5-,5+} &\
-    refresh_blocks 10
+XF86Audio{LowerVolume,RaiseVolume}
+    pulsemixer --change-volume {-5,+5} &\
+        refresh_blocks 10
+    
+XF86Audio{Mute}
+    pulsemixer --toggle-mute &\
+        refresh_blocks 10
 
 super + b
     brave
@@ -20,16 +24,17 @@ super + n
 super + m
     st ncmpcpp
 
+super + s
+    st pulsemixer
+
 super + {Down,Left,Right}
     mpc {toggle,prev,next}
 
 alt + s
-    scrot ~/Downloads/screenshots/ &&\
-        notify-send "Fullscreen screenshot taken" -i ""
+    screenshot -f
 
 alt + shift + s
-    scrot -u ~/Downloads/screenshots/ &&\
-    notify-send "Windowed screenshot taken" -i ""
+    screenshot -w
     
 {Home,End}
     mod_brightness {0.1,-0.1}

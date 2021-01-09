@@ -8,4 +8,4 @@ icon=""
 [ $bat -gt "63" ] && icon=""
 [ $bat -gt "88" ] && icon=""
 
-echo -e "$icon $bat%"
+echo "$icon $bat%"

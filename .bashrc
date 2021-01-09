@@ -14,6 +14,8 @@ PS1=' λ_ \W > '
 #set vi mode
 set -o vi
 
+ufetch-arch
+
 # ibus
 export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
@@ -40,6 +42,7 @@ alias slock='slock -m "$(figlet locked xd | cowsay -f cheese -n)"'
 
 source fzfutil
 
+export NINEIT_USERNAME=pinosaur
 export LF_ICONS="\
 di=:\
 fi=:\
