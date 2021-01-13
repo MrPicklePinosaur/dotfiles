@@ -8,7 +8,8 @@
 syntax on
 set number
 set relativenumber
-set hlsearch
+" set hlsearch
+set incsearch
 set encoding=utf-8
 set tabstop=4
 set shiftwidth=4
@@ -45,7 +46,7 @@ Plug 'lervag/vimtex'
 Plug 'jiangmiao/auto-pairs'
 Plug 'PietroPate/vim-tex-conceal'
 Plug 'vim-airline/vim-airline'
-Plug 'ctrlpvim/ctrlp.vim'
+" Plug 'ctrlpvim/ctrlp.vim'
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'habamax/vim-godot'
 Plug 'tpope/vim-commentary'

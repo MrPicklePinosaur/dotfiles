@@ -14,7 +14,6 @@ PS1=' λ_ \W > '
 #set vi mode
 set -o vi
 
-ufetch-arch
 
 # ibus
 export GTK_IM_MODULE=ibus
@@ -40,10 +39,17 @@ alias musicdl="youtube-dl -f bestaudio"
 alias mpv="mpv --no-input-default-bindings"
 alias slock='slock -m "$(figlet locked xd | cowsay -f cheese -n)"'
 alias darkmpv='mpv --vf=sub,lavfi="negate"'
+alias nmaplocal='nmap -sn 192.168.1.0/24'
 
 source fzfutil
 
 export NINEIT_USERNAME=pinosaur
+
+
+# startup stuff
+
+ufetch-arch
+
 export LF_ICONS="\
 di=:\
 fi=:\

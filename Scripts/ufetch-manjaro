@@ -1,16 +1,16 @@
 #!/bin/sh
 #
-# ufetch-gentoo - tiny system info for gentoo
+# ufetch-arch - tiny system info for arch
 
 ## INFO
 
 # user is already defined
 hostname="$(hostname)"
-os='Gentoo Linux'
+os='Arch Linux'
 host="$(cat /sys/devices/virtual/dmi/id/product_name) $(cat /sys/devices/virtual/dmi/id/product_family)"
 kernel="$(uname -sr)"
 uptime="$(uptime -p | sed 's/up //')"
-packages="$(ls -d /var/db/pkg/*/* | wc -l)"
+packages="$(pacman -Q | wc -l)"
 shell="$(basename "${SHELL}")"
 term="$TERM"
 
@@ -65,23 +65,22 @@ if [ -x "$(command -v tput)" ]; then
 fi
 
 # you can change these
-lc="${reset}${bold}${magenta}"      # labels
-nc="${reset}${bold}${white}"      # user and hostname
+lc="${reset}${bold}${green}"         # labels
+nc="${reset}${bold}${white}"         # user and hostname
 ic="${reset}"                       # info
-c0="${reset}${bold}${magenta}"      # first color
-c1="${reset}${magenta}"             # second color
+c0="${reset}${green}"                # first color
 
 ## OUTPUT
 
 cat <<EOF
 
-                    ${nc}${USER}${ic}@${nc}${hostname}${reset}
-${c0}     .-----.        ${lc}OS:        ${ic}${os}${reset}
-${c0}   .\`    _  \`.      ${lc}KERNEL:    ${ic}${kernel}${reset}
-${c0}   \`.   (${c1}_)   ${c0}\`.    ${lc}HOST:      ${ic}${host}${reset}  
-${c0}     \`${c1}.        /    ${lc}UPTIME:    ${ic}${uptime}${reset}
-${c1}    .\`       .\`     ${lc}PACKAGES:  ${ic}${packages}${reset}
-${c1}   /       .\`       ${lc}${uitype}:        ${ic}${ui}${reset}
-${c1}   \____.-\`         ${lc}TERM:      ${ic}${term}${reset}
+${c0}                   ${nc}${USER}${ic}@${nc}${hostname}${reset}
+${c0}  ||||||||| ||||   ${lc}OS:        ${ic}${os}${reset}
+${c0}  ||||||||| ||||   ${lc}KERNEL:    ${ic}${kernel}${reset}   
+${c0}  ||||      ||||   ${lc}HOST:      ${ic}${host}${reset}  
+${c0}  |||| |||| ||||   ${lc}UPTIME:    ${ic}${uptime}${reset}  
+${c0}  |||| |||| ||||   ${lc}PACKAGES:  ${ic}${packages}${reset}  
+${c0}  |||| |||| ||||   ${lc}${uitype}:        ${ic}${ui}${reset}
+${c0}  |||| |||| ||||   ${lc}TERM:      ${ic}${term}${reset}
 
 EOF
