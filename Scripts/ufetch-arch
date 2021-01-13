@@ -5,7 +5,7 @@
 ## INFO
 
 # user is already defined
-hostname="$(cat /etc/hostname)"
+hostname="$(hostname)"
 os='Arch Linux'
 host="$(cat /sys/devices/virtual/dmi/id/product_name) $(cat /sys/devices/virtual/dmi/id/product_family)"
 kernel="$(uname -sr)"
@@ -72,17 +72,27 @@ c0="${reset}${cyan}"                # first color
 
 ## OUTPUT
 
+# ${c0}        /\\         ${nc}${USER}${ic}@${nc}${hostname}${reset}
+# ${c0}       /  \\        ${lc}OS:        ${ic}${os}${reset}
+# ${c0}      /\\   \\       ${lc}KERNEL:    ${ic}${kernel}${reset}
+# ${c0}     /  __  \\      ${lc}HOST:      ${ic}${host}${reset}      
+# ${c0}    /  (  )  \\     ${lc}UPTIME:    ${ic}${uptime}${reset}
+# ${c0}   / __|  |__\\\\    ${lc}PACKAGES:  ${ic}${packages}${reset}
+# ${c0}  /.\`        \`.\\   ${lc}SHELL:     ${ic}${shell}${reset}
+#                    ${lc}${uitype}:        ${ic}${ui}${reset}
+#   ${bold}${red}██${green}██${yellow}██${blue}██${magenta}██${cyan}██${white}██${reset}   ${lc}TERM:      ${ic}${term}${reset}
+
+  # ${bold}${red}██${green}██${yellow}██${blue}██${magenta}██${cyan}██${white}██${reset}                 
 
 cat <<EOF
 
-${c0}        /\\         ${nc}${USER}${ic}@${nc}${hostname}${reset}
-${c0}       /  \\        ${lc}OS:        ${ic}${os}${reset}
-${c0}      /\\   \\       ${lc}KERNEL:    ${ic}${kernel}${reset}
-${c0}     /  __  \\      ${lc}HOST:      ${ic}${host}${reset}      
-${c0}    /  (  )  \\     ${lc}UPTIME:    ${ic}${uptime}${reset}
-${c0}   / __|  |__\\\\    ${lc}PACKAGES:  ${ic}${packages}${reset}
-${c0}  /.\`        \`.\\   ${lc}SHELL:     ${ic}${shell}${reset}
-                   ${lc}${uitype}:        ${ic}${ui}${reset}
-  ${bold}${red}██${green}██${yellow}██${blue}██${magenta}██${cyan}██${white}██${reset}   ${lc}TERM:      ${ic}${term}${reset}
+${c0}         .         ${nc}${USER}${ic}@${nc}${hostname}${reset}
+${c0}        / \\        ${lc}OS:        ${ic}${os}${reset}
+${c0}       /   \\       ${lc}KERNEL:    ${ic}${kernel}${reset}   
+${c0}      /^.   \\      ${lc}HOST:      ${ic}${host}${reset}  
+${c0}     /  .-.  \\     ${lc}UPTIME:    ${ic}${uptime}${reset}  
+${c0}    /  (   ) _\\    ${lc}PACKAGES:  ${ic}${packages}${reset}  
+${c0}   / _.~   ~._^\\   ${lc}${uitype}:        ${ic}${ui}${reset}
+${c0}  /.^         ^.\\  ${lc}TERM:      ${ic}${term}${reset}
 
 EOF

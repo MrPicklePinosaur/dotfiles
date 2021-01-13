@@ -39,6 +39,7 @@ alias suckless-clean='make clean && rm -rf config.h && git reset --hard home/mas
 alias musicdl="youtube-dl -f bestaudio"
 alias mpv="mpv --no-input-default-bindings"
 alias slock='slock -m "$(figlet locked xd | cowsay -f cheese -n)"'
+alias darkmpv='mpv --vf=sub,lavfi="negate"'
 
 source fzfutil
 

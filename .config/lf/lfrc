@@ -3,7 +3,6 @@
 map d
 
 
-
 set icons true
 set hidden true
 map . set hidden!
@@ -22,15 +21,25 @@ map dd delete
 
 # =-=-=-=-= custom 'go to' commands
 
+# downloads
+map gd. cd ~/Downloads
+map gdw cd ~/Downloads/wallpapers
+map gds cd ~/Downloads/screenshots
+
 # school
-map gd cd ~/Downloads
 map gS cd ~/Scripts
 map gs. cd ~/School
-map gsc cd ~/School/cs145
-map gsm5 cd ~/School/math135
-map gsm7 cd ~/School/math137
-map gsp cd ~/School/phys121
-map gss cd ~/School/spcom223
+# map gsc cd ~/School/cs145
+# map gsm5 cd ~/School/math135
+# map gsm7 cd ~/School/math137
+# map gsp cd ~/School/phys121
+# map gss cd ~/School/spcom223
+
+map gsc cd ~/School/cs146
+map gsm6 cd ~/School/math136
+map gsm8 cd ~/School/math138
+map gsp cd ~/School/phys175
+map gse cd ~/School/econ101
 
 # config
 map gc. cd ~/.config
