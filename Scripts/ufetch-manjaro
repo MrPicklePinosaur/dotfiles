@@ -6,7 +6,7 @@
 
 # user is already defined
 hostname="$(hostname)"
-os='Arch Linux'
+os='Manjaro Linux'
 host="$(cat /sys/devices/virtual/dmi/id/product_name) $(cat /sys/devices/virtual/dmi/id/product_family)"
 kernel="$(uname -sr)"
 uptime="$(uptime -p | sed 's/up //')"

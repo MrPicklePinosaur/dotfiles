@@ -75,13 +75,13 @@ c1="${reset}${magenta}"             # second color
 
 cat <<EOF
 
-                    ${nc}${USER}${ic}@${nc}${hostname}${reset}
-${c0}     .-----.        ${lc}OS:        ${ic}${os}${reset}
-${c0}   .\`    _  \`.      ${lc}KERNEL:    ${ic}${kernel}${reset}
-${c0}   \`.   (${c1}_)   ${c0}\`.    ${lc}HOST:      ${ic}${host}${reset}  
-${c0}     \`${c1}.        /    ${lc}UPTIME:    ${ic}${uptime}${reset}
-${c1}    .\`       .\`     ${lc}PACKAGES:  ${ic}${packages}${reset}
-${c1}   /       .\`       ${lc}${uitype}:        ${ic}${ui}${reset}
-${c1}   \____.-\`         ${lc}TERM:      ${ic}${term}${reset}
+                   ${nc}${USER}${ic}@${nc}${hostname}${reset}
+${c0}     .-----.       ${lc}OS:        ${ic}${os}${reset}
+${c0}   .\`    _  \`.     ${lc}KERNEL:    ${ic}${kernel}${reset}
+${c0}   \`.   (${c1}_)   ${c0}\`.   ${lc}HOST:      ${ic}${host}${reset}  
+${c0}     \`${c1}.        /   ${lc}UPTIME:    ${ic}${uptime}${reset}
+${c1}    .\`       .\`    ${lc}PACKAGES:  ${ic}${packages}${reset}
+${c1}   /       .\`      ${lc}${uitype}:        ${ic}${ui}${reset}
+${c1}   \____.-\`        ${lc}TERM:      ${ic}${term}${reset}
 
 EOF

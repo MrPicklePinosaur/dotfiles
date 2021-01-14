@@ -5,6 +5,7 @@
 "   (_)_/ |_|_| |_| |_|_|  \___|
 "                            
 
+" basics
 syntax on
 set number
 set relativenumber
@@ -16,20 +17,32 @@ set shiftwidth=4
 set expandtab
 set formatoptions-=cro "disables auto comments
 
+" spell check
 setlocal spell
 set spelllang=en_us
 set spellcapcheck=
 
+" conceal
 set conceallevel=2
+
+" Bindings
+let mapleader = ' '
+
+" map <leader>e :Ex<cr>
+" map <leader>v :Vex<cr>
+map <leader>l :bn<cr>
+map <leader>h :bp<cr>
+map <leader>d :bd<cr>
 
 " colors
 hi Conceal ctermbg=Black
 hi SpellBad ctermfg=Red ctermbg=Black cterm=underline
 
-" Bindings
-nnoremap <C-[> <C-t>
-
-" Some macros
+" Netrw
+" let g:netrw_liststyle = 3
+" let g:netrw_banner = 0
+" let g:netrw_winsize = 25
+" let g:netrw_browse_split = 4
 
 " vim plug
 " this blob auto installs vim plug if it isnt already
@@ -46,10 +59,11 @@ Plug 'lervag/vimtex'
 Plug 'jiangmiao/auto-pairs'
 Plug 'PietroPate/vim-tex-conceal'
 Plug 'vim-airline/vim-airline'
+Plug 'tpope/vim-commentary'
+Plug 'ptzz/lf.vim'
 " Plug 'ctrlpvim/ctrlp.vim'
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'habamax/vim-godot'
-Plug 'tpope/vim-commentary'
 
 call plug#end()
 
@@ -70,8 +84,12 @@ let g:vimtex_compiler_latexmk = {
 \}
 
 " VimAirline
-"let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_min_count = 2
 let g:airline_powerline_fonts=1
 
 " Ctrlp
 let g:ctrlp_cmd='CtrlPTag'
+
+" Lf
+" let g:lf_replace_netrw = 1 " weird behavior rn

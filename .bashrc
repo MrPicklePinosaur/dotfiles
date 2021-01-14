@@ -14,7 +14,6 @@ PS1=' λ_ \W > '
 #set vi mode
 set -o vi
 
-
 # ibus
 export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
@@ -23,6 +22,7 @@ export QT_IM_MODULE=ibus
 
 # Enivormentals
 export PATH=$HOME/Scripts:$HOME/Scripts/dmenu:$HOME/Scripts/statusbar:$HOME/Scripts/acpi:$PATH
+export NINEIT_USERNAME=pinosaur
 
 export XDG_CONFIG_HOME=$HOME/.config
 export EDITOR="vim"
@@ -33,7 +33,7 @@ export WM="dwm"
 
 # aliaseseses
 alias ls='ls --color=auto'
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
+alias dotfiles='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 alias suckless-clean='make clean && rm -rf config.h && git reset --hard home/master'
 alias musicdl="youtube-dl -f bestaudio"
 alias mpv="mpv --no-input-default-bindings"
@@ -43,11 +43,7 @@ alias nmaplocal='nmap -sn 192.168.1.0/24'
 
 source fzfutil
 
-export NINEIT_USERNAME=pinosaur
-
-
 # startup stuff
-
 ufetch-arch
 
 export LF_ICONS="\
