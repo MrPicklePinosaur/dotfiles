@@ -11,5 +11,5 @@ screen_name="$screen_dir/$screen_name.png"
 
 case $1 in
     -f|--full) scrot "$screen_name" && notify-send "Fullscreen screenshot taken - $screen_name" -i "";;
-    -w|--win) scrot -u "$screen_name" && notify-send "Windowed screenshot taken - $screen_name" -i "";;
+    -b|--box) scrot -s "$screen_name" && notify-send "Windowed screenshot taken - $screen_name" -i "";;
 esac

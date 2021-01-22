@@ -34,7 +34,7 @@ alt + s
     screenshot -f
 
 alt + shift + s
-    screenshot -w
+    screenshot -b
     
 {Home,End}
     mod_brightness {0.1,-0.1}

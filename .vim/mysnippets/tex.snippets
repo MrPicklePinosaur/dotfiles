@@ -5,13 +5,11 @@ snippet \begin "enviroment" bA
 \end{$1}
 endsnippet
 
-
 snippet enum "enumerate" w
 \begin{enumerate}[$1]
 	$0
 \end{enumerate}
 endsnippet
-
 
 snippet align "align" w
 \begin{align*}
@@ -19,11 +17,16 @@ snippet align "align" w
 \end{align*}
 endsnippet
 
-
 snippet center "center" w
 \begin{center}
 	$0
 \end{center}
+endsnippet
+
+snippet proof "proof" w
+\begin{proof}
+	$0
+\end{proof}
 endsnippet
 
 # FRACTIONS
@@ -36,7 +39,6 @@ endsnippet
 snippet lim "limit" w
 \lim\limits_{$1 \to $2}$3
 endsnippet
-
 
 snippet inflim "limit to infinity" w
 \lim\limits_{n \to \infty}
@@ -58,63 +60,62 @@ snippet im "inline math" w
 $$1$$0
 endsnippet
 
-
 snippet bm "block math" w
 \[
 	$1
 \]$0
 endsnippet
 
-
-# SETS
+# mathbb
 snippet set "Set" w
 \\{ $0 \\}
 endsnippet
 
-
-snippet reals "Set of Reals" w
-\mathbb{R}
-endsnippet
-
-
-snippet integers "Set of Integers" w
-\mathbb{Z}
-endsnippet
-
-
-snippet naturals "Set of Naturals" w
-\mathbb{N}
+snippet field "Field" w
+\mathbb{F}
 endsnippet
 
 snippet complex "Set of Complex" w
 \mathbb{C}
 endsnippet
 
+snippet reals "Set of Reals" w
+\mathbb{R}
+endsnippet
+
+snippet rationals "Set of Rational" w
+\mathbb{Q}
+endsnippet
+
+snippet integers "Set of Integers" w
+\mathbb{Z}
+endsnippet
+
+snippet naturals "Set of Naturals" w
+\mathbb{N}
+endsnippet
+
+
 # OTHERS
 snippet implies "Implies" w
 \Rightarrow
 endsnippet
 
-
 snippet mod "Mod" w
 {\ (\textrm{mod}\ $1)}
 endsnippet
-
 
 snippet floor "Floor" w
 \lfloor $1 \rfloor
 endsnippet
 
-
 snippet cubert "Cube root" w
 \sqrt[\leftroot{-2}\uproot{2}3]{$1}
 endsnippet
 
-
 snippet nroot "Root" w
 \sqrt[\leftroot{-2}\uproot{2}$1]{$2}
 endsnippet
-
 
 snippet ceil "Ceiling" w
 \lceil $1 \rceil
@@ -151,7 +152,6 @@ snippet eea "Extended Euclidian Algorithm" w
 \end{center}
 endsnippet
 
-
 snippet lemma "Lemma" w
 \textbf{Lemma $1}
 
@@ -161,4 +161,29 @@ snippet lemma "Lemma" w
     }%
 }
 
+endsnippet
+
+snippet piecewise "Piecewise" w
+\[
+    \begin{cases}
+		$0
+    \end{cases}
+\]
+endsnippet
+
+snippet graph "Graph" w
+\begin{tikzpicture}
+\begin{axis}[
+    ticks=none,
+    axis lines = middle,
+    axis line style={->},
+    ymin=-5, ymax=5,
+    xmin=-5, xmax=5,
+    xlabel={$x$},
+    ylabel={$y$},
+    axis equal image
+]
+
+\end{axis}
+\end{tikzpicture}
 endsnippet
