@@ -1,12 +1,16 @@
 #!/bin/sh
 
-# reads the config file and pushes to all the remotes
+# you can pass in git parameters to this script too
+# e.g
+# git-pushall git --git-dir=$HOME/.dotfiles --work-tree=$HOME
 
-config_path="$(git rev-parse --show-toplevel)/.git/config" 2>/dev/null
+cmd="$@"
+[ -z "$cmd" ] && cmd="git"
 
+config_path="$($cmd config --local -l)" 2>/dev/null
 [ ! "$?" = 0 ] && echo "Failed: not a git repo." && exit 1
-[ -z "$1" ] && echo "Failed: Please supply a branch to push to." && exit 1
 
-# look for all remotes
-cat "$config_path" | sed '/^\[remote "/!d; s/^\[remote "//; s/"]$//' |\
-    xargs -I _ git push _ "$1"
+echo "$config_path" | grep '^remote.*.url=' |\
+    sed 's/^remote.*.url=//' |\
+    xargs printf "$cmd push %s master\n" |\
+

@@ -27,6 +27,9 @@ super + m
 super + s
     st pulsemixer
 
+super + l
+    st slock -m "$(figlet locked xd | cowsay -f cheese -n)"
+
 super + {Down,Left,Right}
     mpc {toggle,prev,next}
 

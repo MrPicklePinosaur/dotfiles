@@ -15,7 +15,7 @@ set encoding=utf-8
 set tabstop=4
 set shiftwidth=4
 set expandtab
-set formatoptions-=cro "disables auto comments
+" set formatoptions-=cro "disables auto comments (not working rn)
 
 " spell check
 setlocal spell
@@ -44,6 +44,11 @@ hi SpellBad ctermfg=Red ctermbg=Black cterm=underline
 " let g:netrw_winsize = 25
 " let g:netrw_browse_split = 4
 
+" Templates
+augroup templates
+    autocmd BufNewFile *.tex 0r ~/.vim/templates/skeleton.tex
+augroup END
+
 " vim plug
 " this blob auto installs vim plug if it isnt already
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -52,6 +57,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
          autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
          endif
 
+" template stuff
 call plug#begin('~/.vim/plugged')
 
 Plug 'sirver/ultisnips'
@@ -93,3 +99,6 @@ let g:ctrlp_cmd='CtrlPTag'
 
 " Lf
 " let g:lf_replace_netrw = 1 " weird behavior rn
+
+" Run after plugins
+autocmd FileType * set formatoptions-=o
