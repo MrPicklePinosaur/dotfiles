@@ -9,13 +9,11 @@
 syntax on
 set number
 set relativenumber
-" set hlsearch
 set incsearch
 set encoding=utf-8
 set tabstop=4
 set shiftwidth=4
 set expandtab
-" set formatoptions-=cro "disables auto comments (not working rn)
 
 " spell check
 setlocal spell
@@ -47,6 +45,8 @@ hi SpellBad ctermfg=Red ctermbg=Black cterm=underline
 " Templates
 augroup templates
     autocmd BufNewFile *.tex 0r ~/.vim/templates/skeleton.tex
+    autocmd BufNewFile *.html 0r ~/.vim/templates/skeleton.html
+    autocmd BufNewFile *.rkt 0r ~/.vim/templates/skeleton.rkt
 augroup END
 
 " vim plug

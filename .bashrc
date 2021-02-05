@@ -33,7 +33,7 @@ export WM="dwm"
 
 # aliaseseses
 alias ls='ls --color=auto'
-alias git-pushall='git-pushall ' # for alias chaining
+# alias git-pushall='git-pushall ' # for alias chaining
 alias dotfiles='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 alias suckless-clean='make clean && rm -rf config.h && git reset --hard home/master'
 alias musicdl="youtube-dl -f bestaudio"

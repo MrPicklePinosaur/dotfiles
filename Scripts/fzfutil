@@ -1,6 +1,6 @@
 #!/bin/sh
 
-fuzzy_dirs="$HOME/Scripts/* $HOME/School/* $HOME/.vim/mysnippets/* $HOME/.bashrc $HOME/.xinitrc $HOME/.Xresources $HOME/.Xmodmap $HOME/.config/* $HOME/Repos/* $HOME/installs/*"
+fuzzy_dirs="$HOME/Scripts/* $HOME/School/* $HOME/.vim/mysnippets/* $HOME/.bashrc $HOME/.xinitrc $HOME/.Xresources $HOME/.Xmodmap $HOME/.config/* $HOME/Repos/* $HOME/Installs/*"
 
 fvi() { 
     [ -z "$1" ] && search="$fuzzy_dirs" || search="$1"
