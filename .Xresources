@@ -6,102 +6,113 @@
  * (_)_/\_\_|  \___||___/\___/ \__,_|_|  \___\___||___/
  * 
 */
- 
 
 /* nord */
-#define nord0 #2E3440
-#define nord1 #3B4252
-#define nord2 #434C5E
-#define nord3 #4C566A
-#define nord4 #D8DEE9
-#define nord5 #E5E9F0
-#define nord6 #ECEFF4
-#define nord7 #8FBCBB
-#define nord8 #88C0D0
-#define nord9 #81A1C1
-#define nord10 #5E81AC
-#define nord11 #BF616A
-#define nord12 #D08770 
-#define nord13 #EBCB8B
-#define nord14 #A3BE8C
-#define nord15 #B48EAD
+#define nord0  #3B4252
+#define nord8  #4C566A
+#define nord1  #BF616A
+#define nord9  #BF616A
+#define nord2  #A3BE8C
+#define nord10 #A3BE8C
+#define nord3  #EBCB8B
+#define nord11 #EBCB8B
+#define nord4  #81A1C1
+#define nord12 #81A1C1
+#define nord5  #B48EAD
+#define nord13 #B48EAD
+#define nord6  #88C0D0
+#define nord14 #8FBCBB
+#define nord7  #E5E9F0
+#define nord15 #ECEFF4
+#define nordfg #D8DEE9
+#define nordbg #2E3440
 
-/* 0: #1d2021 */
-/* 1: #ea6962 */
-/* 2: #a9b665 */
-/* 3: #d8a657 */
-/* 4: #7daea3 */
-/* 5: #d3869b */
-/* 6: #89b482 */
-/* 7: #d4be98 */
-/* 8: #1d2021 */
-/* 9: #ea6962 */
-/* 10: #a9b665 */
-/* 11: #d8a657 */
-/* 12: #7daea3 */
-/* 13: #d3869b */
-/* 14: #89b482 */
-/* 15: #d4be98 */
-/* background: #1d2021 */
-/* foreground: #d4be98 */
-/* cursorColor: #d4be98 */
-
+/* gruvbox */
+#define gruv0  #282828
+#define gruv8  #928374
+#define gruv1  #CC241D
+#define gruv9  #FB4934
+#define gruv2  #98971A
+#define gruv10 #B8BB26
+#define gruv3  #D79921
+#define gruv11 #FABD2F
+#define gruv4  #458588
+#define gruv12 #83A598
+#define gruv5  #B16286
+#define gruv13 #D3869B
+#define gruv6  #689D6A
+#define gruv14 #8EC07C
+#define gruv7  #A89984
+#define gruv15 #EBDBB2
+#define gruvfg #EBDBB2
+#define gruvbg #282828
 
 #define theme0  nord0
-#define theme1  nord1
-#define theme2  nord2
-#define theme3  nord3
-#define theme4  nord4
-#define theme5  nord5
-#define theme6  nord6
-#define theme7  nord7
 #define theme8  nord8
+#define theme1  nord1
 #define theme9  nord9
+#define theme2  nord2
 #define theme10 nord10
+#define theme3  nord3
 #define theme11 nord11
+#define theme4  nord4
 #define theme12 nord12
+#define theme5  nord5
 #define theme13 nord13
+#define theme6  nord6
 #define theme14 nord14
+#define theme7  nord7
 #define theme15 nord15
+#define themefg nordfg
+#define themebg nordbg
+#define themehl nord1
 
 *.font: Source Code Pro:size=12
 
-*.foreground:   theme4
-*.background:   theme0
-*.cursorColor:  theme4
-*.termname: st-256color
+*.foreground:   themefg
+*.background:   themebg
+*.cursorColor:  themefg
+*.termname:     st-256color
 
+! black + darkgrey
+*.color0: theme0
+*.color8: theme8
+! darkred + red
+*.color1: theme1
+*.color9: theme9
+! darkgreen + green
+*.color2: theme2
+*.color10: theme10
+! darkyellow + yellow
+*.color3: theme3
+*.color11: theme11
+! darkblue + blue
+*.color4: theme4
+*.color12: theme12
+! darkmagenta + magneta
+*.color5: theme5
+*.color13: theme13
+! darkcyan + cyan
+*.color6: theme6
+*.color14: theme14
+! lightgrey + white
+*.color7: theme7
+*.color15: theme15
+
+/* dwm */
 *.borderpx: 5
-*.normbordercolor: theme0
-*.selbordercolor: theme6
-
-*.normbgcolor: theme0
-*.selbgcolor: theme8
-
-*.selfgcolor: theme0
-
-*.color0: theme1
-*.color1: theme11
-*.color2: theme14
-*.color3: theme13
-*.color4: theme9
-*.color5: theme15
-*.color6: theme8
-*.color7: theme5
-*.color8: theme3
-*.color9: theme11
-*.color10: theme14
-*.color11: theme13
-*.color12: theme9
-*.color13: theme15
-*.color14: theme7
-*.color15: theme6
+dwm.normbordercolor: themebg
+dwm.selbordercolor: themefg
+/* dwm's bar */
+dwm.normbgcolor: themebg
+dwm.selbgcolor: themehl
+dwm.selfgcolor: themebg
 
 /* dmenu */
-dmenu.selbackground: theme8
+dmenu.selbackground: themehl
 
 /* herbe */
-herbe.background_color: theme0
+herbe.background_color: themebg
 herbe.font_pattern: Source Code Pro:size=10
 /* herbe.font_pattern: Symbols Nerd Font:style=2048-em */ 
 herbe.width: 300

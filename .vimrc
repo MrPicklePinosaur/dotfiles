@@ -26,11 +26,16 @@ set conceallevel=2
 " Bindings
 let mapleader = ' '
 
+" File stuff
 " map <leader>e :Ex<cr>
 " map <leader>v :Vex<cr>
 map <leader>l :bn<cr>
 map <leader>h :bp<cr>
 map <leader>d :bd<cr>
+
+" View whitespace
+set lcs=space:·
+map <leader>s :set list!<cr>
 
 " colors
 hi Conceal ctermbg=Black
@@ -67,6 +72,7 @@ Plug 'PietroPate/vim-tex-conceal'
 Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-commentary'
 Plug 'ptzz/lf.vim'
+Plug 'voldikss/vim-floaterm'
 " Plug 'ctrlpvim/ctrlp.vim'
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'habamax/vim-godot'
