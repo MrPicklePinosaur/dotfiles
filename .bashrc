@@ -9,8 +9,9 @@
 [[ $- != *i* ]] && return
 
 # prompt lmao
-PS1='\e[01;33m λ_\e[m\e[01;37m \W \e[m\e[01;33m> \e[m'
-PS2='\e[01;37m> \e[m'
+# PS1='\e[01;33m λ_\e[m\e[01;37m \W \e[m\e[01;33m> \e[m'
+# PS2='\e[01;37m> \e[m'
+PS1=' λ_ \W > '
 
 #set vi mode
 set -o vi

@@ -27,15 +27,18 @@ set conceallevel=2
 let mapleader = ' '
 
 " File stuff
-" map <leader>e :Ex<cr>
-" map <leader>v :Vex<cr>
+map <leader>f :Ex<cr>
 map <leader>l :bn<cr>
 map <leader>h :bp<cr>
 map <leader>d :bd<cr>
 
+let g:netrw_liststyle = 3
+let g:netrw_banner = 0
+let g:netrw_winsize = 25
+
 " View whitespace
-set lcs=space:·
 map <leader>s :set list!<cr>
+set lcs=space:·
 
 " colors
 hi Conceal ctermbg=Black
@@ -60,7 +63,7 @@ endfunction
 
 function! StatusModifiedColor()
     if getbufinfo(1)[0].changed
-        hi User1 cterm=None gui=None ctermfg=Black ctermbg=LightGrey
+        hi User1 cterm=None gui=None ctermfg=Black ctermbg=Magenta
     else
         hi User1 cterm=None gui=None ctermfg=White ctermbg=Black
     endif
@@ -68,28 +71,27 @@ function! StatusModifiedColor()
     return ''
 endfunction
 
-call StatusModeColor()
+function! BufCount()
+    return printf("%d/%d", bufnr("%"), len(getbufinfo({'buflisted':1})))
+endfunction
 
-" set showtabline=2
+call StatusModeColor()
+call StatusModifiedColor()
 
 set laststatus=2
 set statusline=
 set statusline+=%{StatusModeColor()}
 set statusline+=%{StatusModifiedColor()}
-set statusline+=\ vim\ \[%{mode()}\]
+set statusline+=%1*\ | 
+set statusline+=%0*\ vim\ \[%{mode()}\]
+set statusline+=\[%{BufCount()}\]
 set statusline+=\ %1*\ %F\ %m
 set statusline+=%=
 set statusline+=%0*
 set statusline+=\ %ff
 set statusline+=\ %r\[%{v:register}\]
-set statusline+=\ %l/%L:%c
-set statusline+=\ 
-
-" Netrw
-" let g:netrw_liststyle = 3
-" let g:netrw_banner = 0
-" let g:netrw_winsize = 25
-" let g:netrw_browse_split = 4
+set statusline+=\ %l/%L:%c\ |
+set statusline+=%1*\ |
 
 " Templates
 augroup templates
@@ -111,15 +113,11 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'sirver/ultisnips'
 Plug 'lervag/vimtex'
-Plug 'jiangmiao/auto-pairs'
 Plug 'PietroPate/vim-tex-conceal'
-" Plug 'vim-airline/vim-airline'
+Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-commentary'
-Plug 'ptzz/lf.vim'
-Plug 'voldikss/vim-floaterm'
-" Plug 'ctrlpvim/ctrlp.vim'
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" Plug 'habamax/vim-godot'
+" Plug 'ptzz/lf.vim'
+" Plug 'voldikss/vim-floaterm'
 
 call plug#end()
 
@@ -139,13 +137,8 @@ let g:vimtex_compiler_latexmk = {
     \'build_dir': '/home/pinosaur/.cache/latexaux/',
 \}
 
-" VimAirline
-" let g:airline#extensions#tabline#enabled = 1
-" let g:airline#extensions#tabline#buffer_min_count = 2
-" let g:airline_powerline_fonts=1
-
 " Ctrlp
-let g:ctrlp_cmd='CtrlPTag'
+" let g:ctrlp_cmd='CtrlPTag'
 
 " Lf
 " let g:lf_replace_netrw = 1 " weird behavior rn
