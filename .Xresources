@@ -65,7 +65,7 @@
 #define theme15 nord15
 #define themefg nordfg
 #define themebg nordbg
-#define themehl nord1
+#define themehl nord11
 
 *.font: Source Code Pro:size=12
 

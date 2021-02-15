@@ -9,7 +9,8 @@
 [[ $- != *i* ]] && return
 
 # prompt lmao
-PS1=' λ_ \W > '
+PS1='\e[01;33m λ_\e[m\e[01;37m \W \e[m\e[01;33m> \e[m'
+PS2='\e[01;37m> \e[m'
 
 #set vi mode
 set -o vi
@@ -41,6 +42,7 @@ alias mpv="mpv --no-input-default-bindings"
 # alias lockscreen='slock -m "$(figlet locked xd | cowsay -f cheese -n)"'
 alias darkmpv='mpv --vf=sub,lavfi="negate"'
 alias nmaplocal='nmap -sn 192.168.1.0/24'
+alias refreshusb='udevadm control --reload-rules'
 
 source fzfutil
 

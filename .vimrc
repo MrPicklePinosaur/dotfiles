@@ -41,6 +41,50 @@ map <leader>s :set list!<cr>
 hi Conceal ctermbg=Black
 hi SpellBad ctermfg=Red ctermbg=Black cterm=underline
 
+" statusline
+function! StatusModeColor()
+    if (mode() =~# '\v(n|no)')
+        hi StatusLine cterm=None gui=None ctermfg=black ctermbg=Yellow
+    elseif (mode() =~# '\v(v|V)')
+        hi StatusLine cterm=None gui=None ctermfg=black ctermbg=Red
+    elseif (mode() ==# 'i')
+        hi StatusLine cterm=None gui=None ctermfg=black ctermbg=LightBlue
+    elseif (mode() ==# 'c') 
+        hi StatusLine cterm=None gui=None ctermfg=black ctermbg=Green
+    else
+        hi StatusLine cterm=None gui=None ctermfg=black ctermbg=DarkGrey
+    endif
+    
+    return ''
+endfunction
+
+function! StatusModifiedColor()
+    if getbufinfo(1)[0].changed
+        hi User1 cterm=None gui=None ctermfg=Black ctermbg=LightGrey
+    else
+        hi User1 cterm=None gui=None ctermfg=White ctermbg=Black
+    endif
+
+    return ''
+endfunction
+
+call StatusModeColor()
+
+" set showtabline=2
+
+set laststatus=2
+set statusline=
+set statusline+=%{StatusModeColor()}
+set statusline+=%{StatusModifiedColor()}
+set statusline+=\ vim\ \[%{mode()}\]
+set statusline+=\ %1*\ %F\ %m
+set statusline+=%=
+set statusline+=%0*
+set statusline+=\ %ff
+set statusline+=\ %r\[%{v:register}\]
+set statusline+=\ %l/%L:%c
+set statusline+=\ 
+
 " Netrw
 " let g:netrw_liststyle = 3
 " let g:netrw_banner = 0
@@ -69,7 +113,7 @@ Plug 'sirver/ultisnips'
 Plug 'lervag/vimtex'
 Plug 'jiangmiao/auto-pairs'
 Plug 'PietroPate/vim-tex-conceal'
-Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-commentary'
 Plug 'ptzz/lf.vim'
 Plug 'voldikss/vim-floaterm'
@@ -96,9 +140,9 @@ let g:vimtex_compiler_latexmk = {
 \}
 
 " VimAirline
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#buffer_min_count = 2
-let g:airline_powerline_fonts=1
+" let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#tabline#buffer_min_count = 2
+" let g:airline_powerline_fonts=1
 
 " Ctrlp
 let g:ctrlp_cmd='CtrlPTag'
