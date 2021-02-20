@@ -7,5 +7,5 @@ get_json() {
 while read line; do
     icon="$(echo $line | get_json app_icon)"
     msg="$(echo $line | get_json summary)"
-    herbe "$icon $msg" &
+    herbe "$icon  $msg" &
 done

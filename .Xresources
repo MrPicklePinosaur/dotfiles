@@ -113,7 +113,7 @@ dmenu.selbackground: themehl
 
 /* herbe */
 herbe.background_color: themebg
-herbe.font_pattern: Source Code Pro:size=10
+herbe.font_pattern: Sauce Code Pro Nerd Font:size=10
 /* herbe.font_pattern: Symbols Nerd Font:style=2048-em */ 
 herbe.width: 300
 herbe.pos_x: 20

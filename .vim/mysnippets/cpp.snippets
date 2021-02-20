@@ -1,0 +1,20 @@
+snippet guard "header guard" w
+#ifndef $1
+#define $1
+
+$0
+
+#endif // $1
+endsnippet
+
+snippet cpp "cpp extern" w
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+$0
+
+#ifdef __cplusplus
+}
+#endif
+endsnippet

@@ -11,10 +11,9 @@ do
     
     # make sure the song acc changed
     cur_song="$(mpc current)" 
-    [ "$cur_song" == "$playing" ] && continue;
+    [ "$cur_song" = "$playing" ] && continue;
 
     playing="$cur_song"; 
-
     [ -z "$cur_song" ] && continue; # don't send notify if no song tho
 
     out="${cur_song%.*}" # get rid of extension

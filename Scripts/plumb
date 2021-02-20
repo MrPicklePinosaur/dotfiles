@@ -6,7 +6,7 @@ openlink() {
 }
 
 link=$(echo "$2" | grep -P "https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&\//=]*)") >/dev/null 2>&1
-[ -n "$link" ] && openlink "$link" && notify-send "Opening Link: $link"
+[ -n "$link" ] && openlink "$link" && notify-send -i "" "Opening Link: $link"
 
 
 

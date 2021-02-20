@@ -81,17 +81,27 @@ call StatusModifiedColor()
 set laststatus=2
 set statusline=
 set statusline+=%{StatusModeColor()}
-set statusline+=%{StatusModifiedColor()}
-set statusline+=%1*\ | 
+set statusline+=%1*\ |
 set statusline+=%0*\ vim\ \[%{mode()}\]
-set statusline+=\[%{BufCount()}\]
-set statusline+=\ %1*\ %F\ %m
+set statusline+=\ %1*\ %{expand('%:~:.')}\ %m
 set statusline+=%=
-set statusline+=%0*
-set statusline+=\ %ff
+set statusline+=%y
+set statusline+=\ %0*
 set statusline+=\ %r\[%{v:register}\]
 set statusline+=\ %l/%L:%c\ |
 set statusline+=%1*\ |
+" set statusline+=%{StatusModeColor()}
+" set statusline+=%{StatusModifiedColor()}
+" set statusline+=%1*\ | 
+" set statusline+=%0*\ vim\ \[%{mode()}\]
+" set statusline+=\[%{BufCount()}\]
+" set statusline+=\ %1*\ %{expand('%:~:.')}\ %m
+" set statusline+=%=
+" set statusline+=%y
+" set statusline+=\ %0*
+" set statusline+=\ %r\[%{v:register}\]
+" set statusline+=\ %l/%L:%c\ |
+" set statusline+=%1*\ |
 
 " Templates
 augroup templates
