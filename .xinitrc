@@ -35,6 +35,7 @@ export QT_IM_MODULE=ibus
 ibus-daemon -drx
 
 # start some daemons
+dwmblocks &
 tiramisu -j | notify &
 acpi_listen &
 redshift -l 55.7:12.6 -t 3000:3000 -g 0.85 -m randr -v &
@@ -43,7 +44,6 @@ mpd &
 mpd-change &
 xbanish &
 picom &
-dwmblocks &
 #syncthing &
 
 exec dwm

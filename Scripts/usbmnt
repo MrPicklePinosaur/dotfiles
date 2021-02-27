@@ -13,9 +13,9 @@ case $1 in
         devpath="/dev/bus/usb/$(printf %03d $2)/$(printf %03d $3)"
         manname="$(lsusb -D $devpath | grep 'iManufacturer' | sed 's/\s*iManufacturer\s*[0-9]\s*//')"
         devname="$(lsusb -D $devpath | grep 'iProduct' | sed 's/\s*iProduct\s*[0-9]\s*//')"
-        su pinosaur -c "notify-send 'USB inserted: $manname $devname'"
+        su pinosaur -c "notify-send -i '' 'USB inserted: $manname $devname'"
         ;;
-    r) su pinosaur -c "notify-send 'USB ejected'";;
+    r) su pinosaur -c "notify-send -i '' 'USB ejected'";;
     *) exit 1;;
 esac
 

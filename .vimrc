@@ -10,6 +10,7 @@ syntax on
 set number
 set relativenumber
 set incsearch
+set smartcase
 set encoding=utf-8
 set tabstop=4
 set shiftwidth=4
@@ -77,12 +78,15 @@ endfunction
 
 call StatusModeColor()
 call StatusModifiedColor()
+autocmd BufWritePost <buffer> call StatusModifiedColor()
 
 set laststatus=2
 set statusline=
 set statusline+=%{StatusModeColor()}
-set statusline+=%1*\ |
+set statusline+=%{StatusModifiedColor()}
+set statusline+=%1*\ | 
 set statusline+=%0*\ vim\ \[%{mode()}\]
+set statusline+=\[%{BufCount()}\]
 set statusline+=\ %1*\ %{expand('%:~:.')}\ %m
 set statusline+=%=
 set statusline+=%y
@@ -90,18 +94,6 @@ set statusline+=\ %0*
 set statusline+=\ %r\[%{v:register}\]
 set statusline+=\ %l/%L:%c\ |
 set statusline+=%1*\ |
-" set statusline+=%{StatusModeColor()}
-" set statusline+=%{StatusModifiedColor()}
-" set statusline+=%1*\ | 
-" set statusline+=%0*\ vim\ \[%{mode()}\]
-" set statusline+=\[%{BufCount()}\]
-" set statusline+=\ %1*\ %{expand('%:~:.')}\ %m
-" set statusline+=%=
-" set statusline+=%y
-" set statusline+=\ %0*
-" set statusline+=\ %r\[%{v:register}\]
-" set statusline+=\ %l/%L:%c\ |
-" set statusline+=%1*\ |
 
 " Templates
 augroup templates

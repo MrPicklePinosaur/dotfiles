@@ -39,10 +39,11 @@ alias dotfiles='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 alias suckless-clean='make clean && rm -rf config.h && git reset --hard home/master'
 alias musicdl="youtube-dl -f bestaudio"
 alias mpv="mpv --no-input-default-bindings"
-# alias lockscreen='slock -m "$(figlet locked xd | cowsay -f cheese -n)"'
 alias darkmpv='mpv --vf=sub,lavfi="negate"'
+# alias lockscreen='slock -m "$(figlet locked xd | cowsay -f cheese -n)"'
 alias nmaplocal='nmap -sn 192.168.1.0/24'
 alias refreshusb='udevadm control --reload-rules'
+alias vpnup='nmcli connection up pinovpn'
 
 source fzfutil
 
