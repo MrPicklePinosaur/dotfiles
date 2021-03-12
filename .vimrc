@@ -15,6 +15,7 @@ set encoding=utf-8
 set tabstop=4
 set shiftwidth=4
 set expandtab
+set hidden
 
 " spell check
 setlocal spell
@@ -100,6 +101,7 @@ augroup templates
     autocmd BufNewFile *.tex 0r ~/.vim/templates/skeleton.tex
     autocmd BufNewFile *.html 0r ~/.vim/templates/skeleton.html
     autocmd BufNewFile *.rkt 0r ~/.vim/templates/skeleton.rkt
+    autocmd BufNewFile *.xml 0r ~/.vim/templates/skeleton.xml
 augroup END
 
 " vim plug
@@ -123,11 +125,16 @@ Plug 'tpope/vim-commentary'
 
 call plug#end()
 
+" leader for plugins
+let maplocalleader = "\\"
+
 " Ultisnips
 let g:UltiSnipsExpandTrigger = '<tab>'
 let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "mysnippets"]
+
+map <localleader>sr :call UltiSnips#RefreshSnippets()<cr>
 
 " Vimtex
 let g:tex_flavor='latex'
