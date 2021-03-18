@@ -1,6 +1,6 @@
-snippet `<[a-z]+[0-9]*` "HTML tag expand" r
-<`!p snip.rv = match.group()[1:]`>$0</`!p snip.rv = match.group()[1:]`>
-endsnippet
+# snippet `<[a-z]+[0-9]*` "HTML tag expand" r
+# <`!p snip.rv = match.group()[1:]`>$0</`!p snip.rv = match.group()[1:]`>
+# endsnippet
 
 snippet html "html template" w
 <!DOCTYPE html>
@@ -15,3 +15,40 @@ snippet html "html template" w
 	</body>
 </html>
 endsnippet
+
+snippet p "p tag" w
+<p>$0</p>
+endsnippet
+
+snippet div "div tag" w
+<div>$0</div>
+endsnippet
+
+snippet a "a tag" w
+<a>$0</a>
+endsnippet
+
+snippet code "code tag" w
+<code>$0</code>
+endsnippet
+
+snippet img "img tag" w
+<img src="$0" />
+endsnippet
+
+snippet '(h[0-9])' "h tag" rw
+`!p
+snip.rv = "<{0}></{0}>".format(match.group(1))
+`
+endsnippet
+
+snippet bigcode "bigcode block" w
+<pre><code>
+$0
+</code></pre>
+endsnippet
+
+snippet tag "html safe tag" w
+&lt;$1&gt;$0&lt;/$1&gt;
+endsnippet
+

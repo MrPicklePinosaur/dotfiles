@@ -15,6 +15,7 @@ set encoding=utf-8
 set tabstop=4
 set shiftwidth=4
 set expandtab
+set nrformats+=alpha "inc/dec alpha
 set hidden
 
 " spell check
