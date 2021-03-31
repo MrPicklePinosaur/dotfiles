@@ -18,6 +18,11 @@ set expandtab
 set nrformats+=alpha "inc/dec alpha
 set hidden
 
+" cursors depending on mode
+let &t_EI = "\<Esc>[2 q" "normal mode
+let &t_SI = "\<Esc>[6 q" "insert mode
+let &t_SR = "\<Esc>[4 q" "replace mode
+
 " spell check
 setlocal spell
 set spelllang=en_us

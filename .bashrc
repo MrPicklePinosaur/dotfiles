@@ -44,6 +44,8 @@ alias darkmpv='mpv --vf=sub,lavfi="negate"'
 alias nmaplocal='nmap -sn 192.168.1.0/24'
 alias refreshusb='udevadm control --reload-rules'
 alias vpnup='nmcli connection up pinovpn'
+# connect to wifi
+# nmcli device wifi connect WIFI_NAME password PASSWORD
 
 source fzfutil
 
