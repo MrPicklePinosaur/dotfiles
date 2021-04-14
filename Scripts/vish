@@ -1,0 +1,7 @@
+#!/bin/sh
+
+## creates a new shell script and chmods it
+
+[ -f "$1" ] && echo "File already exists, aborting" && return 1
+
+echo '#!/bin/sh' > "$1" && chmod +x "$1" && $EDITOR "$1"

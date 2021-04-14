@@ -23,11 +23,6 @@ let &t_EI = "\<Esc>[2 q" "normal mode
 let &t_SI = "\<Esc>[6 q" "insert mode
 let &t_SR = "\<Esc>[4 q" "replace mode
 
-" spell check
-setlocal spell
-set spelllang=en_us
-set spellcapcheck=
-
 " conceal
 set conceallevel=2
 
@@ -44,9 +39,17 @@ let g:netrw_liststyle = 3
 let g:netrw_banner = 0
 let g:netrw_winsize = 25
 
+" spell check
+setlocal spell
+set spelllang=en_us
+set spellcapcheck=
+
+" accept first spell check fix
+map <leader>z 1z=<cr>
+
 " View whitespace
 map <leader>s :set list!<cr>
-set lcs=space:·
+set listchars=tab:▸\ ,space:·,eol:¬
 
 " colors
 hi Conceal ctermbg=Black
@@ -65,7 +68,7 @@ function! StatusModeColor()
     else
         hi StatusLine cterm=None gui=None ctermfg=black ctermbg=DarkGrey
     endif
-    
+
     return ''
 endfunction
 

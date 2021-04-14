@@ -33,6 +33,12 @@ super + l
 super + {Down,Left,Right}
     mpc {toggle,prev,next}
 
+super + e
+    emoter
+
+super + shift + e
+    emoter -g
+
 alt + s
     screenshot -f
 

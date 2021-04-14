@@ -1,6 +1,11 @@
 #!/bin/sh
 
 bat="$(cat /sys/class/power_supply/BAT0/capacity)"
+stat="$(cat /sys/class/power_supply/BAT0/status)"
+
+status="?"
+[ "$stat" = "Charging" ] && status="C"
+[ "$stat" = "Discharging" ] && status="D"
 
 icon=""
 [ $bat -gt "13" ] && icon=""
@@ -8,4 +13,4 @@ icon=""
 [ $bat -gt "63" ] && icon=""
 [ $bat -gt "88" ] && icon=""
 
-echo "$icon $bat%"
+echo "$icon $status$bat%"
