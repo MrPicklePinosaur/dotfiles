@@ -5,7 +5,7 @@
 boards_path="$HOME/.config/taskell/boards/"
 (
     cd "$boards_path"
-    board=$(ls -1 | dmenu -i -p "Choose board to open") 
+    board=$(ls -1p | grep -v / | dmenu -i -p "Choose board to open") 
     [ -z "$board" ] && exit 1
 
     st -e taskell "$board"

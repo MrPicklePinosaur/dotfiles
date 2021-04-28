@@ -4,6 +4,9 @@
 
 Here are some notable Scripts
 
+### emoter
+Paste emote sized images automatically when dmenu (~~great for if you don't have nitro~~).
+
 ### fzfutil
 cd-ing and vi-ing at the speed of light. Uses fzf to let you cd to dirs and edit files across the galaxy.
 Simply source the script in your .bashrc or equivalent. 

@@ -22,7 +22,7 @@ export QT_IM_MODULE=ibus
 #ibus-daemon -drx
 
 # Enivormentals
-export PATH=$HOME/Scripts:$HOME/Scripts/dmenu:$HOME/Scripts/statusbar:$HOME/Scripts/acpi:$PATH
+export PATH=$HOME/.local/bin:$HOME/Scripts:$HOME/Scripts/dmenu:$HOME/Scripts/statusbar:$HOME/Scripts/acpi:$PATH
 export NINEIT_USERNAME=pinosaur
 
 export XDG_CONFIG_HOME=$HOME/.config
@@ -44,6 +44,7 @@ alias darkmpv='mpv --vf=sub,lavfi="negate"'
 alias nmaplocal='nmap -sn 192.168.1.0/24'
 alias refreshusb='udevadm control --reload-rules'
 alias vpnup='nmcli connection up pinovpn'
+alias drill-srs='drill-srs 2>/dev/null'
 # connect to wifi
 # nmcli device wifi connect WIFI_NAME password PASSWORD
 
