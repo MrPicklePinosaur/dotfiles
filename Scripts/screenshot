@@ -9,6 +9,8 @@ screen_name="$(printf "" | dmenu -p 'Screenshot name:')" # dmenu problem where i
 
 screen_name="$screen_dir/$screen_name.png"
 
+sleep 0.3
+
 case $1 in
     -f|--full) scrot "$screen_name" && notify-send "Fullscreen screenshot taken - $screen_name" -i "";;
     -b|--box) scrot -s "$screen_name" && notify-send "Windowed screenshot taken - $screen_name" -i "";;

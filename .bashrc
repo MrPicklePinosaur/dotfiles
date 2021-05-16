@@ -34,19 +34,26 @@ export WM="dwm"
 
 # aliaseseses
 alias ls='ls --color=auto'
-# alias git-pushall='git-pushall ' # for alias chaining
+alias grep='grep--color=auto'
 alias dotfiles='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 alias suckless-clean='make clean && rm -rf config.h && git reset --hard home/master'
 alias musicdl="youtube-dl -f bestaudio"
 alias mpv="mpv --no-input-default-bindings"
 alias darkmpv='mpv --vf=sub,lavfi="negate"'
-# alias lockscreen='slock -m "$(figlet locked xd | cowsay -f cheese -n)"'
 alias nmaplocal='nmap -sn 192.168.1.0/24'
 alias refreshusb='udevadm control --reload-rules'
 alias vpnup='nmcli connection up pinovpn'
 alias drill-srs='drill-srs 2>/dev/null'
+
+alias v="$EDITOR"
+alias z="$READER"
+alias b="$BROWSER"
+
 # connect to wifi
 # nmcli device wifi connect WIFI_NAME password PASSWORD
+# record
+# ffmpeg -y -f x11grab -s 1600x900 -i :0.0 -f alsa -i default -c:v libx264 -r 30 -c:a flac $filename
+
 
 source fzfutil
 

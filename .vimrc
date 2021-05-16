@@ -14,7 +14,7 @@ set smartcase
 set encoding=utf-8
 set tabstop=4
 set shiftwidth=4
-set expandtab
+" set expandtab
 set nrformats+=alpha "inc/dec alpha
 set hidden
 
@@ -129,6 +129,7 @@ Plug 'lervag/vimtex'
 Plug 'PietroPate/vim-tex-conceal'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-commentary'
+Plug 'rlue/vim-barbaric'
 " Plug 'ptzz/lf.vim'
 " Plug 'voldikss/vim-floaterm'
 
@@ -152,7 +153,7 @@ let g:vimtex_quickfix_mode=0
 let g:tex_conceal='abdmgs'
 
 let g:vimtex_compiler_latexmk = {
-    \'build_dir': '/home/pinosaur/.cache/latexaux/',
+    \'build_dir': '/home/pinosaur/.cache/latexaux/'
 \}
 
 " Ctrlp
@@ -160,6 +161,10 @@ let g:vimtex_compiler_latexmk = {
 
 " Lf
 " let g:lf_replace_netrw = 1 " weird behavior rn
+
+" vim-barbaric
+let g:barbaric_ime = 'ibus'
+set ttimeoutlen=0
 
 " Run after plugins
 autocmd FileType * set formatoptions-=o
