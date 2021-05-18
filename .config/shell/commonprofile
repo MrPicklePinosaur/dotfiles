@@ -1,0 +1,91 @@
+
+export PATH=$HOME/.local/bin:$HOME/Scripts:$HOME/Scripts/dmenu:$HOME/Scripts/statusbar:$HOME/Scripts/acpi:$PATH
+export NINEIT_USERNAME=pinosaur
+export XDG_CONFIG_HOME=$HOME/.config
+
+# programs
+export EDITOR="vim"
+export READER="zathura"
+export VIEWER="sxiv" # non-standard
+export PLAYER="mpv" # non-standard
+export TERMINAL="st"
+export BROWSER="brave"
+export WM="dwm"
+
+# ibus
+export GTK_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+export QT_IM_MODULE=ibus
+#ibus-daemon -drx
+
+# colors for less
+export LESS_TERMCAP_md=$'\e[1;33m'
+export LESS_TERMCAP_mb=$'\e[1;33m'
+export LESS_TERMCAP_me=$'\e[0m'
+export LESS_TERMCAP_so=$'\e[01;36m'
+export LESS_TERMCAP_se=$'\e[0m'
+export LESS_TERMCAP_us=$'\e[1;4;36m'
+export LESS_TERMCAP_ue=$'\e[0m'
+
+export ZDOTDIR="$HOME/.config/zsh"
+
+export LF_ICONS="\
+di=:\
+fi=:\
+ln=:\
+or=:\
+ex=:\
+*.c=:\
+*.cc=:\
+*.cpp=:\
+*.go=:\
+*.hs=:\
+*.java=:\
+*.html=:\
+*.css=:\
+*.js=:\
+*.ts=:\
+*.json=:\
+*.jsx=:\
+*.tsx=:\
+*.vue=﵂:\
+*.php=:\
+*.py=:\
+*.rkt=λ:\
+*.tex=:\
+*.md=:\
+*.vim=:\
+*.vimrc=:\
+*.viminfo=:\
+*.gitignore=:\
+*.cmd=:\
+*.sh=:\
+*.bash=:\
+*.zsh=:\
+*.fish=:\
+*.diff=繁:\
+*.bashrc=
+*.tar=:\
+*.zip=:\
+*.jar=:\ 
+*.rar=:\
+*.7z=:\
+*.gz=:\
+*.zst=:\
+*.jpg=:\
+*.jpeg=:\
+*.gif=:\
+*.bmp=:\
+*.png=:\
+*.svg=:\
+*.mov=:\
+*.webm=:\
+*.mp4=:\
+*.mid=:\
+*.midi=:\
+*.mp3=:\
+*.ogg=:\
+*.wav=:\
+*.pdf=:\
+"
+
