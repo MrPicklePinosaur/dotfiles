@@ -17,6 +17,9 @@ set -o vi
 
 source ~/.config/shell/commonrc
 
+source ~/Scripts/lfcd
+bind '"\C-f":"lfcd\n"'
+
 # startup stuff
 ufetch-arch
 

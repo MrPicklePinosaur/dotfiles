@@ -14,7 +14,7 @@ set smartcase
 set encoding=utf-8
 set tabstop=4
 set shiftwidth=4
-" set expandtab
+set expandtab
 set nrformats+=alpha "inc/dec alpha
 set hidden
 
@@ -153,8 +153,11 @@ let g:vimtex_quickfix_mode=0
 let g:tex_conceal='abdmgs'
 
 let g:vimtex_compiler_latexmk = {
-    \'build_dir': '/home/pinosaur/.cache/latexaux/'
+    \'build_dir': '/home/pinosaur/.cache/latexaux/',
 \}
+    " \'options': [
+    " \   '-shell-escape',
+    " \],
 
 " Ctrlp
 " let g:ctrlp_cmd='CtrlPTag'

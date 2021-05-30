@@ -37,7 +37,7 @@ sxhkd &
 mpd &
 mpd-change &
 xbanish &
-picom --experimental-backends &
+# picom --experimental-backends &
 #syncthing &
 
 # ibus

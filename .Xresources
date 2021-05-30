@@ -28,44 +28,63 @@
 #define nordbg #2E3440
 
 /* gruvbox */
-#define gruv0  #282828
-#define gruv8  #928374
-#define gruv1  #CC241D
-#define gruv9  #FB4934
-#define gruv2  #98971A
-#define gruv10 #B8BB26
-#define gruv3  #D79921
-#define gruv11 #FABD2F
-#define gruv4  #458588
-#define gruv12 #83A598
-#define gruv5  #B16286
-#define gruv13 #D3869B
-#define gruv6  #689D6A
-#define gruv14 #8EC07C
-#define gruv7  #A89984
-#define gruv15 #EBDBB2
-#define gruvfg #EBDBB2
-#define gruvbg #282828
+/* #define gruv0  #282828 */
+/* #define gruv8  #928374 */
+/* #define gruv1  #CC241D */
+/* #define gruv9  #FB4934 */
+/* #define gruv2  #98971A */
+/* #define gruv10 #B8BB26 */
+/* #define gruv3  #D79921 */
+/* #define gruv11 #FABD2F */
+/* #define gruv4  #458588 */
+/* #define gruv12 #83A598 */
+/* #define gruv5  #B16286 */
+/* #define gruv13 #D3869B */
+/* #define gruv6  #689D6A */
+/* #define gruv14 #8EC07C */
+/* #define gruv7  #A89984 */
+/* #define gruv15 #EBDBB2 */
+/* #define gruvfg #EBDBB2 */
+/* #define gruvbg #282828 */
 
-#define theme0  nord0
-#define theme8  nord8
-#define theme1  nord1
-#define theme9  nord9
-#define theme2  nord2
-#define theme10 nord10
-#define theme3  nord3
-#define theme11 nord11
-#define theme4  nord4
-#define theme12 nord12
-#define theme5  nord5
-#define theme13 nord13
-#define theme6  nord6
-#define theme14 nord14
-#define theme7  nord7
-#define theme15 nord15
-#define themefg nordfg
-#define themebg nordbg
-#define themehl nord11
+#define gruv0 #32302f
+#define gruv1 #ea6962
+#define gruv2 #a9b665
+#define gruv3 #d8a657
+#define gruv4 #7daea3
+#define gruv5 #d3869b
+#define gruv6 #89b482
+#define gruv7 #d4be98
+#define gruv8 #32302f
+#define gruv9 #ea6962
+#define gruv10 #a9b665
+#define gruv11 #d8a657
+#define gruv12 #7daea3
+#define gruv13 #d3869b
+#define gruv14 #89b482
+#define gruv15 #d4be98
+#define gruvfg #d4be98
+#define gruvbg #32302f
+
+#define theme0  gruv0
+#define theme8  gruv8
+#define theme1  gruv1
+#define theme9  gruv9
+#define theme2  gruv2
+#define theme10 gruv10
+#define theme3  gruv3
+#define theme11 gruv11
+#define theme4  gruv4
+#define theme12 gruv12
+#define theme5  gruv5
+#define theme13 gruv13
+#define theme6  gruv6
+#define theme14 gruv14
+#define theme7  gruv7
+#define theme15 gruv15
+#define themefg gruvfg
+#define themebg gruvbg
+#define themehl gruv11
 
 *.font: Source Code Pro:size=12
 

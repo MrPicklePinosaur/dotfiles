@@ -7,7 +7,7 @@
 
 autoload -U colors && colors
 
-PS1=" %B%{$fg[yellow]%}Z_%{$fg[white]%} %1~ %{$fg[yellow]%}>>>%{$reset_color%}%b "
+PS1=" %B%{$fg[yellow]%}𝓩_%{$fg[white]%} %1~ %{$fg[yellow]%}>>>%{$reset_color%}%b "
 
 ## tab completion grid
 autoload -U compinit
