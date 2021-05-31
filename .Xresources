@@ -28,24 +28,6 @@
 #define nordbg #2E3440
 
 /* gruvbox */
-/* #define gruv0  #282828 */
-/* #define gruv8  #928374 */
-/* #define gruv1  #CC241D */
-/* #define gruv9  #FB4934 */
-/* #define gruv2  #98971A */
-/* #define gruv10 #B8BB26 */
-/* #define gruv3  #D79921 */
-/* #define gruv11 #FABD2F */
-/* #define gruv4  #458588 */
-/* #define gruv12 #83A598 */
-/* #define gruv5  #B16286 */
-/* #define gruv13 #D3869B */
-/* #define gruv6  #689D6A */
-/* #define gruv14 #8EC07C */
-/* #define gruv7  #A89984 */
-/* #define gruv15 #EBDBB2 */
-/* #define gruvfg #EBDBB2 */
-/* #define gruvbg #282828 */
 
 #define gruv0 #32302f
 #define gruv1 #ea6962
@@ -66,6 +48,25 @@
 #define gruvfg #d4be98
 #define gruvbg #32302f
 
+/* #define gruv0 #32302f */
+/* #define gruv1 #fb4934 */
+/* #define gruv2 #b8bb26 */
+/* #define gruv3 #fabd2f */
+/* #define gruv4 #83a598 */
+/* #define gruv5 #d3869b */
+/* #define gruv6 #8ec07c */
+/* #define gruv7 #d5c4a1 */
+/* #define gruv8 #665c54 */
+/* #define gruv9 #fe8019 */
+/* #define gruv10 #3c3836 */
+/* #define gruv11 #504945 */
+/* #define gruv12 #bdae93 */
+/* #define gruv13 #ebdbb2 */
+/* #define gruv14 #d65d0e */
+/* #define gruv15 #fbf1c7 */
+/* #define gruvfg #d5c4a1 */
+/* #define gruvbg #32302f */
+
 #define theme0  gruv0
 #define theme8  gruv8
 #define theme1  gruv1
@@ -84,7 +85,7 @@
 #define theme15 gruv15
 #define themefg gruvfg
 #define themebg gruvbg
-#define themehl gruv11
+#define themehl gruv3
 
 *.font: Source Code Pro:size=12
 

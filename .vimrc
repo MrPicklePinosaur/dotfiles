@@ -47,13 +47,19 @@ set spellcapcheck=
 " accept first spell check fix
 map <leader>z 1z=<cr>
 
+" folding
+set foldmethod=manual
+set foldnestmax=10
+set nofoldenable
+set foldlevel=2
+
+
 " View whitespace
 map <leader>s :set list!<cr>
 set listchars=tab:▸\ ,space:·,eol:¬
 
-" colors
-hi Conceal ctermbg=Black
-hi SpellBad ctermfg=Red ctermbg=Black cterm=underline
+" reload vimrc
+map <leader>r :source ~/.vimrc<cr>
 
 " statusline
 function! StatusModeColor()
@@ -130,6 +136,7 @@ Plug 'PietroPate/vim-tex-conceal'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-commentary'
 Plug 'rlue/vim-barbaric'
+Plug 'jeffkreeftmeijer/vim-dim'
 " Plug 'ptzz/lf.vim'
 " Plug 'voldikss/vim-floaterm'
 
@@ -171,3 +178,44 @@ set ttimeoutlen=0
 
 " Run after plugins
 autocmd FileType * set formatoptions-=o
+
+" colors
+" based off https://github.com/jeffkreeftmeijer/vim-dim/blob/main/colors/default-light.vim
+hi SpecialKey     ctermfg=4
+hi TermCursor     cterm=reverse
+hi NonText        ctermfg=12
+hi Directory      ctermfg=4
+hi ErrorMsg       ctermfg=15 ctermbg=1
+hi IncSearch      cterm=reverse
+hi MoreMsg        ctermfg=2
+hi ModeMsg        cterm=bold
+hi Question       ctermfg=2
+hi Title          ctermfg=5
+hi WarningMsg     ctermfg=1
+hi WildMenu       ctermfg=0 ctermbg=11
+hi Conceal        ctermfg=0
+hi SpellBad       ctermbg=9 ctermbg=0 cterm=underline
+hi SpellRare      ctermbg=13
+hi SpellLocal     ctermbg=14
+hi PmenuSbar      ctermbg=8
+hi PmenuThumb     ctermbg=0
+hi TabLine        cterm=underline ctermfg=0 ctermbg=7
+hi TabLineSel     cterm=bold
+hi TabLineFill    cterm=reverse
+hi CursorColumn   ctermbg=7
+hi CursorLine     cterm=underline
+hi MatchParen     ctermbg=14
+hi Constant       ctermfg=1
+hi Special        ctermfg=5
+hi Identifier     cterm=NONE ctermfg=6
+hi Statement      ctermfg=3
+hi PreProc        ctermfg=5
+hi Type           ctermfg=2
+hi Underlined     cterm=underline ctermfg=5
+hi Ignore         ctermfg=15
+hi Error          ctermfg=15 ctermbg=9
+hi Todo           ctermfg=0 ctermbg=11
+hi Comment        ctermfg=7
+hi lineNr         ctermfg=DarkGrey
+hi Folded         ctermfg=0
+
