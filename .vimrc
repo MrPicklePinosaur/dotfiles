@@ -53,13 +53,12 @@ set foldnestmax=10
 set nofoldenable
 set foldlevel=2
 
-
 " View whitespace
 map <leader>s :set list!<cr>
 set listchars=tab:▸\ ,space:·,eol:¬
 
 " reload vimrc
-map <leader>r :source ~/.vimrc<cr>
+map <leader>r :source ~/.vimrc<cr>:echo "vimrc reloaded"<cr>
 
 " statusline
 function! StatusModeColor()
@@ -136,9 +135,7 @@ Plug 'PietroPate/vim-tex-conceal'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-commentary'
 Plug 'rlue/vim-barbaric'
-Plug 'jeffkreeftmeijer/vim-dim'
-" Plug 'ptzz/lf.vim'
-" Plug 'voldikss/vim-floaterm'
+Plug 'ap/vim-css-color'
 
 call plug#end()
 
@@ -151,7 +148,7 @@ let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "mysnippets"]
 
-map <localleader>sr :call UltiSnips#RefreshSnippets()<cr>
+map <localleader>sr :call UltiSnips#RefreshSnippets()<cr>:echo "Refreshed Snippets"<cr>
 
 " Vimtex
 let g:tex_flavor='latex'
@@ -193,10 +190,10 @@ hi Question       ctermfg=2
 hi Title          ctermfg=5
 hi WarningMsg     ctermfg=1
 hi WildMenu       ctermfg=0 ctermbg=11
-hi Conceal        ctermfg=0
-hi SpellBad       ctermbg=9 ctermbg=0 cterm=underline
-hi SpellRare      ctermbg=13
-hi SpellLocal     ctermbg=14
+hi Conceal        ctermbg=0
+hi SpellBad       ctermfg=9 ctermbg=0 cterm=underline
+hi SpellRare      ctermbg=13 ctermbg=0 cterm=underline
+hi SpellLocal     ctermfg=14 ctermbg=0 cterm=underline
 hi PmenuSbar      ctermbg=8
 hi PmenuThumb     ctermbg=0
 hi TabLine        cterm=underline ctermfg=0 ctermbg=7
@@ -204,7 +201,7 @@ hi TabLineSel     cterm=bold
 hi TabLineFill    cterm=reverse
 hi CursorColumn   ctermbg=7
 hi CursorLine     cterm=underline
-hi MatchParen     ctermbg=14
+hi MatchParen     cterm=NONE ctermfg=0 ctermbg=14
 hi Constant       ctermfg=1
 hi Special        ctermfg=5
 hi Identifier     cterm=NONE ctermfg=6
