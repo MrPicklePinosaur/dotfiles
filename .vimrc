@@ -10,11 +10,12 @@ syntax on
 set number
 set relativenumber
 set incsearch
-set smartcase
 set encoding=utf-8
 set tabstop=4
 set shiftwidth=4
 set expandtab
+set ignorecase
+set smartcase
 set nrformats+=alpha "inc/dec alpha
 set hidden
 
@@ -110,6 +111,11 @@ set statusline+=\ %r\[%{v:register}\]
 set statusline+=\ %l/%L:%c\ |
 set statusline+=%1*\ |
 
+" Tab line
+hi TabLineSel   cterm=Bold ctermfg=Yellow
+hi TabLine      cterm=None ctermfg=Grey ctermbg=Black
+hi TabLineFill  cterm=None ctermbg=Black
+
 " Templates
 augroup templates
     autocmd BufNewFile *.tex 0r ~/.vim/templates/skeleton.tex
@@ -132,10 +138,10 @@ call plug#begin('~/.vim/plugged')
 Plug 'sirver/ultisnips'
 Plug 'lervag/vimtex'
 Plug 'PietroPate/vim-tex-conceal'
-Plug 'jiangmiao/auto-pairs'
+" Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-commentary'
 Plug 'rlue/vim-barbaric'
-Plug 'ap/vim-css-color'
+Plug 'ap/vim-buftabline'
 
 call plug#end()
 
@@ -163,15 +169,12 @@ let g:vimtex_compiler_latexmk = {
     " \   '-shell-escape',
     " \],
 
-" Ctrlp
-" let g:ctrlp_cmd='CtrlPTag'
-
-" Lf
-" let g:lf_replace_netrw = 1 " weird behavior rn
-
 " vim-barbaric
 let g:barbaric_ime = 'ibus'
 set ttimeoutlen=0
+
+" buftabline
+let g:buftabline_show = 1
 
 " Run after plugins
 autocmd FileType * set formatoptions-=o
@@ -196,9 +199,6 @@ hi SpellRare      ctermbg=13 ctermbg=0 cterm=underline
 hi SpellLocal     ctermfg=14 ctermbg=0 cterm=underline
 hi PmenuSbar      ctermbg=8
 hi PmenuThumb     ctermbg=0
-hi TabLine        cterm=underline ctermfg=0 ctermbg=7
-hi TabLineSel     cterm=bold
-hi TabLineFill    cterm=reverse
 hi CursorColumn   ctermbg=7
 hi CursorLine     cterm=underline
 hi MatchParen     cterm=NONE ctermfg=0 ctermbg=14
@@ -212,7 +212,7 @@ hi Underlined     cterm=underline ctermfg=5
 hi Ignore         ctermfg=15
 hi Error          ctermfg=15 ctermbg=9
 hi Todo           ctermfg=0 ctermbg=11
-hi Comment        ctermfg=7
+hi Comment        ctermfg=DarkGrey
 hi lineNr         ctermfg=DarkGrey
 hi Folded         ctermfg=0
 

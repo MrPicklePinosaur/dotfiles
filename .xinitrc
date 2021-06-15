@@ -26,13 +26,13 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 fi
 
 # bg
-feh --bg-center "$(ls -d $HOME/Downloads/wallpapers/active/* | sort -R | tail -n1)"
-
+setwallpaper
 # start some daemons
 dwmblocks &
 tiramisu -j | notify &
 acpi_listen &
-redshift -l 55.7:12.6 -t 3000:3000 -g 0.85 -m randr -v &
+redshift -m randr:crtc=0 -O 3000
+# redshift -l 55.7:12.6 -t 3000:3000 -g 1 -m randr -v &
 sxhkd &
 mpd &
 mpd-change &

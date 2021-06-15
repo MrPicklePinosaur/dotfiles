@@ -303,3 +303,32 @@ snippet graph "Graph" w
 \end{axis}
 \end{tikzpicture}
 endsnippet
+
+snippet ffig "Figure" w
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=1]{$1}
+    \caption{$2}
+\end{figure}
+endsnippet
+
+snippet ftab "Table" w
+\begin{table}[H]
+\centering 
+\caption{$1}
+\begin{tabular}{$2}
+    \hline
+	$3
+    \hline
+    \hline
+\end{tabular}
+\end{table}
+endsnippet
+
+snippet b "bold" w
+\textbf{$1}$0
+endsnippet
+
+snippet i "italics" w
+\emph{$1}$0
+endsnippet

@@ -13,6 +13,9 @@ alias refreshusb='udevadm control --reload-rules'
 alias vpnup='nmcli connection up pinovpn'
 alias drill-srs='drill-srs 2>/dev/null'
 alias scrkey='screenkey -t 2.5 --mods-mode emacs -s small -p fixed -g $(slop -n -f '%g')'
+alias mdp='export TERM=st; mdp'
+alias R='R --vanilla'
+alias fzf="fzf --color=16 --header=peee --info=inline --preview='echo {}; file -b {}; echo =-=-=-=-=-=-=-=-=-=-=-=-=-=; head -$LINES {}'"
 
 alias v="$EDITOR"
 alias z="$READER"

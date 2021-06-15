@@ -1,0 +1,3 @@
+#!/bin/sh
+
+feh --bg-fill "$(ls -d $HOME/Downloads/wallpapers/active/* | sort -R | tail -n1)"
