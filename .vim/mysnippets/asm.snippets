@@ -1,0 +1,10 @@
+snippet frame "Prologue and Epilogue" w
+push ebp
+mov ebp, esp
+
+$0
+
+mov esp, ebp
+pop ebp
+ret
+endsnippet

@@ -6,6 +6,10 @@ XF86Audio{Mute}
     pulsemixer --toggle-mute &\
         refresh_blocks 10
 
+super + r
+    kill -SIGUSR1 $(pidof sxhkd) &\
+    notify-send "Reloaded sxhkd" -i ""
+
 super + b
     brave
 
@@ -38,6 +42,14 @@ super + e
 
 super + shift + e
     emoter -g
+
+super + d
+    monitor-attach &\
+    notify-send "Attached Monitor" -i ""
+
+super + shift + d
+    monitor-detach &\
+    notify-send "Detached Monitor" -i ""
 
 alt + s
     screenshot -f
