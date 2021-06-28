@@ -15,8 +15,12 @@ alias drill-srs='drill-srs 2>/dev/null'
 alias scrkey='screenkey -t 2.5 --mods-mode emacs -s small -p fixed -g $(slop -n -f '%g')'
 alias mdp='export TERM=st; mdp'
 alias R='R --vanilla'
-alias fzf="fzf --color=16 --header=fzf --info=inline --preview='echo {}; file -b {}; echo =-=-=-=-=-=-=-=-=-=-=-=-=-=; if [ -d '{}' ]; then ls -A {}; else head -$LINES {}; fi'"
+alias fzf="fzf --color=16 --header=fzf --info=inline --preview='echo {}; file -b {}; echo =-=-=-=-=-=-=-=-=-=-=-=-=-=; if [ -d '{}' ]; then ls -A {}; else head -$LINES {}; fi'" # fzf options when running from shell
 alias gdb="gdb -q"
+
+mkcd() {
+    mkdir "$1" && cd "$1"
+}
 
 alias v="$EDITOR"
 alias z="$READER"

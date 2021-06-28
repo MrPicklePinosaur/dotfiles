@@ -5,7 +5,7 @@
 ## INFO
 
 # user is already defined
-hostname="$(hostname)"
+hostname="$(uname -a | awk '{ print $2 }')"
 os='Arch Linux'
 host="$(cat /sys/devices/virtual/dmi/id/product_name) $(cat /sys/devices/virtual/dmi/id/product_family)"
 kernel="$(uname -sr)"

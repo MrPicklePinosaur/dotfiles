@@ -13,7 +13,7 @@ set incsearch
 set encoding=utf-8
 set tabstop=4
 set shiftwidth=4
-set expandtab
+" set expandtab
 set ignorecase
 set smartcase
 set nrformats+=alpha "inc/dec alpha
@@ -30,7 +30,7 @@ set conceallevel=2
 " Bindings
 let mapleader = ' '
 
-" File stuff
+" netrw stuff
 map <leader>f :Ex<cr>
 map <leader>l :bn<cr>
 map <leader>h :bp<cr>
@@ -65,7 +65,7 @@ map <leader>r :source ~/.vimrc<cr>:echo "vimrc reloaded"<cr>
 function! StatusModeColor()
     if (mode() =~# '\v(n|no)')
         hi StatusLine cterm=None gui=None ctermfg=black ctermbg=Yellow
-    elseif (mode() =~# '\v(v|V)')
+    elseif (mode() =~# '\v(v|V|)')
         hi StatusLine cterm=None gui=None ctermfg=black ctermbg=Red
     elseif (mode() ==# 'i')
         hi StatusLine cterm=None gui=None ctermfg=black ctermbg=LightBlue
@@ -126,22 +126,27 @@ augroup END
 
 " vim plug
 " this blob auto installs vim plug if it isnt already
-if empty(glob('~/.vim/autoload/plug.vim'))
-   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-       \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-         autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-         endif
+fun! s:VimPlugSetup()
+    if empty(glob('~/.vim/autoload/plug.vim'))
+        silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+        autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+    else
+        echo 'VimPlug is already installed'
+    endif
+endfun
+command PlugSetup :call s:VimPlugSetup()
 
 " template stuff
 call plug#begin('~/.vim/plugged')
 
 Plug 'sirver/ultisnips'
+Plug 'tpope/vim-commentary'
+Plug 'ap/vim-buftabline'
 Plug 'lervag/vimtex'
 Plug 'PietroPate/vim-tex-conceal'
 " Plug 'jiangmiao/auto-pairs'
-Plug 'tpope/vim-commentary'
-Plug 'rlue/vim-barbaric'
-Plug 'ap/vim-buftabline'
+" Plug 'rlue/vim-barbaric'
+" Plug 'junegunn/fzf'
 
 call plug#end()
 
@@ -155,6 +160,15 @@ let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "mysnippets"]
 
 map <localleader>sr :call UltiSnips#RefreshSnippets()<cr>:echo "Refreshed Snippets"<cr>
+
+" latex stuff
+" fun! LatexCompile()
+"     echo 'compiling latex'
+" endfun
+" augroup latex
+"     autocmd!
+"     autocmd BufWritePost *.tex :call LatexCompile()
+" augroup END
 
 " Vimtex
 let g:tex_flavor='latex'
@@ -170,11 +184,15 @@ let g:vimtex_compiler_latexmk = {
     " \],
 
 " vim-barbaric
-let g:barbaric_ime = 'ibus'
-set ttimeoutlen=0
+" let g:barbaric_ime = 'ibus'
+" set ttimeoutlen=0
 
 " buftabline
 let g:buftabline_show = 1
+
+" fzf
+" let g:fzf_layout = { 'down': '40%' }
+" let g:fzf_layout = { 'window': '-tabnew' }
 
 " Run after plugins
 autocmd FileType * set formatoptions-=o
