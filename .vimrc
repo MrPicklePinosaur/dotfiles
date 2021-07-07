@@ -13,10 +13,9 @@ set incsearch
 set encoding=utf-8
 set tabstop=4
 set shiftwidth=4
-" set expandtab
+set expandtab
 set ignorecase
 set smartcase
-set nrformats+=alpha "inc/dec alpha
 set hidden
 
 " cursors depending on mode
@@ -60,6 +59,17 @@ set listchars=tab:▸\ ,space:·,eol:¬
 
 " reload vimrc
 map <leader>r :source ~/.vimrc<cr>:echo "vimrc reloaded"<cr>
+
+" write with sudo
+cmap w!! w !sudo tee > /dev/null %
+
+" reload current file
+map <leader>e :e<cr>:echo "current file reloaded"<cr>
+map <leader>E :e!<cr>:echo "current file force reloaded"<cr>
+
+" highlighting (will get rid of this sometime prob)
+au BufRead,BufNewFile *.svelte set filetype=svelte
+au! Syntax svelte source ~/.vim/syntax/svelte.vim
 
 " statusline
 function! StatusModeColor()
@@ -142,8 +152,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'sirver/ultisnips'
 Plug 'tpope/vim-commentary'
 Plug 'ap/vim-buftabline'
-Plug 'lervag/vimtex'
-Plug 'PietroPate/vim-tex-conceal'
+Plug 'lervag/vimtex', { 'for': 'tex' }
+Plug 'PietroPate/vim-tex-conceal', { 'for': 'tex' }
 " Plug 'jiangmiao/auto-pairs'
 " Plug 'rlue/vim-barbaric'
 " Plug 'junegunn/fzf'
@@ -233,4 +243,5 @@ hi Todo           ctermfg=0 ctermbg=11
 hi Comment        ctermfg=DarkGrey
 hi lineNr         ctermfg=DarkGrey
 hi Folded         ctermfg=0
-
+hi Pmenu          ctermfg=0 ctermbg=7
+hi PmenuSel       ctermfg=0 ctermbg=6
