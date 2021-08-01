@@ -2,6 +2,8 @@
 # alias
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
+alias trree='tree -C'
+
 alias cp='cp -i'
 alias dotfiles='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 alias suckless-clean='make clean && rm -rf config.h && git reset --hard home/master'

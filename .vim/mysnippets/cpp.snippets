@@ -1,10 +1,10 @@
 snippet guard "header guard" w
-#ifndef $1
-#define $1
+#ifndef __$1_H__
+#define __$1_H__
 
 $0
 
-#endif // $1
+#endif // __$1_H__
 endsnippet
 
 snippet cpp "cpp extern" w
@@ -17,4 +17,14 @@ $0
 #ifdef __cplusplus
 }
 #endif
+endsnippet
+
+snippet class "Class" w
+class $1
+{
+private:
+public:
+	$1();
+	~$1();
+};
 endsnippet

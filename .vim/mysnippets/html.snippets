@@ -16,24 +16,8 @@ snippet html "html template" w
 </html>
 endsnippet
 
-# snippet `<(.+)` "tag" rw
-# <>
-# endsnippet
-
-snippet p "p tag" w
-<p>$0</p>
-endsnippet
-
-snippet div "div tag" w
-<div>$0</div>
-endsnippet
-
-snippet a "a tag" w
-<a>$0</a>
-endsnippet
-
-snippet code "code tag" w
-<code>$0</code>
+snippet `<(.+)` "tag" rw
+`!p snip.rv = "<{0}>".format(match.group(1))`$1`!p snip.rv = "</{0}>".format(match.group(1))` 
 endsnippet
 
 snippet img "img tag" w

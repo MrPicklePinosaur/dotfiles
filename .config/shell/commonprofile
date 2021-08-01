@@ -1,5 +1,5 @@
 
-export PATH=$HOME/.local/bin:$HOME/Scripts:$HOME/Scripts/dmenu:$HOME/Scripts/statusbar:$HOME/Scripts/acpi:$PATH
+export PATH=$HOME/.local/bin:$HOME/Scripts:$HOME/Scripts/dmenu:$HOME/Scripts/statusbar:$HOME/Scripts/acpi:$HOME/.cache/go/bin:$PATH
 export NINEIT_USERNAME=pinosaur
 export XDG_CONFIG_HOME=$HOME/.config
 
@@ -28,6 +28,8 @@ export LESS_TERMCAP_us=$'\e[1;4;36m'
 export LESS_TERMCAP_ue=$'\e[0m'
 
 export ZDOTDIR="$HOME/.config/zsh"
+
+export GOPATH="$HOME/.cache/go"
 
 export LF_ICONS="\
 di=:\

@@ -39,13 +39,22 @@ let g:netrw_liststyle = 3
 let g:netrw_banner = 0
 let g:netrw_winsize = 25
 
+" file finding
+set path=**
+set wildmenu
+
 " spell check
 setlocal spell
 set spelllang=en_us
 set spellcapcheck=
 
-" accept first spell check fix
-map <leader>z 1z=<cr>
+" use s as prefix for spell check related commands
+map s <nop>
+map sf 1z=<cr>
+map sn ]s
+map sN [s
+map sa zg
+map sd zw
 
 " folding
 set foldmethod=manual
@@ -67,10 +76,6 @@ cmap w!! w !sudo tee > /dev/null %
 map <leader>e :e<cr>:echo "current file reloaded"<cr>
 map <leader>E :e!<cr>:echo "current file force reloaded"<cr>
 
-" highlighting (will get rid of this sometime prob)
-au BufRead,BufNewFile *.svelte set filetype=svelte
-au! Syntax svelte source ~/.vim/syntax/svelte.vim
-
 " statusline
 function! StatusModeColor()
     if (mode() =~# '\v(n|no)')
@@ -84,17 +89,19 @@ function! StatusModeColor()
     else
         hi StatusLine cterm=None gui=None ctermfg=black ctermbg=DarkGrey
     endif
-
-    return ''
 endfunction
 
 function! StatusModifiedColor()
-    if getbufinfo(1)[0].changed
+    if &mod
         hi User1 cterm=None gui=None ctermfg=Black ctermbg=Magenta
     else
         hi User1 cterm=None gui=None ctermfg=White ctermbg=Black
     endif
+endfunction
 
+function! ReloadBar()
+    call StatusModeColor()
+    call StatusModifiedColor()
     return ''
 endfunction
 
@@ -102,14 +109,12 @@ function! BufCount()
     return printf("%d/%d", bufnr("%"), len(getbufinfo({'buflisted':1})))
 endfunction
 
-call StatusModeColor()
-call StatusModifiedColor()
-autocmd BufWritePost <buffer> call StatusModifiedColor()
+autocmd BufEnter * call ReloadBar()
+autocmd BufWritePost <buffer> call ReloadBar()
 
 set laststatus=2
 set statusline=
-set statusline+=%{StatusModeColor()}
-set statusline+=%{StatusModifiedColor()}
+set statusline+=%{ReloadBar()}
 set statusline+=%1*\ | 
 set statusline+=%0*\ vim\ \[%{mode()}\]
 set statusline+=\[%{BufCount()}\]
@@ -134,6 +139,13 @@ augroup templates
     autocmd BufNewFile *.xml 0r ~/.vim/templates/skeleton.xml
 augroup END
 
+" highlighting (will get rid of this sometime prob)
+au BufRead,BufNewFile *.svelte set filetype=svelte
+au! Syntax svelte source ~/.vim/syntax/svelte.vim
+
+au BufRead,BufNewFile *.shader set filetype=glsl
+au! Syntax svelte source ~/.vim/syntax/glsl.vim
+
 " vim plug
 " this blob auto installs vim plug if it isnt already
 fun! s:VimPlugSetup()
@@ -154,9 +166,7 @@ Plug 'tpope/vim-commentary'
 Plug 'ap/vim-buftabline'
 Plug 'lervag/vimtex', { 'for': 'tex' }
 Plug 'PietroPate/vim-tex-conceal', { 'for': 'tex' }
-" Plug 'jiangmiao/auto-pairs'
-" Plug 'rlue/vim-barbaric'
-" Plug 'junegunn/fzf'
+Plug 'takac/vim-hardtime'
 
 call plug#end()
 
@@ -188,21 +198,17 @@ let g:tex_conceal='abdmgs'
 
 let g:vimtex_compiler_latexmk = {
     \'build_dir': '/home/pinosaur/.cache/latexaux/',
+    \'options': [
+    \   '-shell-escape',
+    \],
 \}
-    " \'options': [
-    " \   '-shell-escape',
-    " \],
-
-" vim-barbaric
-" let g:barbaric_ime = 'ibus'
-" set ttimeoutlen=0
 
 " buftabline
 let g:buftabline_show = 1
 
-" fzf
-" let g:fzf_layout = { 'down': '40%' }
-" let g:fzf_layout = { 'window': '-tabnew' }
+" hardtime
+let g:hardtime_default_on = 1
+let g:hardtime_maxcount = 2
 
 " Run after plugins
 autocmd FileType * set formatoptions-=o
@@ -245,3 +251,4 @@ hi lineNr         ctermfg=DarkGrey
 hi Folded         ctermfg=0
 hi Pmenu          ctermfg=0 ctermbg=7
 hi PmenuSel       ctermfg=0 ctermbg=6
+
