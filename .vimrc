@@ -17,6 +17,7 @@ set expandtab
 set ignorecase
 set smartcase
 set hidden
+" set cursorline
 
 " cursors depending on mode
 let &t_EI = "\<Esc>[2 q" "normal mode
@@ -61,6 +62,14 @@ set foldmethod=manual
 set foldnestmax=10
 set nofoldenable
 set foldlevel=2
+
+" tags
+set tags=.tags
+" todo, regenerate tags
+" probably do the following
+" - check if tags file already exists
+" - if it does, then regenerate it on every save
+" - otherwise, provide a function to generate tags for the first time
 
 " View whitespace
 map <leader>s :set list!<cr>
@@ -126,11 +135,6 @@ set statusline+=\ %r\[%{v:register}\]
 set statusline+=\ %l/%L:%c\ |
 set statusline+=%1*\ |
 
-" Tab line
-hi TabLineSel   cterm=Bold ctermfg=Yellow
-hi TabLine      cterm=None ctermfg=Grey ctermbg=Black
-hi TabLineFill  cterm=None ctermbg=Black
-
 " Templates
 augroup templates
     autocmd BufNewFile *.tex 0r ~/.vim/templates/skeleton.tex
@@ -166,7 +170,7 @@ Plug 'tpope/vim-commentary'
 Plug 'ap/vim-buftabline'
 Plug 'lervag/vimtex', { 'for': 'tex' }
 Plug 'PietroPate/vim-tex-conceal', { 'for': 'tex' }
-Plug 'takac/vim-hardtime'
+" Plug 'takac/vim-hardtime'
 
 call plug#end()
 
@@ -198,10 +202,10 @@ let g:tex_conceal='abdmgs'
 
 let g:vimtex_compiler_latexmk = {
     \'build_dir': '/home/pinosaur/.cache/latexaux/',
-    \'options': [
-    \   '-shell-escape',
-    \],
 \}
+    " \'options': [
+    " \   '-shell-escape',
+    " \],
 
 " buftabline
 let g:buftabline_show = 1
@@ -234,7 +238,7 @@ hi SpellLocal     ctermfg=14 ctermbg=0 cterm=underline
 hi PmenuSbar      ctermbg=8
 hi PmenuThumb     ctermbg=0
 hi CursorColumn   ctermbg=7
-hi CursorLine     cterm=underline
+hi CursorLine     cterm=NONE ctermbg=DarkGrey
 hi MatchParen     cterm=NONE ctermfg=0 ctermbg=14
 hi Constant       ctermfg=1
 hi Special        ctermfg=5
@@ -251,4 +255,7 @@ hi lineNr         ctermfg=DarkGrey
 hi Folded         ctermfg=0
 hi Pmenu          ctermfg=0 ctermbg=7
 hi PmenuSel       ctermfg=0 ctermbg=6
+hi TabLineSel     cterm=Bold ctermfg=Yellow
+hi TabLine        cterm=None ctermfg=Grey ctermbg=Black
+hi TabLineFill    cterm=None ctermbg=Black
 

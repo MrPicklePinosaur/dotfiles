@@ -20,14 +20,12 @@ snippet `<(.+)` "tag" rw
 `!p snip.rv = "<{0}>".format(match.group(1))`$1`!p snip.rv = "</{0}>".format(match.group(1))` 
 endsnippet
 
-snippet img "img tag" w
-<img src="$0" />
+snippet <a "a tag" w
+<a href="$1">$0</a>
 endsnippet
 
-snippet '(h[0-9])' "h tag" rw
-`!p
-snip.rv = "<{0}></{0}>".format(match.group(1))
-`
+snippet img "img tag" w
+<img src="$0" />
 endsnippet
 
 snippet bigcode "bigcode block" w

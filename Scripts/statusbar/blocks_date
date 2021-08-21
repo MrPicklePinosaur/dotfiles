@@ -1,4 +1,5 @@
 #!/bin/sh
 
-dte="$(date +"%a, %b %d %H:%M")"
+export LANG=ja_JP.UTF-8
+dte="$(date +"%B%d日(%a)%H:%M")"
 echo " $dte"
