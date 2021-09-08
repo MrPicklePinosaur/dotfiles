@@ -27,18 +27,18 @@ fi
 
 # bg
 setwallpaper
+
 # start some daemons
 dwmblocks &
 tiramisu -j | notify &
 acpi_listen &
 redshift -m randr:crtc=0 -O 3000
-# redshift -l 55.7:12.6 -t 3000:3000 -g 1 -m randr -v &
 sxhkd &
 mpd &
 mpd-change &
 xbanish &
 # picom --experimental-backends &
-#syncthing &
+# syncthing &
 
 # ibus
 export GTK_IM_MODULE=ibus

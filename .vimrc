@@ -39,6 +39,7 @@ map <leader>d :bd<cr>
 let g:netrw_liststyle = 3
 let g:netrw_banner = 0
 let g:netrw_winsize = 25
+let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro'
 
 " file finding
 set path=**
@@ -148,7 +149,7 @@ au BufRead,BufNewFile *.svelte set filetype=svelte
 au! Syntax svelte source ~/.vim/syntax/svelte.vim
 
 au BufRead,BufNewFile *.shader set filetype=glsl
-au! Syntax svelte source ~/.vim/syntax/glsl.vim
+au! Syntax shader source ~/.vim/syntax/glsl.vim
 
 " vim plug
 " this blob auto installs vim plug if it isnt already
@@ -239,7 +240,7 @@ hi PmenuSbar      ctermbg=8
 hi PmenuThumb     ctermbg=0
 hi CursorColumn   ctermbg=7
 hi CursorLine     cterm=NONE ctermbg=DarkGrey
-hi MatchParen     cterm=NONE ctermfg=0 ctermbg=14
+hi MatchParen     cterm=NONE ctermbg=DarkGrey
 hi Constant       ctermfg=1
 hi Special        ctermfg=5
 hi Identifier     cterm=NONE ctermfg=6

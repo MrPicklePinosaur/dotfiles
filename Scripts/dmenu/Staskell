@@ -2,7 +2,7 @@
 
 # This is a simple launcher script for Taskell
 
-boards_path="$HOME/.config/taskell/boards/"
+boards_path="$HOME/Data/boards/"
 (
     cd "$boards_path"
     board=$(ls -1p | grep -v / | dmenu -i -p "Choose board to open") 

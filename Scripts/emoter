@@ -1,6 +1,6 @@
 #!/bin/sh
 
-emote_dir="$HOME/Downloads/emotes"
+emote_dir="$HOME/Data/emotes"
 
 mode="image/png"
 [ "$1" = "-g" ] && mode="image/gif"

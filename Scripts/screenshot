@@ -2,7 +2,7 @@
 
 [ -z "$1" ] && printf "screenshot =-=-=-=-=\n-f for fullscreen screenshot\n-w for windowed screenshot\n" && exit 1
 
-screen_dir="$HOME/Downloads/screenshots" # no ending slash
+screen_dir="$HOME/Data/screenshots" # no ending slash
 
 screen_name="$(printf "" | dmenu -p 'Screenshot name:')" # dmenu problem where it doesnt show up unless an input is given
 [ -z "$screen_name" ] && screen_name="screen_$(date +'%m%d%H%M')"
