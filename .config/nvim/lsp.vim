@@ -11,6 +11,7 @@ nnoremap <silent> <C-n> <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
 lua << EOF
 local lspconfig = require'lspconfig'
 
+-- npm install -g typescript typescript-language-server vscode-langservers-extracted
 lspconfig.tsserver.setup{}
 lspconfig.ccls.setup{}
 lspconfig.html.setup{}

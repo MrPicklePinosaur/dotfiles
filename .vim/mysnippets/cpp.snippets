@@ -1,3 +1,5 @@
+extends c
+
 snippet guard "header guard" w
 #ifndef __$1_H__
 #define __$1_H__
@@ -27,4 +29,8 @@ public:
 	$1();
 	~$1();
 };
+endsnippet
+
+snippet cout "Cout" w
+std::cout << $1 << std::endl;
 endsnippet

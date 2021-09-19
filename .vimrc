@@ -17,6 +17,7 @@ set expandtab
 set ignorecase
 set smartcase
 set hidden
+set showcmd
 " set cursorline
 
 " cursors depending on mode
@@ -41,6 +42,10 @@ let g:netrw_banner = 0
 let g:netrw_winsize = 25
 let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro'
 
+" keep cursor position after switching buffer (prob useless after adding scrolloff
+autocmd BufEnter * silent! normal! g`"
+set scrolloff=999
+
 " file finding
 set path=**
 set wildmenu
@@ -63,6 +68,17 @@ set foldmethod=manual
 set foldnestmax=10
 set nofoldenable
 set foldlevel=2
+
+" toggle fold column
+" map <leader>z :set foldcolumn=1
+
+" remember all folds
+augroup remember_folds
+  autocmd!
+  autocmd BufWinLeave * mkview
+  autocmd BufWinEnter * silent! loadview
+augroup END
+" TODO: possible an indicator on number of folds in status bar
 
 " tags
 set tags=.tags
