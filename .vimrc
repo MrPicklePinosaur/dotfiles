@@ -16,6 +16,7 @@ set shiftwidth=4
 set expandtab
 set ignorecase
 set smartcase
+set hlsearch
 set hidden
 set showcmd
 " set cursorline
@@ -45,6 +46,9 @@ let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro'
 " keep cursor position after switching buffer (prob useless after adding scrolloff
 autocmd BufEnter * silent! normal! g`"
 set scrolloff=999
+
+" clear search hl
+map <leader>/ :noh<cr>
 
 " file finding
 set path=**
@@ -91,6 +95,12 @@ set tags=.tags
 " View whitespace
 map <leader>s :set list!<cr>
 set listchars=tab:▸\ ,space:·,eol:¬
+
+set showbreak=>
+
+" 80-char column
+hi ColorColumn ctermbg=magenta
+call matchadd('ColorColumn', '\%81v', 100)
 
 " reload vimrc
 map <leader>r :source ~/.vimrc<cr>:echo "vimrc reloaded"<cr>
@@ -241,7 +251,8 @@ hi TermCursor     cterm=reverse
 hi NonText        ctermfg=12
 hi Directory      ctermfg=4
 hi ErrorMsg       ctermfg=15 ctermbg=1
-hi IncSearch      cterm=reverse
+hi IncSearch      ctermfg=0 ctermbg=3
+hi Search         ctermfg=0 ctermbg=3
 hi MoreMsg        ctermfg=2
 hi ModeMsg        cterm=bold
 hi Question       ctermfg=2

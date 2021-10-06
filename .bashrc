@@ -8,18 +8,24 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# shell options
+set -o vi
+
+shopt -s cdspell
+shopt -s extglob
+shopt -s no_empty_cmd_completion
+
+# keybinds
+bind '"\C-f":"lfcd\n"'
+bind '"\C-l":"clear\n"'
+# bind "TAB:menu-complete"
+
 # prompt lmao
 PS1='\[\033[01;33m\] λ_\[\033[01;37m\] \W\[\033[01;33m\] > \[\033[00m\]'
 PS2='\[\033[01;37m\]> \[\033[00m\]'
 
-#set vi mode
-set -o vi
-
 source ~/.config/shell/commonrc
-
 source ~/Scripts/lfcd
-bind '"\C-f":"lfcd\n"'
 
 # startup stuff
 ufetch-arch
-
