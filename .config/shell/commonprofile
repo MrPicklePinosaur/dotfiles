@@ -1,4 +1,6 @@
 
+export CODENAME=柳
+
 export PATH=$HOME/.local/bin:$HOME/Scripts:$HOME/Scripts/dmenu:$HOME/Scripts/statusbar:$HOME/Scripts/acpi:$HOME/.cache/go/bin:$PATH
 export NINEIT_USERNAME=pinosaur
 export XDG_CONFIG_HOME=$HOME/.config
@@ -30,6 +32,9 @@ export LESS_TERMCAP_ue=$'\e[0m'
 export ZDOTDIR="$HOME/.config/zsh"
 
 export GOPATH="$HOME/.cache/go"
+
+# ansible
+ANSIBLE_NOCOWS=1
 
 export LF_ICONS="\
 di=:\

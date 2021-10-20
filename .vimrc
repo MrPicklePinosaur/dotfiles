@@ -14,12 +14,14 @@ set encoding=utf-8
 set tabstop=4
 set shiftwidth=4
 set expandtab
+set smarttab
+set smartindent
 set ignorecase
 set smartcase
 set hlsearch
 set hidden
 set showcmd
-" set cursorline
+set directory^=$HOME/.vim/swap//
 
 " cursors depending on mode
 let &t_EI = "\<Esc>[2 q" "normal mode
@@ -78,9 +80,9 @@ set foldlevel=2
 
 " remember all folds
 augroup remember_folds
-  autocmd!
-  autocmd BufWinLeave * mkview
-  autocmd BufWinEnter * silent! loadview
+    autocmd!
+    autocmd BufWinLeave * mkview
+    autocmd BufWinEnter * silent! loadview
 augroup END
 " TODO: possible an indicator on number of folds in status bar
 
@@ -95,72 +97,21 @@ set tags=.tags
 " View whitespace
 map <leader>s :set list!<cr>
 set listchars=tab:▸\ ,space:·,eol:¬
-
 set showbreak=>
 
-" 80-char column
+" 80-char column - TODO: add toggle
 hi ColorColumn ctermbg=magenta
 call matchadd('ColorColumn', '\%81v', 100)
-
-" reload vimrc
-map <leader>r :source ~/.vimrc<cr>:echo "vimrc reloaded"<cr>
 
 " write with sudo
 cmap w!! w !sudo tee > /dev/null %
 
+" reload vimrc
+map <leader>r :source ~/.vimrc<cr>:echo "vimrc reloaded"<cr>
+
 " reload current file
 map <leader>e :e<cr>:echo "current file reloaded"<cr>
 map <leader>E :e!<cr>:echo "current file force reloaded"<cr>
-
-" statusline
-function! StatusModeColor()
-    if (mode() =~# '\v(n|no)')
-        hi StatusLine cterm=None gui=None ctermfg=black ctermbg=Yellow
-    elseif (mode() =~# '\v(v|V|)')
-        hi StatusLine cterm=None gui=None ctermfg=black ctermbg=Red
-    elseif (mode() ==# 'i')
-        hi StatusLine cterm=None gui=None ctermfg=black ctermbg=LightBlue
-    elseif (mode() ==# 'c') 
-        hi StatusLine cterm=None gui=None ctermfg=black ctermbg=Green
-    else
-        hi StatusLine cterm=None gui=None ctermfg=black ctermbg=DarkGrey
-    endif
-endfunction
-
-function! StatusModifiedColor()
-    if &mod
-        hi User1 cterm=None gui=None ctermfg=Black ctermbg=Magenta
-    else
-        hi User1 cterm=None gui=None ctermfg=White ctermbg=Black
-    endif
-endfunction
-
-function! ReloadBar()
-    call StatusModeColor()
-    call StatusModifiedColor()
-    return ''
-endfunction
-
-function! BufCount()
-    return printf("%d/%d", bufnr("%"), len(getbufinfo({'buflisted':1})))
-endfunction
-
-autocmd BufEnter * call ReloadBar()
-autocmd BufWritePost <buffer> call ReloadBar()
-
-set laststatus=2
-set statusline=
-set statusline+=%{ReloadBar()}
-set statusline+=%1*\ | 
-set statusline+=%0*\ vim\ \[%{mode()}\]
-set statusline+=\[%{BufCount()}\]
-set statusline+=\ %1*\ %{expand('%:~:.')}\ %m
-set statusline+=%=
-set statusline+=%y
-set statusline+=\ %0*
-set statusline+=\ %r\[%{v:register}\]
-set statusline+=\ %l/%L:%c\ |
-set statusline+=%1*\ |
 
 " Templates
 augroup templates
@@ -212,15 +163,6 @@ let g:UltiSnipsSnippetDirectories=["UltiSnips", "mysnippets"]
 
 map <localleader>sr :call UltiSnips#RefreshSnippets()<cr>:echo "Refreshed Snippets"<cr>
 
-" latex stuff
-" fun! LatexCompile()
-"     echo 'compiling latex'
-" endfun
-" augroup latex
-"     autocmd!
-"     autocmd BufWritePost *.tex :call LatexCompile()
-" augroup END
-
 " Vimtex
 let g:tex_flavor='latex'
 let g:vimtex_view_method='zathura'
@@ -244,46 +186,5 @@ let g:hardtime_maxcount = 2
 " Run after plugins
 autocmd FileType * set formatoptions-=o
 
-" colors
-" based off https://github.com/jeffkreeftmeijer/vim-dim/blob/main/colors/default-light.vim
-hi SpecialKey     ctermfg=4
-hi TermCursor     cterm=reverse
-hi NonText        ctermfg=12
-hi Directory      ctermfg=4
-hi ErrorMsg       ctermfg=15 ctermbg=1
-hi IncSearch      ctermfg=0 ctermbg=3
-hi Search         ctermfg=0 ctermbg=3
-hi MoreMsg        ctermfg=2
-hi ModeMsg        cterm=bold
-hi Question       ctermfg=2
-hi Title          ctermfg=5
-hi WarningMsg     ctermfg=1
-hi WildMenu       ctermfg=0 ctermbg=11
-hi Conceal        ctermbg=0
-hi SpellBad       ctermfg=9 ctermbg=0 cterm=underline
-hi SpellRare      ctermbg=13 ctermbg=0 cterm=underline
-hi SpellLocal     ctermfg=14 ctermbg=0 cterm=underline
-hi PmenuSbar      ctermbg=8
-hi PmenuThumb     ctermbg=0
-hi CursorColumn   ctermbg=7
-hi CursorLine     cterm=NONE ctermbg=DarkGrey
-hi MatchParen     cterm=NONE ctermbg=DarkGrey
-hi Constant       ctermfg=1
-hi Special        ctermfg=5
-hi Identifier     cterm=NONE ctermfg=6
-hi Statement      ctermfg=3
-hi PreProc        ctermfg=5
-hi Type           ctermfg=2
-hi Underlined     cterm=underline ctermfg=5
-hi Ignore         ctermfg=15
-hi Error          ctermfg=15 ctermbg=9
-hi Todo           ctermfg=0 ctermbg=11
-hi Comment        ctermfg=DarkGrey
-hi lineNr         ctermfg=DarkGrey
-hi Folded         ctermfg=0
-hi Pmenu          ctermfg=0 ctermbg=7
-hi PmenuSel       ctermfg=0 ctermbg=6
-hi TabLineSel     cterm=Bold ctermfg=Yellow
-hi TabLine        cterm=None ctermfg=Grey ctermbg=Black
-hi TabLineFill    cterm=None ctermbg=Black
+colorscheme pino
 

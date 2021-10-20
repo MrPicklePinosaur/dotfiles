@@ -1,6 +1,7 @@
 #!/bin/sh
 
-bat="$(cat /sys/class/power_supply/BAT0/capacity)"
+bat0="$(cat /sys/class/power_supply/BAT0/capacity)"
+bat1="$(cat /sys/class/power_supply/BAT1/capacity)"
 stat="$(cat /sys/class/power_supply/BAT0/status)"
 
 status="?"
@@ -8,9 +9,9 @@ status="?"
 [ "$stat" = "Discharging" ] && status="D"
 
 icon=""
-[ $bat -gt "13" ] && icon=""
-[ $bat -gt "38" ] && icon=""
-[ $bat -gt "63" ] && icon=""
-[ $bat -gt "88" ] && icon=""
+[ "$bat0" -gt "13" ] && icon=""
+[ "$bat0" -gt "38" ] && icon=""
+[ "$bat0" -gt "63" ] && icon=""
+[ "$bat0" -gt "88" ] && icon=""
 
-echo "$icon $status$bat%"
+echo "$icon ${status}${bat0}%:${bat1}%"

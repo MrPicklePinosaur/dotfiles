@@ -6,6 +6,7 @@
 
 # user is already defined
 hostname="$(uname -a | awk '{ print $2 }')"
+codename="$([ -n "$CODENAME" ] && echo "（${CODENAME}）")"
 os='Arch Linux'
 host="$(cat /sys/devices/virtual/dmi/id/product_name) $(cat /sys/devices/virtual/dmi/id/product_family)"
 kernel="$(uname -sr)"
@@ -74,7 +75,7 @@ c0="${reset}${cyan}"                # first color
 
 cat <<EOF
 
-${c0}         .         ${nc}${USER}${ic}@${nc}${hostname}${reset}
+${c0}         .         ${nc}${USER}${ic}@${nc}${hostname}${codename}${reset}
 ${c0}        / \\        ${lc}OS:        ${ic}${os}${reset}
 ${c0}       /   \\       ${lc}KERNEL:    ${ic}${kernel}${reset}   
 ${c0}      /^.   \\      ${lc}HOST:      ${ic}${host}${reset}  

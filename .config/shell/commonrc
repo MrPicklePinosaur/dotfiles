@@ -22,12 +22,14 @@ mkcd() {
     mkdir "$1" && cd "$1"
 }
 
+# laziness aliases
 alias v="$EDITOR"
 alias z="$READER"
 alias b="$BROWSER"
 alias s="$VIEWER"
 alias m="$PLAYER"
 alias V="nvim"
+alias g="git"
 
 # connect to wifi
 # nmcli device wifi connect WIFI_NAME password PASSWORD
