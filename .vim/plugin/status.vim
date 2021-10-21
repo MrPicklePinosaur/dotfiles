@@ -39,7 +39,13 @@ set laststatus=2
 set statusline=
 set statusline+=%{ReloadBar()}
 set statusline+=%1*\ | 
-set statusline+=%0*\ vim\ \[%{mode()}\]
+set statusline+=%0*
+if has('nvim')
+    set statusline+=\ nvim
+else
+    set statusline+=\ vim
+endif
+set statusline+=\ \[%{mode()}\]
 set statusline+=\[%{BufCount()}\]
 set statusline+=\ %1*\ %{expand('%:~:.')}\ %m
 set statusline+=%=

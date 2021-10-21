@@ -3,7 +3,7 @@
 "   \ \ / / | '_ ` _ \| '__/ __|
 "    \ V /| | | | | | | | | (__ 
 "   (_)_/ |_|_| |_| |_|_|  \___|
-"                            
+"   pinosaur's vim config                            
 
 " basics
 syntax on
@@ -13,15 +13,15 @@ set incsearch
 set encoding=utf-8
 set tabstop=4
 set shiftwidth=4
+set smartindent
 set expandtab
 set smarttab
-set smartindent
 set ignorecase
 set smartcase
 set hlsearch
 set hidden
 set showcmd
-set directory^=$HOME/.vim/swap//
+set directory^=$HOME/.cache/vimswap//
 
 " cursors depending on mode
 let &t_EI = "\<Esc>[2 q" "normal mode
@@ -143,12 +143,14 @@ command PlugSetup :call s:VimPlugSetup()
 " template stuff
 call plug#begin('~/.vim/plugged')
 
+if has('vim')
 Plug 'sirver/ultisnips'
 Plug 'tpope/vim-commentary'
 Plug 'ap/vim-buftabline'
 Plug 'lervag/vimtex', { 'for': 'tex' }
 Plug 'PietroPate/vim-tex-conceal', { 'for': 'tex' }
 " Plug 'takac/vim-hardtime'
+endif
 
 call plug#end()
 
