@@ -34,7 +34,7 @@ export ZDOTDIR="$HOME/.config/zsh"
 export GOPATH="$HOME/.cache/go"
 
 # ansible
-ANSIBLE_NOCOWS=1
+export ANSIBLE_NOCOWS=1
 
 export LF_ICONS="\
 di=:\

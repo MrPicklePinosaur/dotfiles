@@ -1,0 +1,19 @@
+#!/bin/sh
+# set of short-hand git commands since i hate typing
+
+g() {
+
+    case $1 in
+        i) git init "${@:2}";;
+        a) git add "${@:2}";;
+        s) git status "${@:2}";;
+        b) git branch "${@:2}";;
+        c) git commit "${@:2}";;
+        ch) git checkout "${@:2}";;
+        p) git push "${@:2}";;
+        P) git pull "${@:2}";;
+        l) git log "${@:2}";;
+        *) git "$@"
+    esac
+
+}

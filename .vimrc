@@ -107,7 +107,11 @@ call matchadd('ColorColumn', '\%81v', 100)
 cmap w!! w !sudo tee > /dev/null %
 
 " reload vimrc
+if has('nvim')
+map <leader>r :source ~/.config/nvim/init.vim<cr>:echo "init.vim reloaded"<cr>
+else
 map <leader>r :source ~/.vimrc<cr>:echo "vimrc reloaded"<cr>
+endif
 
 " reload current file
 map <leader>e :e<cr>:echo "current file reloaded"<cr>
@@ -128,6 +132,8 @@ au! Syntax svelte source ~/.vim/syntax/svelte.vim
 au BufRead,BufNewFile *.shader set filetype=glsl
 au! Syntax shader source ~/.vim/syntax/glsl.vim
 
+let markdown_fenced_languages = ['cpp']
+
 " vim plug
 " this blob auto installs vim plug if it isnt already
 fun! s:VimPlugSetup()
@@ -143,7 +149,7 @@ command PlugSetup :call s:VimPlugSetup()
 " template stuff
 call plug#begin('~/.vim/plugged')
 
-if has('vim')
+if !has('nvim')
 Plug 'sirver/ultisnips'
 Plug 'tpope/vim-commentary'
 Plug 'ap/vim-buftabline'

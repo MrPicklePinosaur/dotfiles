@@ -41,4 +41,4 @@ hi PmenuSel       ctermfg=0 ctermbg=6
 hi TabLineSel     cterm=Bold ctermfg=Yellow
 hi TabLine        cterm=None ctermfg=Grey ctermbg=Black
 hi TabLineFill    cterm=None ctermbg=Black
-
+hi SignColumn     ctermbg=Black

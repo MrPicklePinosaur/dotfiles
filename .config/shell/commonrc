@@ -3,6 +3,7 @@
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias tree='tree -C'
+alias ip='ip -c'
 
 alias cp='cp -i'
 alias dotfiles='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
@@ -29,7 +30,6 @@ alias b="$BROWSER"
 alias s="$VIEWER"
 alias m="$PLAYER"
 alias V="nvim"
-alias g="git"
 
 # connect to wifi
 # nmcli device wifi connect WIFI_NAME password PASSWORD
@@ -37,5 +37,6 @@ alias g="git"
 # ffmpeg -y -f x11grab -s 1600x900 -i :0.0 -f alsa -i default -c:v libx264 -r 30 -c:a flac $filename
 
 source fzfutil
+source git-alias
 source /usr/share/nvm/init-nvm.sh
 
