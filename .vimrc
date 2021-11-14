@@ -132,7 +132,7 @@ au! Syntax svelte source ~/.vim/syntax/svelte.vim
 au BufRead,BufNewFile *.shader set filetype=glsl
 au! Syntax shader source ~/.vim/syntax/glsl.vim
 
-let markdown_fenced_languages = ['cpp']
+let markdown_fenced_languages = ['cpp', 'html', 'make']
 
 " vim plug
 " this blob auto installs vim plug if it isnt already
