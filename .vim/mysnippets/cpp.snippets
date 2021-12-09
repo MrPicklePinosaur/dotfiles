@@ -24,7 +24,15 @@ endsnippet
 snippet class "Class" w
 class $1
 {
-private:
+public:
+	$1();
+	~$1();
+};
+endsnippet
+
+snippet iclass "Class" w
+class $1 : public $2
+{
 public:
 	$1();
 	~$1();

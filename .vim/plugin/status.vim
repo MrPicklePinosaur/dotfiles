@@ -32,6 +32,13 @@ function! BufCount()
     return printf("%d/%d", bufnr("%"), len(getbufinfo({'buflisted':1})))
 endfunction
 
+function! SpaceOrTab()
+    return &expandtab ==# "expandtab" ? "S" : "T"
+endfunction
+function! TabstopValue()
+    return &tabstop
+endfunction
+
 autocmd BufEnter * call ReloadBar()
 autocmd BufWritePost <buffer> call ReloadBar()
 
@@ -52,6 +59,7 @@ set statusline+=%=
 set statusline+=%y
 set statusline+=\ %0*
 set statusline+=\ %r\[%{v:register}\]
+set statusline+=\ %{SpaceOrTab()}:%{TabstopValue()}
 set statusline+=\ %l/%L:%c\ |
 set statusline+=%1*\ |
 
