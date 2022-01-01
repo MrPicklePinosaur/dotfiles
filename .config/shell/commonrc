@@ -38,5 +38,6 @@ alias V="nvim"
 
 source fzfutil
 source git-alias
+source docker-alias
 source /usr/share/nvm/init-nvm.sh
 
