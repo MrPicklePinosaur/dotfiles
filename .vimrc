@@ -3,7 +3,7 @@
 "   \ \ / / | '_ ` _ \| '__/ __|
 "    \ V /| | | | | | | | | (__ 
 "   (_)_/ |_|_| |_| |_|_|  \___|
-"   pinosaur's vim config                            
+"   pinosaur's vim config
 
 " basics
 syntax on

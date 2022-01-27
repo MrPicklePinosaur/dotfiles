@@ -23,3 +23,5 @@ c.downloads.location.directory = "~/Downloads"
 c.downloads.location.prompt    = True
 c.downloads.location.remember  = True
 
+c.content.blocking.enabled = True
+c.content.blocking.method  = "both"
