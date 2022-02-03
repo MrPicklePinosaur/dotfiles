@@ -32,7 +32,7 @@ setwallpaper
 dwmblocks &
 tiramisu -j | notify &
 acpi_listen &
-redshift -m randr:crtc=0 -O 3000
+nightlight
 sxhkd &
 mpd &
 mpd-change &

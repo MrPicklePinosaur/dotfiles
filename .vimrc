@@ -28,6 +28,9 @@ let &t_EI = "\<Esc>[2 q" "normal mode
 let &t_SI = "\<Esc>[6 q" "insert mode
 let &t_SR = "\<Esc>[4 q" "replace mode
 
+" default key remaps
+map Y y$
+
 " conceal
 set conceallevel=2
 
