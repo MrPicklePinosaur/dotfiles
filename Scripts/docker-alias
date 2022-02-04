@@ -9,6 +9,7 @@ d() {
         v) docker volume "${@:2}";;
         n) docker network "${@:2}";;
         i) docker images "${@:2}";;
+        l) docker logs "${@:2}";;
         e) docker exec "${@:2}";;
         *) docker "$@"
     esac
