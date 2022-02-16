@@ -8,6 +8,7 @@ config_file=$XDG_CONFIG_HOME/zathura/zathurarc
 
 cat > $config_file <<- CONF
     set guioptions none
+    set selection-clipboard clipboard
     set recolor
     set recolor-darkcolor "$(get_option foreground)"
     set recolor-lightcolor "$(get_option *.color0:)"

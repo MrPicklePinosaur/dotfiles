@@ -135,6 +135,9 @@ au! Syntax svelte source ~/.vim/syntax/svelte.vim
 au BufRead,BufNewFile *.shader set filetype=glsl
 au! Syntax shader source ~/.vim/syntax/glsl.vim
 
+au BufRead,BufNewFile *.shader set filetype=241
+au! Syntax 241 source ~/.vim/syntax/241.vim
+
 let markdown_fenced_languages = ['cpp', 'html', 'make']
 
 " vim plug

@@ -23,7 +23,7 @@ open() {
         echo "No browser set, try setting your $BROWSER environmental variable" &&\
         exit 1
 
-    selection="$(cat "$BOOKMARKS_FILE" | egrep -v '^$' | grep -v '#' \
+    selection="$(cat "$BOOKMARKS_FILE" | egrep -v '^$' \
         | awk '{ print $2 }'\
         | dmenu -r \
         )"

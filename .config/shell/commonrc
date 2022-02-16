@@ -20,7 +20,11 @@ alias fzf="fzf --color=16 --header=fzf --info=inline --preview='echo {}; file -b
 alias gdb="gdb -q"
 
 mkcd() {
-    mkdir "$1" && cd "$1"
+    mkdir "$@" && cd "$1"
+}
+
+cl() {
+    cd "$@" && ls
 }
 
 # laziness aliases
