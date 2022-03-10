@@ -21,6 +21,12 @@ $2($3)
 }
 endsnippet
 
+snippet struct "struct" w
+struct $1 {
+	$0
+};
+endsnippet
+
 snippet #if "#if define" w
 #if $1
 	$0
@@ -32,5 +38,5 @@ snippet inc "include lib" w
 endsnippet
 
 snippet incc "include local" w
-#include <$1>$0
+#include "$1.h"$0
 endsnippet

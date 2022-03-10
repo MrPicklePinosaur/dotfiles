@@ -3,7 +3,7 @@
 " based off https://github.com/jeffkreeftmeijer/vim-dim/blob/main/colors/default-light.vim
 hi SpecialKey     ctermfg=4
 hi TermCursor     cterm=reverse
-hi NonText        ctermfg=12
+hi NonText        ctermfg=DarkGrey
 hi Directory      ctermfg=4
 hi ErrorMsg       ctermfg=15 ctermbg=1
 hi IncSearch      ctermfg=0 ctermbg=3
@@ -21,7 +21,6 @@ hi SpellLocal     ctermfg=14 ctermbg=0 cterm=underline
 hi PmenuSbar      ctermbg=8
 hi PmenuThumb     ctermbg=0
 hi CursorColumn   ctermbg=7
-hi CursorLine     cterm=NONE ctermbg=DarkGrey
 hi MatchParen     cterm=NONE ctermbg=DarkGrey
 hi Constant       ctermfg=1
 hi Special        ctermfg=5
@@ -35,6 +34,8 @@ hi Error          ctermfg=15 ctermbg=9
 hi Todo           ctermfg=0 ctermbg=11
 hi Comment        ctermfg=DarkGrey
 hi lineNr         ctermfg=DarkGrey
+hi CursorLine     cterm=NONE ctermbg=NONE ctermfg=NONE
+hi CursorLineNR   cterm=NONE ctermbg=NONE ctermfg=White
 hi Folded         ctermfg=0
 hi Pmenu          ctermfg=0 ctermbg=7
 hi PmenuSel       ctermfg=0 ctermbg=6

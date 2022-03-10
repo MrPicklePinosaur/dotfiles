@@ -22,6 +22,7 @@ set hlsearch
 set hidden
 set showcmd
 set directory^=$HOME/.cache/vimswap//
+set cursorline "this is set only to enable color theme on current line number
 
 " cursors depending on mode
 let &t_EI = "\<Esc>[2 q" "normal mode
@@ -137,6 +138,9 @@ au! Syntax shader source ~/.vim/syntax/glsl.vim
 
 au BufRead,BufNewFile *.shader set filetype=241
 au! Syntax 241 source ~/.vim/syntax/241.vim
+
+au BufRead,BufNewFile *.hs set filetype=haskell
+au! Syntax haskell source ~/.vim/syntax/haskell.vim
 
 let markdown_fenced_languages = ['cpp', 'html', 'make']
 
