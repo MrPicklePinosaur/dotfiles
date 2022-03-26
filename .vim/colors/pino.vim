@@ -37,7 +37,7 @@ hi lineNr         ctermfg=DarkGrey
 hi CursorLine     cterm=NONE ctermbg=NONE ctermfg=NONE
 hi CursorLineNR   cterm=NONE ctermbg=NONE ctermfg=White
 hi Folded         ctermfg=0
-hi Pmenu          ctermfg=0 ctermbg=7
+hi Pmenu          ctermfg=7 ctermbg=DarkGrey
 hi PmenuSel       ctermfg=0 ctermbg=6
 hi TabLineSel     cterm=Bold ctermfg=Yellow
 hi TabLine        cterm=None ctermfg=Grey ctermbg=Black

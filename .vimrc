@@ -204,5 +204,8 @@ let g:hardtime_maxcount = 2
 " Run after plugins
 autocmd FileType * set formatoptions-=o
 
+" cpp function (move this later)
+command Cfunc :s/^\(\w\+\)\s\+\(\p\+(.*)\);/\1\r\2\r{\r}/
+
 colorscheme pino
 

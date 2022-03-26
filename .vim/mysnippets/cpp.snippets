@@ -47,10 +47,39 @@ snippet s "std" w
 std::
 endsnippet
 
+snippet c "const" w
+const
+endsnippet
+
+snippet n "noexcept" w
+noexcept
+endsnippet
+
+snippet str "string" w
+std::string
+endsnippet
+
+snippet up "unique ptr" w
+std::unique_ptr<$1>$0
+endsnippet
+
+snippet vec "vector" w
+std::vector<$1>$0
+endsnippet
+
 snippet namespace "namespace" w
 namespace $1 {
 
 $0
 
 } // namespace $1
+endsnippet
+
+snippet opout "operator outstream" w
+std::ostream&
+operator<<(std::ostream& os, const $1& $2)
+{
+	$0
+	return os;
+}
 endsnippet

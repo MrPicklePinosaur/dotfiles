@@ -20,6 +20,7 @@ lspconfig.cssls.setup{}
 lspconfig.gopls.setup{}
 lspconfig.eslint.setup{}
 lspconfig.hls.setup{}
+lspconfig.rust_analyzer.setup{}
 
 -- disable virtual error 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
