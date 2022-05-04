@@ -104,6 +104,7 @@ set listchars=tab:▸\ ,space:·,eol:¬
 set showbreak=>
 
 " 80-char column - TODO: add toggle
+" hi ColorColumn ctermbg=black
 hi ColorColumn ctermbg=magenta
 call matchadd('ColorColumn', '\%81v', 100)
 

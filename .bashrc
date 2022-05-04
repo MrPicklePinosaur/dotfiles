@@ -30,3 +30,4 @@ source ~/Scripts/lfcd
 
 # startup stuff
 ufetch-arch
+

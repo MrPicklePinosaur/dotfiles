@@ -14,4 +14,8 @@ icon=""
 [ "$bat0" -gt "63" ] && icon=""
 [ "$bat0" -gt "88" ] && icon=""
 
-echo "$icon ${status}${bat0}%:${bat1}%"
+to_hex() {
+    echo "${1} * 255 / 100" | bc | xargs printf '%02X'
+}
+
+echo "$icon ${status}$(to_hex $bat0)%:$(to_hex $bat1)%"

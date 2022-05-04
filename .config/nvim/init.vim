@@ -12,7 +12,6 @@ source ~/.vimrc
 
 " toggle sign column
 
-
 " clipboard
 set clipboard+=unnamedplus
 
