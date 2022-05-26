@@ -21,6 +21,7 @@ set smartcase
 set hlsearch
 set hidden
 set showcmd
+set title
 set directory^=$HOME/.cache/vimswap//
 set cursorline "this is set only to enable color theme on current line number
 
@@ -39,7 +40,7 @@ set conceallevel=2
 let mapleader = ' '
 
 " netrw stuff
-map <leader>f :Ex<cr>
+map <leader>f :Lex<cr>
 map <leader>l :bn<cr>
 map <leader>h :bp<cr>
 map <leader>d :bd<cr>
@@ -48,6 +49,7 @@ let g:netrw_liststyle = 3
 let g:netrw_banner = 0
 let g:netrw_winsize = 25
 let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro'
+let g:netrw_browse_split=4
 
 " keep cursor position after switching buffer (prob useless after adding scrolloff
 autocmd BufEnter * silent! normal! g`"
@@ -85,7 +87,7 @@ set foldlevel=2
 " remember all folds
 augroup remember_folds
     autocmd!
-    autocmd BufWinLeave * mkview
+    " autocmd BufWinLeave * mkview " causing issues
     autocmd BufWinEnter * silent! loadview
 augroup END
 " TODO: possible an indicator on number of folds in status bar
@@ -164,8 +166,8 @@ if !has('nvim')
 Plug 'sirver/ultisnips'
 Plug 'tpope/vim-commentary'
 Plug 'ap/vim-buftabline'
-Plug 'lervag/vimtex', { 'for': 'tex' }
-Plug 'PietroPate/vim-tex-conceal', { 'for': 'tex' }
+" Plug 'lervag/vimtex', { 'for': 'tex' }
+" Plug 'PietroPate/vim-tex-conceal', { 'for': 'tex' }
 " Plug 'takac/vim-hardtime'
 endif
 
@@ -183,17 +185,17 @@ let g:UltiSnipsSnippetDirectories=["UltiSnips", "mysnippets"]
 map <localleader>sr :call UltiSnips#RefreshSnippets()<cr>:echo "Refreshed Snippets"<cr>
 
 " Vimtex
-let g:tex_flavor='latex'
-let g:vimtex_view_method='zathura'
-let g:vimtex_quickfix_mode=0
-let g:tex_conceal='abdmgs'
-
-let g:vimtex_compiler_latexmk = {
-    \'build_dir': '/home/pinosaur/.cache/latexaux/',
-\}
-    " \'options': [
-    " \   '-shell-escape',
-    " \],
+" let g:tex_flavor='latex'
+" let g:vimtex_view_method='zathura'
+" let g:vimtex_quickfix_mode=0
+" let g:tex_conceal='abdmgs'
+" 
+" let g:vimtex_compiler_latexmk = {
+"     \'build_dir': '/home/pinosaur/.cache/latexaux/',
+" \}
+"     " \'options': [
+"     " \   '-shell-escape',
+"     " \],
 
 " buftabline
 let g:buftabline_show = 1
