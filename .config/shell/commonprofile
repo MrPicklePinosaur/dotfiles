@@ -1,8 +1,8 @@
 
+## GENERAL ##
 export CODENAME=柳
 
 export PATH=$HOME/.local/bin:$HOME/Scripts:$HOME/Scripts/dmenu:$HOME/Scripts/statusbar:$HOME/Scripts/acpi:$HOME/.cache/go/bin:$PATH
-export NINEIT_USERNAME=pinosaur
 export XDG_CONFIG_HOME=$HOME/.config
 
 # programs
@@ -14,6 +14,7 @@ export TERMINAL="st"
 export BROWSER="brave"
 export WM="dwm"
 
+## CONFIGURATION FOR PROGRAMS ##
 # ibus
 export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
@@ -29,70 +30,15 @@ export LESS_TERMCAP_se=$'\e[0m'
 export LESS_TERMCAP_us=$'\e[1;4;36m'
 export LESS_TERMCAP_ue=$'\e[0m'
 
+# zsh
 export ZDOTDIR="$HOME/.config/zsh"
 
+# go
 export GOPATH="$HOME/.cache/go"
 
 # ansible
 export ANSIBLE_NOCOWS=1
 
-export LF_ICONS="\
-di=:\
-fi=:\
-ln=:\
-or=:\
-ex=:\
-*.c=:\
-*.cc=:\
-*.cpp=:\
-*.go=:\
-*.hs=:\
-*.java=:\
-*.html=:\
-*.css=:\
-*.js=:\
-*.ts=:\
-*.json=:\
-*.jsx=:\
-*.tsx=:\
-*.vue=﵂:\
-*.php=:\
-*.py=:\
-*.rkt=λ:\
-*.tex=:\
-*.md=:\
-*.vim=:\
-*.vimrc=:\
-*.viminfo=:\
-*.gitignore=:\
-*.cmd=:\
-*.sh=:\
-*.bash=:\
-*.zsh=:\
-*.fish=:\
-*.diff=繁:\
-*.bashrc=
-*.tar=:\
-*.zip=:\
-*.jar=:\ 
-*.rar=:\
-*.7z=:\
-*.gz=:\
-*.zst=:\
-*.jpg=:\
-*.jpeg=:\
-*.gif=:\
-*.bmp=:\
-*.png=:\
-*.svg=:\
-*.mov=:\
-*.webm=:\
-*.mp4=:\
-*.mid=:\
-*.midi=:\
-*.mp3=:\
-*.ogg=:\
-*.wav=:\
-*.pdf=:\
-"
+# lf
+export LF_ICONS="di=:fi=:ln=:or=:ex=:*.c=:*.cc=:*.cpp=:*.go=:*.hs=:*.java=:*.html=:*.css=:*.js=:*.ts=:*.json=:*.jsx=:*.tsx=:*.vue=﵂:*.php=:*.py=:*.rkt=λ:*.tex=:*.md=:*.vim=:*.vimrc=:*.viminfo=:*.gitignore=:*.cmd=:*.sh=:*.bash=:*.zsh=:*.fish=:*.diff=繁:*.bashrc=*.tar=:*.zip=:*.jar=: *.rar=:*.7z=:*.gz=:*.zst=:*.jpg=:*.jpeg=:*.gif=:*.bmp=:*.png=:*.svg=:*.mov=:*.webm=:*.mp4=:*.mid=:*.midi=:*.mp3=:*.ogg=:*.wav=:*.pdf=:"
 

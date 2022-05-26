@@ -30,13 +30,16 @@ cl() {
 
 # laziness aliases
 alias v="$EDITOR"
+alias V="nvim"
 alias z="$READER"
 alias b="$BROWSER"
 alias s="$VIEWER"
 alias m="$PLAYER"
-alias V="nvim"
-
 alias m2="m --speed=2"
+
+alias l="ls"
+alias la="ls -a"
+alias c="cd"
 
 # connect to wifi
 # nmcli device wifi connect WIFI_NAME password PASSWORD
@@ -47,6 +50,7 @@ alias m2="m --speed=2"
 export R_LIBS_USER=~/.cache/R-lib
 # also add 'options(menu.graphics=FALSE)' to R profile
 
+# source some stuff
 source fzfutil
 source git-alias
 source docker-alias

@@ -9,8 +9,8 @@
  
 sysresources=/etc/X11/xinit/.Xresources
 sysmodmap=/etc/X11/xinit/.Xmodmap
-userresources=$HOME/.Xresources
-usermodmap=$HOME/.Xmodmap
+userresources=$HOME/.config/xorg/Xresources
+usermodmap=$HOME/.config/xorg/Xmodmap
 
 # merge in defaults and keymaps
 [ -f "$sysresources" ] && xrdb -merge "$sysresources"

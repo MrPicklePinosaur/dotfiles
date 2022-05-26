@@ -22,8 +22,11 @@ set hlsearch
 set hidden
 set showcmd
 set title
-set directory^=$HOME/.cache/vimswap//
 set cursorline "this is set only to enable color theme on current line number
+
+" location of vim meta files
+set directory^=$HOME/.cache/vimswap// " swap location
+set viminfo+=n~/.vim/viminfo
 
 " cursors depending on mode
 let &t_EI = "\<Esc>[2 q" "normal mode
@@ -92,6 +95,9 @@ augroup remember_folds
 augroup END
 " TODO: possible an indicator on number of folds in status bar
 
+" abbrv / commands
+command -nargs=1 Syn :set syntax=<args>
+
 " tags
 set tags=.tags
 " todo, regenerate tags
@@ -123,6 +129,13 @@ endif
 " reload current file
 map <leader>e :e<cr>:echo "current file reloaded"<cr>
 map <leader>E :e!<cr>:echo "current file force reloaded"<cr>
+
+" auto set syntax given filenames
+augroup syntaxhighlight
+    autocmd!
+    autocmd BufRead,BufNewFile commonrc set syntax=sh 
+    autocmd BufRead,BufNewFile commonprofile set syntax=sh 
+augroup END
 
 " Templates
 augroup templates
