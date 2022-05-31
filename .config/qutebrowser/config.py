@@ -9,6 +9,8 @@ config.bind('xb', 'config-cycle tabs.show always never')
 config.bind(' m', 'spawn mpv {url}')
 config.bind(' p', 'spawn --userscript qute-pass', mode='normal')
 config.bind(' r', 'config-source')
+config.bind('gh', 'tab-move -')
+config.bind('gl', 'tab-move +')
 
 # colors
 # c.colors.tabs.bar.bg = ""

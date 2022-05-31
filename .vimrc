@@ -26,7 +26,7 @@ set cursorline "this is set only to enable color theme on current line number
 
 " location of vim meta files
 set directory^=$HOME/.cache/vimswap// " swap location
-set viminfo+=n~/.vim/viminfo
+" set viminfo+=n~/.vim/viminfo
 
 " cursors depending on mode
 let &t_EI = "\<Esc>[2 q" "normal mode
@@ -43,7 +43,8 @@ set conceallevel=2
 let mapleader = ' '
 
 " netrw stuff
-map <leader>f :Lex<cr>
+" map <leader>f :Lex<cr>
+map <leader>f :Ex<cr>
 map <leader>l :bn<cr>
 map <leader>h :bp<cr>
 map <leader>d :bd<cr>
@@ -52,7 +53,7 @@ let g:netrw_liststyle = 3
 let g:netrw_banner = 0
 let g:netrw_winsize = 25
 let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro'
-let g:netrw_browse_split=4
+" let g:netrw_browse_split=4
 
 " keep cursor position after switching buffer (prob useless after adding scrolloff
 autocmd BufEnter * silent! normal! g`"
