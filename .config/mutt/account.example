@@ -1,0 +1,9 @@
+
+set imap_user = "<your-email>"
+set folder = "imaps://<email-server>:993"
+set spoolfile = "+INBOX"
+
+set smtp_url = "smtp://<email-server>:587"
+set from = "<your-email>"
+set realname = "<your-name>"
+

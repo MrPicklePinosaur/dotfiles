@@ -28,6 +28,9 @@ super + n
 super + m
     st ncmpcpp
 
+super + M
+    st neomutt
+
 super + s
     st pulsemixer
 
