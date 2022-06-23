@@ -20,6 +20,10 @@ alias fzf="fzf --color=16 --header=fzf --info=inline --preview='echo {}; file -b
 alias gdb="gdb -q"
 alias venv="source venv/bin/activate"
 
+srs() {
+    drill-srs "$@" 2> /dev/null
+}
+
 mkcd() {
     mkdir "$@" && cd "$1"
 }

@@ -47,7 +47,3 @@ export QT_IM_MODULE=ibus
 ibus-daemon -drx
 
 exec dwm
-# while true; do
-#     /usr/local/bin/dwm 2> /dev/null
-# done
-

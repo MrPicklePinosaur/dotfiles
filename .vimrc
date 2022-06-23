@@ -7,6 +7,7 @@
 
 " basics
 syntax on
+set nocompatible
 set number
 set relativenumber
 set incsearch
@@ -144,6 +145,7 @@ augroup templates
     autocmd BufNewFile *.html 0r ~/.vim/templates/skeleton.html
     autocmd BufNewFile *.rkt 0r ~/.vim/templates/skeleton.rkt
     autocmd BufNewFile *.xml 0r ~/.vim/templates/skeleton.xml
+    autocmd BufNewFile *.pl 0r ~/.vim/templates/skeleton.pl
 augroup END
 
 " highlighting (will get rid of this sometime prob)
@@ -183,6 +185,7 @@ Plug 'ap/vim-buftabline'
 " Plug 'lervag/vimtex', { 'for': 'tex' }
 " Plug 'PietroPate/vim-tex-conceal', { 'for': 'tex' }
 " Plug 'takac/vim-hardtime'
+Plug 'vimwiki/vimwiki'
 endif
 
 call plug#end()
@@ -217,6 +220,9 @@ let g:buftabline_show = 1
 " hardtime
 let g:hardtime_default_on = 1
 let g:hardtime_maxcount = 2
+
+" vimwiki
+let g:vimwiki_list = [{'path': '~/Data/vimwiki'}]
 
 " Run after plugins
 autocmd FileType * set formatoptions-=o

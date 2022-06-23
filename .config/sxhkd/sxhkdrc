@@ -11,7 +11,7 @@ super + r
     notify-send "Reloaded sxhkd" -i ""
 
 super + b
-    brave
+    $BROWSER
 
 super + shift + b  
     pbm -o

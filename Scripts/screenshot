@@ -15,3 +15,6 @@ case $1 in
     -f|--full) scrot "$screen_name" && notify-send "Fullscreen screenshot taken - $screen_name" -i "";;
     -b|--box) scrot -s "$screen_name" && notify-send "Windowed screenshot taken - $screen_name" -i "";;
 esac
+
+# copy to clipboard
+xclip -selection clipboard -t 'image/png' -i "$screen_name"

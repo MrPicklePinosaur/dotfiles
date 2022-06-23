@@ -11,7 +11,8 @@ export READER="zathura"
 export VIEWER="sxiv" # non-standard
 export PLAYER="mpv" # non-standard
 export TERMINAL="st"
-export BROWSER="brave"
+export BROWSER="qutebrowser"
+export BROWSER_ALT="brave"
 export WM="dwm"
 
 ## CONFIGURATION FOR PROGRAMS ##
@@ -38,6 +39,13 @@ export GOPATH="$HOME/.cache/go"
 
 # ansible
 export ANSIBLE_NOCOWS=1
+
+# perl
+export PATH="/home/pinosaur/.cache/perl5/bin${PATH:+:${PATH}}"
+export PERL5LIB="/home/pinosaur/.cache/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"
+export PERL_LOCAL_LIB_ROOT="/home/pinosaur/.cache/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"
+export PERL_MB_OPT="--install_base \"/home/pinosaur/.cache/perl5\""
+export PERL_MM_OPT="INSTALL_BASE=/home/pinosaur/.cache/perl5"
 
 # lf
 export LF_ICONS="di=:fi=:ln=:or=:ex=:*.c=:*.cc=:*.cpp=:*.go=:*.hs=:*.java=:*.html=:*.css=:*.js=:*.ts=:*.json=:*.jsx=:*.tsx=:*.vue=﵂:*.php=:*.py=:*.rkt=λ:*.tex=:*.md=:*.vim=:*.vimrc=:*.viminfo=:*.gitignore=:*.cmd=:*.sh=:*.bash=:*.zsh=:*.fish=:*.diff=繁:*.bashrc=*.tar=:*.zip=:*.jar=: *.rar=:*.7z=:*.gz=:*.zst=:*.jpg=:*.jpeg=:*.gif=:*.bmp=:*.png=:*.svg=:*.mov=:*.webm=:*.mp4=:*.mid=:*.midi=:*.mp3=:*.ogg=:*.wav=:*.pdf=:"

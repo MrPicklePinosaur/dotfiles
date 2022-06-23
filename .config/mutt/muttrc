@@ -9,6 +9,9 @@ mailboxes =INBOX =Sent =Trash =Drafts
 
 set editor = vim
 
+set timeout=10
+set sort = 'reverse-date'
+
 # sidebar
 set sidebar_visible = yes
 set sidebar_width = 20
