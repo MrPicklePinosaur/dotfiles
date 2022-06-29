@@ -1,10 +1,11 @@
 
-# alias
+# color alias
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias tree='tree -C'
 alias ip='ip -c'
 
+# program configuration
 alias cp='cp -i'
 alias dotfiles='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 alias suckless-clean='make clean && rm -rf config.h && git reset --hard home/master'
@@ -32,6 +33,9 @@ cl() {
     cd "$@" && ls
 }
 
+# source bash completion
+source /usr/share/bash-completion/completions/git
+
 # laziness aliases
 alias v="$EDITOR"
 alias V="nvim"
@@ -44,6 +48,10 @@ alias m2="m --speed=2"
 alias l="ls"
 alias la="ls -a"
 alias c="cd"
+alias g="git"
+__git_complete g __git_main
+__git_complete dotfiles __git_main
+alias p="pacman"
 
 # connect to wifi
 # nmcli device wifi connect WIFI_NAME password PASSWORD
@@ -56,7 +64,6 @@ export R_LIBS_USER=~/.cache/R-lib
 
 # source some stuff
 source fzfutil
-source git-alias
 source docker-alias
 source /usr/share/nvm/init-nvm.sh
 

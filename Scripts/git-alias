@@ -1,6 +1,8 @@
 #!/bin/sh
 # set of short-hand git commands since i hate typing
 
+## DEPRECATED in favor of git's native alias system
+
 g() {
 
     case $1 in

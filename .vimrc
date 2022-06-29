@@ -23,6 +23,7 @@ set hlsearch
 set hidden
 set showcmd
 set title
+set autoread
 set cursorline "this is set only to enable color theme on current line number
 
 " location of vim meta files
@@ -231,4 +232,3 @@ autocmd FileType * set formatoptions-=o
 command Cfunc :s/^\(\w\+\)\s\+\(\p\+(.*)\);/\1\r\2\r{\r}/
 
 colorscheme pino
-

@@ -1,15 +1,38 @@
 
+snippet u "use" w
+use $1;$0
+endsnippet
+
+snippet p "pub" w
+pub 
+endsnippet
+
 snippet s "std" w
 std::
 endsnippet
 
 snippet m "mut" w
-mut
+mut 
 endsnippet
 
 snippet struct "struct" w
-#[derive(Debug)]
 struct $1 {
     $0
+}
+endsnippet
+
+snippet enum "enum" w
+enum $1 {
+    $0
+}
+endsnippet
+
+snippet der "derive" w
+#[derive($1)]$0
+endsnippet
+
+snippet new "new function" w
+pub fn new() -> Self {
+$0
 }
 endsnippet

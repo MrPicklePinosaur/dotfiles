@@ -1,0 +1,14 @@
+[init]
+	defaultBranch = master
+[alias]
+    i = init
+    a = add
+    d = diff
+    s = status
+    b = branch
+    c = commit
+    ch = checkout
+    p = push
+    P = pull
+    l = log
+    m = merge
