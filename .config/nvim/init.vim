@@ -18,3 +18,4 @@ set clipboard+=unnamedplus
 " includes
 source $HOME/.config/nvim/plug.vim
 source $HOME/.config/nvim/lsp.vim
+source $HOME/.config/nvim/plug-config/cmp.vim

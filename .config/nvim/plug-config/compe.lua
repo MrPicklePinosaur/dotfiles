@@ -1,4 +1,6 @@
 
+-- this is now deprecated in favor of nvim-cmp
+
 vim.o.completeopt = "menuone,noselect"
 
 require'compe'.setup {
