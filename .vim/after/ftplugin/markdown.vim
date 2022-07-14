@@ -1,2 +1,1 @@
-syn match Spoiler /||.*||/ conceal cchar=
-setlocal conceallevel=2
+let markdown_fenced_languages = ['cpp', 'html', 'make']

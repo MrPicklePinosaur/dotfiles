@@ -24,6 +24,7 @@ set hidden
 set showcmd
 set title
 set autoread
+set filetype
 set cursorline "this is set only to enable color theme on current line number
 
 " location of vim meta files
@@ -101,14 +102,6 @@ augroup END
 " abbrv / commands
 command -nargs=1 Syn :set syntax=<args>
 
-" tags
-set tags=.tags
-" todo, regenerate tags
-" probably do the following
-" - check if tags file already exists
-" - if it does, then regenerate it on every save
-" - otherwise, provide a function to generate tags for the first time
-
 " View whitespace
 map <leader>s :set list!<cr>
 set listchars=tab:▸\ ,space:·,eol:¬
@@ -162,8 +155,6 @@ au! Syntax 241 source ~/.vim/syntax/241.vim
 au BufRead,BufNewFile *.hs set filetype=haskell
 au! Syntax haskell source ~/.vim/syntax/haskell.vim
 
-let markdown_fenced_languages = ['cpp', 'html', 'make']
-
 " vim plug
 " this blob auto installs vim plug if it isnt already
 fun! s:VimPlugSetup()
@@ -183,6 +174,7 @@ if !has('nvim')
 Plug 'sirver/ultisnips'
 Plug 'tpope/vim-commentary'
 Plug 'ap/vim-buftabline'
+Plug 'tpope/vim-surround'
 " Plug 'lervag/vimtex', { 'for': 'tex' }
 " Plug 'PietroPate/vim-tex-conceal', { 'for': 'tex' }
 " Plug 'takac/vim-hardtime'
@@ -198,7 +190,7 @@ let maplocalleader = "\\"
 let g:UltiSnipsExpandTrigger = '<tab>'
 let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
-let g:UltiSnipsSnippetDirectories=["UltiSnips", "mysnippets"]
+let g:UltiSnipsSnippetDirectories=["mysnippets"]
 
 map <localleader>sr :call UltiSnips#RefreshSnippets()<cr>:echo "Refreshed Snippets"<cr>
 
@@ -227,8 +219,5 @@ let g:vimwiki_list = [{'path': '~/Data/vimwiki'}]
 
 " Run after plugins
 autocmd FileType * set formatoptions-=o
-
-" cpp function (move this later)
-command Cfunc :s/^\(\w\+\)\s\+\(\p\+(.*)\);/\1\r\2\r{\r}/
 
 colorscheme pino
