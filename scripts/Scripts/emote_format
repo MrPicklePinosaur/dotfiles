@@ -1,7 +1,0 @@
-#!/bin/sh
-
-# format images to be discord size
-
-mv "$1" "$1_temp" && \
-    ffmpeg -i "$1_temp" -vf scale=48:-1 "$1" && \
-    rm "$1_temp"

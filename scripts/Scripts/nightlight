@@ -1,5 +1,0 @@
-#!/bin/sh
-
-redshift -x
-redshift -m randr:crtc=0 -O 3000
-redshift -m randr:crtc=1 -O 5000

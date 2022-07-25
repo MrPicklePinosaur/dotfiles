@@ -1,7 +1,0 @@
-#!/bin/sh
-
-# alternate script to display total ram too
-#ram="$(free -t -m | grep Mem | awk '{printf "%sM:%sM", $3, $2}')"
-ram="$(free -t -m | grep Mem | awk '{printf "%sM", $3}')"
-echo " $ram"
-

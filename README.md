@@ -3,6 +3,11 @@
 ## USAGE
 
 my dotfiles are managed using [GNU stow](https://www.gnu.org/software/stow/).
+the goal of this dotfile repo are to:
+- version all of my important configuration files
+- easily bootstrap and download files on new machines
+- update configuration files on all devices when i make a change
+- support differences in configs on different machines
 
 ## CONTENTS
 
@@ -20,6 +25,10 @@ dotfiles modules that are included:
 - xmonad
 - xorg: config for x11 (xinit, Xresource etc)
 - zsh: depends on bash module
+
+## PROFILES
+
+profiles are predefined sets of modules 
 
 ## SCRIPTS
 

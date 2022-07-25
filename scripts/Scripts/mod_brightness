@@ -1,4 +1,0 @@
-#!/bin/sh
-
-bright="$(xrandr --verbose | grep Brightness)" &&\
-xrandr --output LVDS1 --brightness "$(echo ${bright#* } ${1} | awk '{print $1 + $2}')"

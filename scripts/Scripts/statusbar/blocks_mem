@@ -1,6 +1,0 @@
-#!/bin/sh
-
-# alternate to display total mem too
-#mem="$(df -h | grep /dev/sda5 | awk '{printf "%s:%s", $3, $2}')"
-mem="$(df -h | grep /dev/sda5 | awk '{print $3}')"
-echo " $mem"

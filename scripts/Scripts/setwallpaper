@@ -1,5 +1,0 @@
-#!/bin/sh
-
-wallpaper_dir=$HOME/Data/wallpapers/active/*
-
-feh --bg-fill "$(ls -d $wallpaper_dir | sort -R | tail -n1)"
