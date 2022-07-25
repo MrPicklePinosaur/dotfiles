@@ -4,4 +4,4 @@
 
 stow="stow -t $HOME"
 
-cat "$1" | xargs -I _ stow -d files -t $HOME -v -n _
+cat "$1" | xargs -I _ stow -d files -t $HOME -v -R _

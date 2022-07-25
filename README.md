@@ -14,12 +14,14 @@ the goal of this dotfile repo are to:
 dotfiles modules that are included:
 - apps: configuration files for common media apps (mpv, mutt, newsboat,  zathura)
 - bash
+- common-scripts: utility scripts
+- desktop-scripts: utility scripts that are for desktop use (ie screenshot, emoter, monitor attach)
 - git
 - misc: some loose config files that are have not been organized yet
 - music: mpd and ncmpcpp
 - nvim: depends on vim module
+- statusbar: statusbar scripts
 - qutebrowser
-- scripts: misc scripts
 - tmux
 - vim: vimrc and contents of `.vim`
 - xmonad

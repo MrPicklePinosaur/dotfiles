@@ -5,6 +5,9 @@
 
 g() {
 
+    echo "DEPRECATED in favor of git's native alias system"
+    exit 1
+
     case $1 in
         i) git init "${@:2}";;
         a) git add "${@:2}";;

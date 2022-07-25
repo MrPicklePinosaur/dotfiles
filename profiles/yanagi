@@ -4,7 +4,8 @@ git
 music
 nvim
 qutebrowser
-scripts
+common-scripts
+desktop-scripts
 tmux
 vim
 xorg
