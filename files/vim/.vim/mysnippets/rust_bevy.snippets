@@ -1,0 +1,32 @@
+snippet plugin "plugin" w
+pub struct $1Plugin;
+
+impl Plugin for $1Plugin {
+	fn build(&self, app: &mut App) {
+		$0
+	}
+}
+endsnippet
+
+snippet bundle "bundle" w
+#[derive(Bundle)]
+pub struct $1Bundle {
+	$0
+}
+endsnippet
+
+snippet comp "component" w
+#[derive(Component)]
+pub struct $1 {
+	$0
+}
+endsnippet
+
+snippet cmd "commands" w
+mut cmd: Commands,
+endsnippet
+
+# resources
+snippet rtime "time resource" w
+time: Res<Time>,
+endsnippet

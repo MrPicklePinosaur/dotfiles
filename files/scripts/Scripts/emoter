@@ -1,0 +1,17 @@
+#!/bin/sh
+
+emote_dir="$HOME/Data/emotes"
+
+mode="image/png"
+[ "$1" = "-g" ] && mode="image/gif"
+
+emote_name="$(ls $emote_dir | grep -E '\.png$|\.jpeg$|\.jpg' | dmenu)"
+[ ! -f "$emote_dir/$emote_name" ] && exit 0
+
+echo "$emote_dir/$emote_name" | \
+     xargs xclip -selection clipboard -t "$mode" -i
+
+# now paste the image
+xdotool getactivewindow key ctrl+v
+xdotool getactivewindow key --delay 250 KP_Enter
+

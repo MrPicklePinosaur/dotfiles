@@ -1,0 +1,40 @@
+# snippet `<[a-z]+[0-9]*` "HTML tag expand" r
+# <`!p snip.rv = match.group()[1:]`>$0</`!p snip.rv = match.group()[1:]`>
+# endsnippet
+
+snippet html "html template" w
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+
+	<body>
+
+	</body>
+</html>
+endsnippet
+
+snippet `<(.+)` "tag" rw
+`!p snip.rv = "<{0}>".format(match.group(1))`$1`!p snip.rv = "</{0}>".format(match.group(1))`
+endsnippet
+
+snippet <a "a tag" w
+<a href="$1">$0</a>
+endsnippet
+
+snippet img "img tag" w
+<img src="$0" />
+endsnippet
+
+snippet bigcode "bigcode block" w
+<pre><code>
+$0
+</code></pre>
+endsnippet
+
+snippet tag "html safe tag" w
+&lt;$1&gt;$0&lt;/$1&gt;
+endsnippet
+

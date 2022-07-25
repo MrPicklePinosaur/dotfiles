@@ -1,0 +1,64 @@
+XF86Audio{LowerVolume,RaiseVolume}
+    pulsemixer --change-volume {-5,+5} &\
+        refresh_blocks 10
+    
+XF86Audio{Mute}
+    pulsemixer --toggle-mute &\
+        refresh_blocks 10
+
+super + r
+    kill -SIGUSR1 $(pidof sxhkd) &\
+    notify-send "Reloaded sxhkd" -i ""
+
+super + b
+    $BROWSER
+
+super + shift + b  
+    pbm -o
+
+super + t
+    Staskell
+
+super + f
+    st lf
+
+super + n
+    st newsboat
+
+super + m
+    st ncmpcpp
+
+super + M
+    st neomutt
+
+super + s
+    st pulsemixer
+
+super + l
+    st slock -m "$(figlet locked xd | cowsay -f cheese -n)"
+
+super + {Down,Left,Right}
+    mpc {toggle,prev,next}
+
+super + e
+    emoter
+
+super + shift + e
+    emoter -g
+
+super + d
+    monitor-attach &\
+    notify-send "Attached Monitor" -i ""
+
+super + shift + d
+    monitor-detach &\
+    notify-send "Detached Monitor" -i ""
+
+alt + s
+    screenshot -f
+
+alt + shift + s
+    screenshot -b
+
+{Home,End}
+    mod_brightness {0.1,-0.1}

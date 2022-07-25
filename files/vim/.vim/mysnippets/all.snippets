@@ -1,0 +1,23 @@
+snippet today "Today" w
+`LANG=en_US.UTF-8 date +"%A, %B %d"`
+endsnippet
+
+snippet '([0-9]+)(,[0-9]+)?..([0-9]+)' "enumerate nums" rw
+`!p 
+# doesn't quite work with counting down yet
+start = int(match.group(1))
+end = int(match.group(3))
+rng = range(start, end+1) if match.group(2) == None else range(start, end+1, int(match.group(2)[1:])-start)
+for i in rng:
+	snip.rv += str(i)+"\n"
+`
+endsnippet
+
+snippet '([a-z])\)..([a-z])\)' "enumerate list" rw
+`!p 
+start = ord(match.group(1))
+end = ord(match.group(2))
+for i in range(start, end+1):
+	snip.rv += chr(i)+")\n"
+`
+endsnippet

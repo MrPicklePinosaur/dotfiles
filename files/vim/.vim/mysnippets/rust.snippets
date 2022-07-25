@@ -1,0 +1,45 @@
+snippet u "use" w
+use $1;$0
+endsnippet
+
+snippet p "pub" w
+pub 
+endsnippet
+
+snippet m "mut" w
+mut 
+endsnippet
+
+snippet s "struct" w
+struct $1 {
+    $0
+}
+endsnippet
+
+snippet e "enum" w
+enum $1 {
+    $0
+}
+endsnippet
+
+snippet d "derive" w
+#[derive($1)]$0
+endsnippet
+
+snippet new "new function" w
+pub fn new() -> Self {
+$0
+}
+endsnippet
+
+snippet impl "implementation" w
+impl $1 {
+	$0
+}
+endsnippet
+
+snippet implf "implementation for" w
+impl $1 for $2 {
+	$0
+}
+endsnippet

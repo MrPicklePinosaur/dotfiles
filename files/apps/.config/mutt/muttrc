@@ -1,0 +1,20 @@
+
+source ~/.config/mutt/account
+
+set record = "+Sent"
+set trash = "+Trash"
+set postponed = "+Drafts"
+
+mailboxes =INBOX =Sent =Trash =Drafts
+
+set editor = vim
+
+set timeout=10
+set sort = 'reverse-date'
+
+# sidebar
+set sidebar_visible = yes
+set sidebar_width = 20
+
+source ~/.config/mutt/bindings
+source ~/.config/mutt/colors

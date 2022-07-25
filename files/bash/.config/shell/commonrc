@@ -1,0 +1,76 @@
+#   ___ ___  _ __ ___  _ __ ___   ___  _ __  _ __ ___
+#  / __/ _ \| '_ ` _ \| '_ ` _ \ / _ \| '_ \| '__/ __|
+# | (_| (_) | | | | | | | | | | | (_) | | | | | | (__
+#  \___\___/|_| |_| |_|_| |_| |_|\___/|_| |_|_|  \___|
+# 
+# pinosaur's common shell rc
+
+# color alias
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias tree='tree -C'
+alias ip='ip -c'
+
+# program configuration
+alias cp='cp -i'
+alias dotfiles='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
+alias suckless-clean='make clean && rm -rf config.h && git reset --hard home/master'
+alias musicdl="youtube-dl -f bestaudio"
+alias mpv="mpv --no-input-default-bindings"
+alias darkmpv='mpv --vf=sub,lavfi="negate"'
+alias nmaplocal='sudo nmap -sn 192.168.1.0/24'
+alias refreshusb='udevadm control --reload-rules'
+alias scrkey='screenkey -t 2.5 --mods-mode emacs -s small -p fixed -g $(slop -n -f '%g')'
+alias mdp='export TERM=st; mdp'
+# alias R='R --vanilla'
+alias fzf="fzf --color=16 --header=fzf --info=inline --preview='echo {}; file -b {}; echo =-=-=-=-=-=-=-=-=-=-=-=-=-=; if [ -d '{}' ]; then ls -A {}; else head -$LINES {}; fi'" # fzf options when running from shell
+alias gdb="gdb -q"
+alias venv="source venv/bin/activate"
+
+srs() {
+    drill-srs "$@" 2> /dev/null
+}
+
+mkcd() {
+    mkdir "$@" && cd "$1"
+}
+
+cl() {
+    cd "$@" && ls
+}
+
+# laziness aliases
+alias v="$EDITOR"
+alias V="nvim"
+alias z="$READER"
+alias b="$BROWSER"
+alias s="$VIEWER"
+alias m="$PLAYER"
+alias m2="m --speed=2"
+
+alias l="ls"
+alias la="ls -a"
+alias c="cd"
+alias g="git"
+alias p="pacman"
+
+# bash completions
+source /usr/share/bash-completion/completions/git
+
+__git_complete g __git_main
+__git_complete dotfiles __git_main
+
+# connect to wifi
+# nmcli device wifi connect WIFI_NAME password PASSWORD
+# record
+# ffmpeg -y -f x11grab -s 1600x900 -i :0.0 -f alsa -i default -c:v libx264 -r 30 -c:a flac $filename
+
+# R
+export R_LIBS_USER=~/.cache/R-lib
+# also add 'options(menu.graphics=FALSE)' to R profile
+
+# source some stuff
+source fzfutil
+source docker-alias
+source /usr/share/nvm/init-nvm.sh
+

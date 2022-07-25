@@ -1,0 +1,23 @@
+#!/bin/sh
+
+# sends a notification on mpd song change :>
+
+playing="$(mpc current)"
+
+while true
+do
+    # block until song change
+    mpc idle player > /dev/null
+    
+    # make sure the song acc changed
+    cur_song="$(mpc current)" 
+    [ "$cur_song" = "$playing" ] && continue;
+
+    playing="$cur_song"; 
+    [ -z "$cur_song" ] && continue; # don't send notify if no song tho
+
+    out="${cur_song%.*}" # get rid of extension
+    notify-send "Now Playing: ${out##*/}" -i "" # get rid of dir
+
+done
+

@@ -1,0 +1,85 @@
+extends c
+
+snippet guard "header guard" w
+#ifndef __$1_H__
+#define __$1_H__
+
+$0
+
+#endif // __$1_H__
+endsnippet
+
+snippet cpp "cpp extern" w
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+$0
+
+#ifdef __cplusplus
+}
+#endif
+endsnippet
+
+snippet class "Class" w
+class $1
+{
+public:
+	$1();
+	~$1();
+};
+endsnippet
+
+snippet iclass "Class" w
+class $1 : public $2
+{
+public:
+	$1();
+	~$1();
+};
+endsnippet
+
+snippet cout "Cout" w
+std::cout << $1 << std::endl;
+endsnippet
+
+snippet s "std" w
+std::
+endsnippet
+
+snippet c "const" w
+const
+endsnippet
+
+snippet n "noexcept" w
+noexcept
+endsnippet
+
+snippet str "string" w
+std::string
+endsnippet
+
+snippet up "unique ptr" w
+std::unique_ptr<$1>$0
+endsnippet
+
+snippet vec "vector" w
+std::vector<$1>$0
+endsnippet
+
+snippet namespace "namespace" w
+namespace $1 {
+
+$0
+
+} // namespace $1
+endsnippet
+
+snippet opout "operator outstream" w
+std::ostream&
+operator<<(std::ostream& os, const $1& $2)
+{
+	$0
+	return os;
+}
+endsnippet
