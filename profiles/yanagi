@@ -1,11 +1,7 @@
-apps
-bash
+vim
+nvim
+tmux
 git
 music
-nvim
 qutebrowser
 common-scripts
-desktop-scripts
-tmux
-vim
-xorg
