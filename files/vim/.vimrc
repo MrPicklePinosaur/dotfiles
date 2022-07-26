@@ -24,7 +24,6 @@ set hidden
 set showcmd
 set title
 set autoread
-set filetype
 set cursorline "this is set only to enable color theme on current line number
 
 " location of vim meta files

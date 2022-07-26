@@ -1,6 +1,38 @@
-# Dotfiles!!
+# dotfiles
 
-## Scripts
+## USAGE
+
+my dotfiles are managed using [GNU stow](https://www.gnu.org/software/stow/).
+the goal of this dotfile repo are to:
+- version all of my important configuration files
+- easily bootstrap and download files on new machines
+- update configuration files on all devices when i make a change
+- support differences in configs on different machines
+
+## CONTENTS
+
+dotfiles modules that are included:
+- apps: configuration files for common media apps (mpv, mutt, newsboat,  zathura)
+- bash
+- common-scripts: utility scripts
+- desktop-scripts: utility scripts that are for desktop use (ie screenshot, emoter, monitor attach)
+- git
+- misc: some loose config files that are have not been organized yet
+- music: mpd and ncmpcpp
+- nvim: depends on vim module
+- statusbar: statusbar scripts
+- qutebrowser
+- tmux
+- vim: vimrc and contents of `.vim`
+- xmonad
+- xorg: config for x11 (xinit, Xresource etc)
+- zsh: depends on bash module
+
+## PROFILES
+
+profiles are predefined sets of modules 
+
+## SCRIPTS
 
 Here are some notable Scripts
 
@@ -30,30 +62,4 @@ Will improve later.
 
 ### usbmnt
 Sends a notification whenever usb is mounted.
-
-## How I manage dotfiles
-This method of managing dotfiles was inspired by [this](https://www.youtube.com/watch?v=tBoLDpTWVOM) video.
-
-TLDR;
-Run in your home directory:
-```
-git init --bare .dotfiles
-```
-
-Then for ease of use add this alias to your bashrc (etc):
-```
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
-```
-
-After reloading the shell, run:
-```
-dotfiles config --local status.showUntrackedFiles no
-```
-
-Now you can use the normal git commands like so
-```
-dotfiles add .bashrc
-dotfiles status
-dotfiles commit -m 'added .bashrc'
-```
 

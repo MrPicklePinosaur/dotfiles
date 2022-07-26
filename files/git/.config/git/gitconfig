@@ -9,6 +9,6 @@
     c = commit
     ch = checkout
     p = push
-    P = pull
+    pu = pull
     l = log
     m = merge
