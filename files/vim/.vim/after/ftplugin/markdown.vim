@@ -1,1 +1,1 @@
-let markdown_fenced_languages = ['cpp', 'html', 'make']
+let markdown_fenced_languages = ['cpp', 'html', 'make', 'javascript']

@@ -1,0 +1,12 @@
+#!/bin/sh
+
+tmux new-session -s 'session' \; \
+    new-window -t :2 \; \
+    new-window -t :3 \; \
+    new-window -t :4 \; \
+    new-window -t :5 \; \
+    new-window -t :6 \; \
+    new-window -t :7 \; \
+    new-window -t :8 \; \
+    new-window -t :9 \; \
+    select-window -t :1 \; \

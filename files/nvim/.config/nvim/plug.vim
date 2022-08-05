@@ -12,6 +12,9 @@ Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 
+Plug 'ron-rs/ron.vim'
+Plug 'MrPicklePinosaur/flowdown', { 'rtp': 'tools/vim' }
+
 call plug#end()
 
 " fzf
