@@ -12,3 +12,4 @@
     pu = pull
     l = log
     m = merge
+    amm = commit --amend --no-edit

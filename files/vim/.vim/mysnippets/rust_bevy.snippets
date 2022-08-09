@@ -23,10 +23,34 @@ pub struct $1 {
 endsnippet
 
 snippet cmd "commands" w
-mut cmd: Commands,
+mut cmd: Commands
 endsnippet
 
 # resources
 snippet rtime "time resource" w
-time: Res<Time>,
+time: Res<Time>
+endsnippet
+
+snippet res "resource" w
+$1: Res<$2>$0
+endsnippet
+
+snippet mres "mutable resource" w
+mut $1: ResMut<$2>$0
+endsnippet
+
+snippet que "query" w
+query: Query<$1>$0
+endsnippet
+
+snippet mque "query" w
+mut query: Query<$1>$0
+endsnippet
+
+snippet evr "event reader" w
+mut events: EventReader<$1>$0
+endsnippet
+
+snippet evw "event writer" w
+mut writer: EventWriter<$1>$0
 endsnippet

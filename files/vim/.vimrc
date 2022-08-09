@@ -74,12 +74,12 @@ set spelllang=en_us
 set spellcapcheck=
 
 " use s as prefix for spell check related commands
-map s <nop>
-map sf 1z=<cr>
-map sn ]s
-map sN [s
-map sa zg
-map sd zw
+" map s <nop>
+" map sf 1z=<cr>
+" map sn ]s
+" map sN [s
+" map sa zg
+" map sd zw
 
 " folding
 set foldmethod=manual
