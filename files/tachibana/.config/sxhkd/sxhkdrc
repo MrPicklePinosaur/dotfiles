@@ -1,0 +1,19 @@
+super + r
+    kill -SIGUSR1 $(pidof sxhkd) &\
+    notify-send "Reloaded sxhkd" -i ""
+
+super + b
+    qutebrowser 
+
+super + shift + b  
+    pbm -o
+
+super + l
+    st slock -m 'locked.'
+
+super + d
+    monitor-attach
+
+super + shift + d
+    monitor-detach
+

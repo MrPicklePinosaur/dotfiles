@@ -1,0 +1,29 @@
+
+# alias
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias tree='tree -C'
+alias ip='ip -c'
+
+alias cp='cp -i'
+alias dotfiles='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
+
+mkcd() {
+    mkdir "$1" && cd "$1"
+}
+
+# laziness aliases
+alias v="$EDITOR"
+alias z="$READER"
+alias b="$BROWSER"
+alias s="$VIEWER"
+alias m="$PLAYER"
+alias V="nvim"
+alias g="git"
+
+alias l="ls"
+alias la="ls -a"
+alias c="cd"
+
+export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
+export PATH="$PATH:$GEM_HOME/bin"
