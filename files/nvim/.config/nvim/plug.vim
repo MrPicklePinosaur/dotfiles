@@ -15,6 +15,7 @@ Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 
 Plug 'ron-rs/ron.vim'
 Plug 'DingDean/wgsl.vim'
+Plug 'ziglang/zig.vim'
 
 call plug#end()
 
