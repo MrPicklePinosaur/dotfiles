@@ -25,8 +25,8 @@ bind '"\C-l":"clear\n"'
 PS1='\[\033[01;33m\] ${CODENAME}・\[\033[01;37m\]\W\[\033[01;33m\] > \[\033[00m\]'
 PS2='\[\033[01;37m\]> \[\033[00m\]'
 
-source ~/.config/shell/commonrc
-source ~/Scripts/lfcd
+[ -f ~/.config/shell/commonrc ] && source ~/.config/shell/commonrc
+[ -f ~/Scripts/lfcd ] && source ~/Scripts/lfcd
 
 # startup stuff
 ufetch-arch

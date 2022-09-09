@@ -174,8 +174,8 @@ Plug 'sirver/ultisnips'
 Plug 'tpope/vim-commentary'
 Plug 'ap/vim-buftabline'
 Plug 'tpope/vim-surround'
-" Plug 'lervag/vimtex', { 'for': 'tex' }
-" Plug 'PietroPate/vim-tex-conceal', { 'for': 'tex' }
+Plug 'lervag/vimtex', { 'for': 'tex' }
+Plug 'PietroPate/vim-tex-conceal', { 'for': 'tex' }
 " Plug 'takac/vim-hardtime'
 Plug 'vimwiki/vimwiki'
 endif
@@ -194,14 +194,14 @@ let g:UltiSnipsSnippetDirectories=["mysnippets"]
 map <localleader>sr :call UltiSnips#RefreshSnippets()<cr>:echo "Refreshed Snippets"<cr>
 
 " Vimtex
-" let g:tex_flavor='latex'
-" let g:vimtex_view_method='zathura'
-" let g:vimtex_quickfix_mode=0
-" let g:tex_conceal='abdmgs'
-" 
-" let g:vimtex_compiler_latexmk = {
-"     \'build_dir': '/home/pinosaur/.cache/latexaux/',
-" \}
+ let g:tex_flavor='latex'
+ let g:vimtex_view_method='zathura'
+ let g:vimtex_quickfix_mode=0
+ let g:tex_conceal='abdmgs'
+ 
+ let g:vimtex_compiler_latexmk = {
+     \'build_dir': '/home/pinosaur/.cache/latexaux/',
+ \}
 "     " \'options': [
 "     " \   '-shell-escape',
 "     " \],
