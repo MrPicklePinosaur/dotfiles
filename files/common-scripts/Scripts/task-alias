@@ -1,0 +1,15 @@
+#!/bin/sh
+
+t() {
+
+    case $1 in
+        c) task context "${@:2}";;
+        cn) task context none;;
+        a) task add "${@:2}";;
+        d) task done "${@:2}";;
+        D) task del "${@:2}";;
+        m) task mod "${@:2}";;
+        *) task "$@"
+    esac
+
+}

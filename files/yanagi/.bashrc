@@ -28,6 +28,12 @@ PS2='\[\033[01;37m\]> \[\033[00m\]'
 [ -f ~/.config/shell/commonrc ] && source ~/.config/shell/commonrc
 [ -f ~/Scripts/lfcd ] && source ~/Scripts/lfcd
 
+# bash completions
+source /usr/share/bash-completion/completions/git
+
+__git_complete g __git_main
+__git_complete dotfiles __git_main
+
 # startup stuff
 ufetch-arch
 

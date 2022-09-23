@@ -53,3 +53,4 @@ c.content.headers.custom          = {"accept": "text/html,application/xhtml+xml,
 c.content.canvas_reading          = False
 c.content.webgl                   = False
 
+c.downloads.remove_finished = 5

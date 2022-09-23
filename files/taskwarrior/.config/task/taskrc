@@ -50,3 +50,21 @@ urgency.uda.effort.l.coefficient=1
 
 report.next.labels=ID,Age,Due,Tags,Effort,Description,Urgency
 report.next.columns=id,start.age,due.formatted,tags.list,effort,description.desc,urgency.real
+
+context=school
+context.shopping.read=+shopping
+context.shopping.write=+shopping
+context.school.read=+school
+context.school.write=+school
+context.personal.read=+machine or +project
+
+# taskwarrior tui
+uda.taskwarrior-tui.keyconfig.log=L
+uda.taskwarrior-tui.keyconfig.next-tab=l
+uda.taskwarrior-tui.keyconfig.previous-tab=h
+
+uda.taskwarrior-tui.style.report.selection=black on white
+uda.taskwarrior-tui.style.context.active=black on white
+uda.taskwarrior-tui.style.calendar.title=black
+uda.taskwarrior-tui.task-report.prompt-on-delete=true
+uda.taskwarrior-tui.task-report.prompt-on-done=false
