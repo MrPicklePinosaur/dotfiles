@@ -211,7 +211,7 @@ let g:buftabline_show = 1
 
 " hardtime
 let g:hardtime_default_on = 1
-let g:hardtime_maxcount = 2
+let g:hardtime_maxcount = 4
 
 " vimwiki
 let g:vimwiki_list = [{'path': '~/Data/vimwiki'}]
