@@ -43,3 +43,5 @@ hi TabLineSel     cterm=Bold ctermfg=Yellow
 hi TabLine        cterm=None ctermfg=Grey ctermbg=Black
 hi TabLineFill    cterm=None ctermbg=Black
 hi SignColumn     ctermbg=Black
+
+

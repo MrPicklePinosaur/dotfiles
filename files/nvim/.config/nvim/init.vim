@@ -19,3 +19,9 @@ set clipboard+=unnamedplus
 source $HOME/.config/nvim/plug.vim
 source $HOME/.config/nvim/lsp.vim
 source $HOME/.config/nvim/plug-config/cmp.vim
+source $HOME/.config/nvim/plug-config/magma.vim
+source $HOME/.config/nvim/plug-config/jupyter.vim
+
+" lua << EOF
+" vim.o.ch = 0
+" EOF

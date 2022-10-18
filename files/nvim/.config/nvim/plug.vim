@@ -18,6 +18,9 @@ Plug 'DingDean/wgsl.vim'
 Plug 'ziglang/zig.vim'
 Plug 'NoahTheDuke/vim-just'
 
+" Plug 'dccsillag/magma-nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'jupyter-vim/jupyter-vim'
+
 call plug#end()
 
 " fzf

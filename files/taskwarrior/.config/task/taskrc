@@ -51,7 +51,6 @@ urgency.uda.effort.l.coefficient=1
 report.next.labels=ID,Age,Due,Tags,Effort,Description,Urgency
 report.next.columns=id,start.age,due.formatted,tags.list,effort,description.desc,urgency.real
 
-context=school
 context.shopping.read=+shopping
 context.shopping.write=+shopping
 context.school.read=+school

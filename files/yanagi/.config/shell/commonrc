@@ -26,6 +26,7 @@ alias mdp='export TERM=st; mdp'
 alias fzf="fzf --color=16 --header=fzf --info=inline --preview='echo {}; file -b {}; echo =-=-=-=-=-=-=-=-=-=-=-=-=-=; if [ -d '{}' ]; then ls -A {}; else head -$LINES {}; fi'" # fzf options when running from shell
 alias gdb="gdb -q"
 alias venv="source venv/bin/activate"
+alias blank="sleep 1; xset s activate"
 
 srs() {
     drill-srs "$@" 2> /dev/null

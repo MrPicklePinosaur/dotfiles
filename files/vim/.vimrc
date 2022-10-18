@@ -178,6 +178,7 @@ Plug 'lervag/vimtex', { 'for': 'tex' }
 Plug 'PietroPate/vim-tex-conceal', { 'for': 'tex' }
 " Plug 'takac/vim-hardtime'
 Plug 'vimwiki/vimwiki'
+Plug 'justinmk/vim-sneak'
 endif
 
 call plug#end()
