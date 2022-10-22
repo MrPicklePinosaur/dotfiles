@@ -2,7 +2,7 @@
 import Data.Maybe
 import System.IO
 
-import XMonad hiding ( (|||) )
+import XMonad
 import XMonad.Util.EZConfig
 import XMonad.Layout.ThreeColumns
 

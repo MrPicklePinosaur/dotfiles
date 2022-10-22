@@ -12,6 +12,11 @@ mkcd() {
     mkdir "$1" && cd "$1"
 }
 
+# replacement programs
+alias cat="bat"
+alias grep="rg"
+alias ls="exa"
+
 # laziness aliases
 alias v="$EDITOR"
 alias z="$READER"
