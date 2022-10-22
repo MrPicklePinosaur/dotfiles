@@ -5,6 +5,7 @@ Plug 'sirver/ultisnips'
 Plug 'tpope/vim-commentary'
 Plug 'ap/vim-buftabline'
 Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-surround'
 Plug 'justinmk/vim-sneak'
 
@@ -25,6 +26,8 @@ call plug#end()
 
 " fzf
 map <leader>F :FZF<cr>
+map <leader>b :Buffers<cr>
+map <leader>t :Tags<cr>
 
 let g:fzf_action = {
   \ 'ctrl-x': 'split',
