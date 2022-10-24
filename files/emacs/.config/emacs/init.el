@@ -1,24 +1,33 @@
+
 					; basic configuration
+
 (setq inhibit-startup-message t)
 (setq visual-bell nil)
+; (setq blink-cursor-interval 0.6)
+(setq use-dialog-box nil)
+(setq backup-inhibited t)
+(setq auto-save-default nil)
+(setq vc-follow-symlinks nil)
+
+(setq-default frame-title-format "%b %& emacs")
+(setq-default indicate-empty-lines t)
+
+; (setq maximum-scroll-margin 0.5
+;       scroll-margin 99999
+;       scroll-preserve-screen-position t
+;       scroll-conservatively 0)
 
 (menu-bar-mode -1)
-(scroll-bar-mode -1)
+; (scroll-bar-mode -1)
 (global-display-line-numbers-mode 1)
-
-(defalias 'yes-or-no-p 'y-or-n-p)
-
-; (setq blink-cursor-interval 0.6)
-
-(load-theme 'modus-vivendi t)
-
 (recentf-mode 1)
 (save-place-mode 1)
-
-(setq use-dialog-box nil)
 (global-auto-revert-mode 1)
 
-(setq display-line-numbers 'relative)
+(setq display-line-numbers-type 'relative)
+(defalias 'yes-or-no-p 'y-or-n-p)
+
+(load-theme 'modus-vivendi t)
 
 					; straight.el
 (defvar bootstrap-version)
@@ -30,7 +39,7 @@
         (url-retrieve-synchronously
          "https://raw.githubusercontent.com/radian-software/straight.el/develop/install.el"
          'silent 'inhibit-cookies)
-      (gotoOD-char (point-max))
+      (goto-char (point-max))
       (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
 
@@ -43,6 +52,7 @@
   :init
   (setq evil-want-C-u-scroll t)
   (setq evil-want-C-d-scroll t)
+  (setq evil-want-C-i-jump nil)
 
   :config
   (setq evil-emacs-state-cursor '("#ffffff" box))
@@ -55,8 +65,34 @@
 
   (evil-mode 1))
 
+; org mode
+(use-package org)
+
+(use-package evil-org
+  :ensure t
+  :after org
+  :hook (add-hook 'org-mode-hook 'evil-org-mode)
+  :config
+  (require 'evil-org-agenda)
+  (evil-org-agenda-set-keys)
+  )
+
+; org mode presnetation
+(use-package org-tree-slide
+  :config
+  (define-key org-tree-slide-mode-map (kbd "<f9>") 'org-tree-slide-move-previous-tree)
+  (define-key org-tree-slide-mode-map (kbd "<f10>") 'org-tree-slide-move-next-tree)
+
+  (setq org-tree-slide-slide-in-effect nil)
+  )
+
 ; lsp mode
 (use-package lsp-mode
   :init
   (setq lsp-keymap-prefix "C-l"))
-(add-hook 'python-mode-hook #'lsp)
+
+(use-package rustic)
+(use-package yaml-mode)
+
+; command log mode
+; (use-package command-log-mode)

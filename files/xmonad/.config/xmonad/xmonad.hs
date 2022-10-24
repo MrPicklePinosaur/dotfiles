@@ -12,6 +12,12 @@ import XMonad.Util.Run(spawnPipe)
 import XMonad.Hooks.StatusBar
 import XMonad.Hooks.StatusBar.PP
 
+-- need to install xmobar package with `with_xft` feature
+-- $ cabal install -fwith_xft --lib --reinstall xmobar
+-- then build xmobar with
+-- $ ghc --make xmobar.hs
+-- and ensure the built binary is in path
+
 -- import XMonad.Layout.LayoutCombinators
 
 -- utils
@@ -20,17 +26,18 @@ import XMonad.Hooks.StatusBar.PP
 
 main :: IO ()
 main = do
-    xmproc <- spawnPipe "xmobar .config/xmonad/xmobar.hs"
-    xmonad $ xmobarProp $ myConfg
-
-myConfg = def
-    { modMask            = mod1Mask
-    , layoutHook         = myLayout
-    , terminal           = "st"
-    , normalBorderColor  = "#75715e"
-    , focusedBorderColor = "#a6e22e"
+    xmproc <- spawnPipe ".config/xmonad/xmobar .config/xmonad/xmobar.hs"
+    xmonad $ xmobarProp $ def {
+        modMask              = mod1Mask
+        , layoutHook         = myLayout
+        , terminal           = "st"
+        , normalBorderColor  = "#75715e"
+        , focusedBorderColor = "#a6e22e"
+        , logHook = dynamicLogWithPP $ def { ppOutput = hPutStrLn xmproc }
     }
-    -- `additionalKeysP`
+
+
+-- myConfg =     -- `additionalKeysP`
     -- [ ("M-f", sendMessage $ JumpToLayout "Full")
     -- ]
 
