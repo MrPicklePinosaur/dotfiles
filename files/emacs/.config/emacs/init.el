@@ -47,7 +47,20 @@
 (straight-use-package 'use-package)
 (use-package straight :custom (straight-use-package-by-default t))
 
+; which key
+(use-package which-key
+  :config
+  (which-key-setup-side-window-bottom)
+  (which-key-mode))
+
+; centered cursor mode
+(use-package centered-cursor-mode
+  :config
+  (global-centered-cursor-mode)
+  )
+
 ; evil mode
+
 (use-package evil
   :init
   (setq evil-want-C-u-scroll t)
@@ -64,6 +77,21 @@
   (setq evil-motion-state-cursor '("#ffffff" box))
 
   (evil-mode 1))
+
+(use-package evil-leader
+  :config
+  (evil-leader/set-leader "<SPC>")
+  (evil-leader/set-key "f" 'dired)
+  (evil-leader/set-key "r" 'eval-buffer) 
+  ; <leader>m prefix indicates a mode
+  (evil-leader/set-key "ms" 'org-tree-slide-mode)
+  (global-evil-leader-mode)
+  )
+
+(use-package evil-snipe
+  :config
+  (evil-snipe-mode)
+  )
 
 ; org mode
 (use-package org)
@@ -86,10 +114,29 @@
   (setq org-tree-slide-slide-in-effect nil)
   )
 
+; posframe
+(use-package posframe)
+
 ; lsp mode
 (use-package lsp-mode
+  :commands (lsp lsp-deferred)
   :init
-  (setq lsp-keymap-prefix "C-l"))
+  (setq lsp-keymap-prefix "C-l")
+  (setq lsp-signature-function 'lsp-signature-posframe)
+  :config
+  (lsp-enable-which-key-integration t)
+  )
+
+(define-key evil-normal-state-map "Lr" 'lsp-find-references)
+(define-key evil-normal-state-map "LR" 'lsp-rename)
+(define-key evil-normal-state-map "Li" 'lsp-find-implementation)
+(define-key evil-normal-state-map "Ld" 'lsp-find-definition)
+(define-key evil-normal-state-map "Lx" 'lsp-execute-code-action)
+(define-key evil-normal-state-map "Lf" 'lsp-format-buffer)
+(define-key evil-normal-state-map "LF" 'lsp-format-region)
+(define-key evil-normal-state-map "K" 'lsp-describe-thing-at-point)
+
+(use-package company)
 
 (use-package rustic)
 (use-package yaml-mode)
