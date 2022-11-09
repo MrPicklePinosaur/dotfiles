@@ -44,6 +44,9 @@ set conceallevel=2
 " Bindings
 let mapleader = ' '
 
+map <leader>w :w<cr>
+map <leader>q :wq<cr>
+
 " netrw stuff
 " map <leader>f :Lex<cr>
 map <leader>f :Ex<cr>

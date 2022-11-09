@@ -51,14 +51,21 @@ alias m2="m --speed=2"
 
 alias l="ls"
 alias la="ls -a"
-alias c="cd"
+#alias c="cd"
+
+c() {
+    cd "$@" && ls
+}
 alias g="git"
 alias p="pacman"
 
 alias j="myougiden" # dictionary
 
+alias e="emacs -nw"
+
 # source some stuff
 source fzfutil
 source docker-alias
 source task-alias
+source systemd-alias
 source /usr/share/nvm/init-nvm.sh

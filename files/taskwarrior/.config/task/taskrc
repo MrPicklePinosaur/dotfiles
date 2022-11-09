@@ -67,3 +67,4 @@ uda.taskwarrior-tui.style.context.active=black on white
 uda.taskwarrior-tui.style.calendar.title=black
 uda.taskwarrior-tui.task-report.prompt-on-delete=true
 uda.taskwarrior-tui.task-report.prompt-on-done=false
+context=school

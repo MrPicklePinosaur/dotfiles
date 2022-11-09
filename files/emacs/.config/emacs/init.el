@@ -18,16 +18,23 @@
 ;       scroll-conservatively 0)
 
 (menu-bar-mode -1)
+(tool-bar-mode -1)
 ; (scroll-bar-mode -1)
 (global-display-line-numbers-mode 1)
 (recentf-mode 1)
 (save-place-mode 1)
 (global-auto-revert-mode 1)
+(electric-pair-mode 1)
+(global-tab-line-mode 1)
 
 (setq display-line-numbers-type 'relative)
 (defalias 'yes-or-no-p 'y-or-n-p)
 
 (load-theme 'modus-vivendi t)
+
+; spell checking (with aspell)
+; (setq ispell-list-command "--list")
+; (flyspell-mode 1)
 
 					; straight.el
 (defvar bootstrap-version)
@@ -78,13 +85,22 @@
 
   (evil-mode 1))
 
+(evil-define-key 'normal 'global "gc" 'comment-or-uncomment-region)
+
 (use-package evil-leader
   :config
   (evil-leader/set-leader "<SPC>")
+  (evil-leader/set-key "w" 'save-buffer)
+  (evil-leader/set-key "q" 'save-buffers-kill-terminal)
   (evil-leader/set-key "f" 'dired)
+  (evil-leader/set-key "F" 'fzf-git-files)
+  (evil-leader/set-key "l" 'next-buffer)
+  (evil-leader/set-key "h" 'previous-buffer)
+  (evil-leader/set-key "b" 'fzf-switch-buffer)
   (evil-leader/set-key "r" 'eval-buffer) 
   ; <leader>m prefix indicates a mode
-  (evil-leader/set-key "ms" 'org-tree-slide-mode)
+  (evil-leader/set-key "mS" 'org-tree-slide-mode)
+  (evil-leader/set-key "ms" 'eshell)
   (global-evil-leader-mode)
   )
 
@@ -115,7 +131,9 @@
   )
 
 ; posframe
-(use-package posframe)
+(use-package posframe :ensure t)
+
+(use-package flycheck)
 
 ; lsp mode
 (use-package lsp-mode
@@ -126,6 +144,12 @@
   :config
   (lsp-enable-which-key-integration t)
   )
+(use-package lsp-ui
+  :config
+  (setq lsp-lens-enable nil)
+  (setq lsp-ui-sideline-enable 1)
+  (setq lsp-ui-sideline-show-diagnostics 1)
+  (lsp-ui-doc-mode))
 
 (define-key evil-normal-state-map "Lr" 'lsp-find-references)
 (define-key evil-normal-state-map "LR" 'lsp-rename)
@@ -136,10 +160,41 @@
 (define-key evil-normal-state-map "LF" 'lsp-format-region)
 (define-key evil-normal-state-map "K" 'lsp-describe-thing-at-point)
 
-(use-package company)
+(use-package company
+  :ensure t
+  :hook ((emacs-lisp-mode . (lambda ()
+			      (setq-local company-backends '(company-elisp))))
+	 (emacs-lisp-mode . company-mode)
+	 )
+  :config
+  (setq company-idle-delay 0.1
+	company-minimum-prefix-length 1)
+  (define-key company-active-map (kbd "C-n") 'company-select-next)
+  (define-key company-active-map (kbd "C-p") 'company-select-previous)
+  )
 
 (use-package rustic)
 (use-package yaml-mode)
+(use-package ccls
+  :hook ((c-mode c++-mode) .
+         (lambda () (require 'ccls) (lsp))))
 
 ; command log mode
 ; (use-package command-log-mode)
+
+(use-package fzf)
+
+; snippets
+(use-package yasnippet
+  :config
+  (setq yas-snippet-dirs '("~/.config/emacs/snippets"))
+  (yas-global-mode 1))
+
+(yas-define-snippets 'latex-mode '(
+    ("im" "\$$0\$" "inline math mode")
+    ("sin" "\\sin($1)$0" "sin")
+    ("sec" "\\section($1)$0" "section")
+    ("ssec" "\\subsection($1)$0" "subsection")
+    ("set" "\\{ $1 \\}$0" "set")
+    (".." "\\ldots" "elipses")
+))

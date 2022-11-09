@@ -17,7 +17,7 @@ shopt -s extglob
 shopt -s no_empty_cmd_completion
 
 # keybinds
-bind '"\C-f":"lfcd\n"'
+bind '"\C-f":"fcd\n"'
 bind '"\C-l":"clear\n"'
 # bind "TAB:menu-complete"
 
