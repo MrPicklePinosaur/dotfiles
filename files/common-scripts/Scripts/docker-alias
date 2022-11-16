@@ -5,6 +5,7 @@
 d() {
     case $1 in
         p) docker ps "${@:2}";;
+        s) docker stop "${@:2}";;
         c) docker container "${@:2}";;
         v) docker volume "${@:2}";;
         n) docker network "${@:2}";;

@@ -29,6 +29,8 @@ fi
 setwallpaper
 
 # start some daemons
+setxkbmap -option caps:escape
+
 dwmblocks &
 tiramisu -j | notify &
 acpi_listen &

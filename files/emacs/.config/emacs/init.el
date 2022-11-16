@@ -2,6 +2,7 @@
 					; basic configuration
 
 (setq inhibit-startup-message t)
+(setq initial-buffer-choice nil)
 (setq visual-bell nil)
 ; (setq blink-cursor-interval 0.6)
 (setq use-dialog-box nil)
@@ -26,9 +27,33 @@
 (global-auto-revert-mode 1)
 (electric-pair-mode 1)
 (global-tab-line-mode 1)
+(setq tab-line-new-button-show nil)
+(setq tab-line-close-button-show nil) 
 
 (setq display-line-numbers-type 'relative)
 (defalias 'yes-or-no-p 'y-or-n-p)
+
+; clean up buffers
+(setq initial-scratch-message "")
+
+(setq-default message-log-max nil)
+(kill-buffer "*Messages*")
+
+; skip buffers when switching
+(defcustom pino/buffer-skip-regexp
+  (rx bos (or (or "*Backtrace*" "*Compile-Log*" "*Completions*"
+                  "*Messages*" "*package*" "*Warnings*"
+                  "*Async-native-compile-log*" "*scratch*" "*straight-process*")
+	      ) eos)
+  "Regular expression matching buffers ignored by `next-buffer' and
+`previous-buffer'."
+  :type 'regexp)
+
+(defun pino/buffer-skip-p (window buffer bury-or-kill)
+  "Return t if BUFFER name matches `pino/buffer-skip-regexp'."
+  (string-match-p pino/buffer-skip-regexp (buffer-name buffer)))
+
+(setq switch-to-prev-buffer-skip 'pino/buffer-skip-p)
 
 (load-theme 'modus-vivendi t)
 
@@ -66,6 +91,12 @@
   (global-centered-cursor-mode)
   )
 
+; undo tree
+(use-package undo-tree
+  :ensure t
+  :config
+  (global-undo-tree-mode))
+
 ; evil mode
 
 (use-package evil
@@ -73,6 +104,7 @@
   (setq evil-want-C-u-scroll t)
   (setq evil-want-C-d-scroll t)
   (setq evil-want-C-i-jump nil)
+  (setq evil-undo-system 'undo-tree)
 
   :config
   (setq evil-emacs-state-cursor '("#ffffff" box))
@@ -96,7 +128,10 @@
   (evil-leader/set-key "F" 'fzf-git-files)
   (evil-leader/set-key "l" 'next-buffer)
   (evil-leader/set-key "h" 'previous-buffer)
+  (evil-leader/set-key "j" 'next-window-any-frame)
+  (evil-leader/set-key "k" 'previous-window-any-frame)
   (evil-leader/set-key "b" 'fzf-switch-buffer)
+  (evil-leader/set-key "d" 'kill-this-buffer)
   (evil-leader/set-key "r" 'eval-buffer) 
   ; <leader>m prefix indicates a mode
   (evil-leader/set-key "mS" 'org-tree-slide-mode)
@@ -131,9 +166,11 @@
   )
 
 ; posframe
-(use-package posframe :ensure t)
+;; (use-package posframe :ensure t)
 
 (use-package flycheck)
+(define-key evil-normal-state-map (kbd "C-n") 'flycheck-next-error)
+(define-key evil-normal-state-map (kbd "C-p") 'flycheck-previous-error)
 
 ; lsp mode
 (use-package lsp-mode
@@ -171,6 +208,8 @@
 	company-minimum-prefix-length 1)
   (define-key company-active-map (kbd "C-n") 'company-select-next)
   (define-key company-active-map (kbd "C-p") 'company-select-previous)
+  (define-key company-active-map (kbd "TAB") 'company-complete-selection)
+  (define-key company-active-map (kbd "RET") 'nil)
   )
 
 (use-package rustic)
