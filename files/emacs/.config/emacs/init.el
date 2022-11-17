@@ -58,8 +58,8 @@
 (load-theme 'modus-vivendi t)
 
 ; spell checking (with aspell)
-; (setq ispell-list-command "--list")
-; (flyspell-mode 1)
+(setq ispell-list-command "--list")
+(flyspell-mode 1)
 
 					; straight.el
 (defvar bootstrap-version)
@@ -199,8 +199,7 @@
 
 (use-package company
   :ensure t
-  :hook ((emacs-lisp-mode . (lambda ()
-			      (setq-local company-backends '(company-elisp))))
+  :hook ((emacs-lisp-mode . (lambda () (setq-local company-backends '(company-elisp))))
 	 (emacs-lisp-mode . company-mode)
 	 )
   :config
