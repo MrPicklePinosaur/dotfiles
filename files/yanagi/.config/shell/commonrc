@@ -61,7 +61,7 @@ alias p="pacman"
 
 alias j="myougiden" # dictionary
 
-alias e="emacs -nw"
+alias e="LANG=en_US.UTF-8 emacs -nw"
 
 # source some stuff
 source fzfutil

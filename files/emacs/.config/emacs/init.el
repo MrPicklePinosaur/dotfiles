@@ -3,7 +3,8 @@
 
 (setq inhibit-startup-message t)
 (setq initial-buffer-choice nil)
-(setq visual-bell nil)
+(setq visual-bell 1)
+(setq ring-bell-function 'ignore)
 ; (setq blink-cursor-interval 0.6)
 (setq use-dialog-box nil)
 (setq backup-inhibited t)
@@ -55,11 +56,16 @@
 
 (setq switch-to-prev-buffer-skip 'pino/buffer-skip-p)
 
+;; (mailcap-add-mailcap-entry "image" "png" '((viewer "sxhkd %s") (type . "image/*")))
+
+; startup time optimization
+(setq gc-cons-threshold most-positive-fixnum)
+
 (load-theme 'modus-vivendi t)
 
 ; spell checking (with aspell)
-(setq ispell-list-command "--list")
-(flyspell-mode 1)
+;; (setq ispell-list-command "--list")
+;; (flyspell-mode 1)
 
 					; straight.el
 (defvar bootstrap-version)
@@ -147,6 +153,14 @@
 ; org mode
 (use-package org)
 
+; org babel
+(use-package ein)
+
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((ein . t)
+   ))
+
 (use-package evil-org
   :ensure t
   :after org
@@ -213,9 +227,15 @@
 
 (use-package rustic)
 (use-package yaml-mode)
+(use-package zig-mode)
+(use-package just-mode)
 (use-package ccls
   :hook ((c-mode c++-mode) .
          (lambda () (require 'ccls) (lsp))))
+(use-package elpy
+  :ensure t
+  :init
+  (elpy-enable))
 
 ; command log mode
 ; (use-package command-log-mode)
@@ -236,3 +256,15 @@
     ("set" "\\{ $1 \\}$0" "set")
     (".." "\\ldots" "elipses")
 ))
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(ein:output-area-inlined-images t))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
