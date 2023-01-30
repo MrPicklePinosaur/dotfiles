@@ -1,2 +1,4 @@
 files/vim/.vim/autoload
 files/vim/.vim/plugged
+*.swp
+*.~undo-tree~

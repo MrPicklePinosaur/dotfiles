@@ -55,7 +55,7 @@ context.shopping.read=+shopping
 context.shopping.write=+shopping
 context.school.read=+school
 context.school.write=+school
-context.personal.read=+machine or +project
+context.personal.read=+personal +machine
 
 # taskwarrior tui
 uda.taskwarrior-tui.keyconfig.log=L
@@ -67,4 +67,7 @@ uda.taskwarrior-tui.style.context.active=black on white
 uda.taskwarrior-tui.style.calendar.title=black
 uda.taskwarrior-tui.task-report.prompt-on-delete=true
 uda.taskwarrior-tui.task-report.prompt-on-done=false
-context=school
+context=personal
+context.work.read=+work
+context.work.write=+work
+context.personal.write=+personal +machine

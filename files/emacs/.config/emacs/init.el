@@ -82,6 +82,7 @@
   (load bootstrap-file nil 'nomessage))
 
 ; use package
+(use-package-always-ensure t)
 (straight-use-package 'use-package)
 (use-package straight :custom (straight-use-package-by-default t))
 
@@ -99,7 +100,6 @@
 
 ; undo tree
 (use-package undo-tree
-  :ensure t
   :config
   (global-undo-tree-mode))
 
@@ -154,7 +154,7 @@
 (use-package org)
 
 ; org babel
-(use-package ein)
+(use-package ein :ensure nil)
 
 (org-babel-do-load-languages
  'org-babel-load-languages
@@ -162,7 +162,6 @@
    ))
 
 (use-package evil-org
-  :ensure t
   :after org
   :hook (add-hook 'org-mode-hook 'evil-org-mode)
   :config
@@ -172,6 +171,7 @@
 
 ; org mode presnetation
 (use-package org-tree-slide
+  :ensure nil
   :config
   (define-key org-tree-slide-mode-map (kbd "<f9>") 'org-tree-slide-move-previous-tree)
   (define-key org-tree-slide-mode-map (kbd "<f10>") 'org-tree-slide-move-next-tree)
@@ -212,7 +212,6 @@
 (define-key evil-normal-state-map "K" 'lsp-describe-thing-at-point)
 
 (use-package company
-  :ensure t
   :hook ((emacs-lisp-mode . (lambda () (setq-local company-backends '(company-elisp))))
 	 (emacs-lisp-mode . company-mode)
 	 )
@@ -225,15 +224,16 @@
   (define-key company-active-map (kbd "RET") 'nil)
   )
 
-(use-package rustic)
-(use-package yaml-mode)
-(use-package zig-mode)
-(use-package just-mode)
+(use-package rustic :ensure nil)
+(use-package yaml-mode :ensure nil)
+(use-package zig-mode :ensure nil)
+(use-package just-mode :ensure nil)
 (use-package ccls
+  :ensure nil
   :hook ((c-mode c++-mode) .
          (lambda () (require 'ccls) (lsp))))
 (use-package elpy
-  :ensure t
+  :ensure nil
   :init
   (elpy-enable))
 

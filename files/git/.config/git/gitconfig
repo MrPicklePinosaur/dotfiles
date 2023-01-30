@@ -2,11 +2,12 @@
 	defaultBranch = master
 [alias]
     i = init
+    ra = remote add github
     a = add
     d = diff
     s = status
     b = branch
-    c = commit
+    c = commit -m
     ch = checkout
     p = push
     pu = pull

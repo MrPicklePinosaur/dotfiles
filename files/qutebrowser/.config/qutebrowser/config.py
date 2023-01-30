@@ -54,3 +54,13 @@ c.content.canvas_reading          = False
 c.content.webgl                   = False
 
 c.downloads.remove_finished = 5
+
+c.zoom.default = "150%"
+
+c.url.searchengines = {
+    'DEFAULT':    'https://google.com/search?hl=en&q={}',
+    '!w':         'https://en.wikipedia.org/wiki/{}',
+    '!y':         'https://www.youtube.com/results?search_query={}',
+    '!gh':        'https://github.com/search?o=desc&q={}&s=stars',
+    '!aw':        'https://wiki.archlinux.org/index.php?search={}'
+}
