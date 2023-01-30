@@ -1,0 +1,24 @@
+#   ___ ___  _ __ ___  _ __ ___   ___  _ __  _ __ ___
+#  / __/ _ \| '_ ` _ \| '_ ` _ \ / _ \| '_ \| '__/ __|
+# | (_| (_) | | | | | | | | | | | (_) | | | | | | (__
+#  \___\___/|_| |_| |_|_| |_| |_|\___/|_| |_|_|  \___|
+# 
+# pinosaur's common shell rc
+
+# colors for programs
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias tree='tree -C'
+alias ip='ip -c'
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+
+# alias for program configuration
+alias cp='cp -i'
+alias musicdl="youtube-dl -f bestaudio"
+alias mpv="mpv --no-input-default-bindings"
+alias darkmpv='mpv --vf=sub,lavfi="negate"'
+alias scrkey='screenkey -t 2.5 --mods-mode emacs -s small -p fixed -g $(slop -n -f '%g')'
+alias fzf="fzf --color=16 --header=fzf --info=inline --preview='echo {}; file -b {}; echo =-=-=-=-=-=-=-=-=-=-=-=-=-=; if [ -d '{}' ]; then ls -A {}; else head -$LINES {}; fi'"
+alias gdb="gdb -q"
+alias venv="source venv/bin/activate"
+alias blank="sleep 1; xset s activate"
