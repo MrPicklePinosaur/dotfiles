@@ -33,13 +33,11 @@ cl() {
     cd "$@" && ls
 }
 
-# alias scripts
 _source_if_exist() {
-    command -v $1 >/dev/null 2>&1 && source $1
+    [ -f $1 ] && source $1
 }
 
-_source_if_exist fzfutil
-_source_if_exist docker-alias
-_source_if_exist task-alias
-_source_if_exist systemd-alias
-
+_source_if_exist ~/Scripts/fzfutil
+_source_if_exist ~/Scripts/docker-alias
+_source_if_exist ~/Scripts/task-alias
+_source_if_exist ~/Scripts/systemd-alias
