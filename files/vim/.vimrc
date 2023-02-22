@@ -26,6 +26,9 @@ set title
 set autoread
 set cursorline "this is set only to enable color theme on current line number
 
+set lazyredraw
+set ttyfast
+
 " location of vim meta files
 set directory^=$HOME/.cache/vimswap// " swap location
 " set viminfo+=n~/.vim/viminfo

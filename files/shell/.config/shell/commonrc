@@ -31,3 +31,24 @@ alias fzf="fzf --color=16 --header=fzf --info=inline --preview='echo {}; file -b
 alias gdb="gdb -q"
 alias venv="source venv/bin/activate"
 alias blank="sleep 1; xset s activate"
+alias cal="khal --color calendar"
+
+# PROGRAMMING TOOLS
+
+## ruby
+export GEM_HOME=$HOME/.cache/gem
+
+## golang
+[ -s "$HOME/.gvm/scripts/gvm" ] && source "$HOME/.gvm/scripts/gvm"
+export GOPATH="$HOME/.cache/go"
+export GOBIN="$HOME/.cache/go/bin"
+export PATH="$HOME/.cache/go/bin:$PATH"
+
+## nodejs
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+## haskell
+[ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env" # ghcup-env
+

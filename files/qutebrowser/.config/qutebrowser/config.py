@@ -43,7 +43,7 @@ c.content.desktop_capture                 = False
 c.content.media.audio_capture             = False
 c.content.media.audio_video_capture       = False
 c.content.media.video_capture             = False
-c.content.javascript.can_access_clipboard = False # this may be a bit annoying
+c.content.javascript.can_access_clipboard = True
 c.content.notifications.enabled           = False
 
 # fingerprint minimizing

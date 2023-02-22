@@ -8,6 +8,8 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+[ -f ~/.bash_profile ] && source ~/.bash_profile
+
 # shell options
 set -o vi
 
@@ -16,6 +18,7 @@ shopt -s cdspell
 shopt -s extglob
 shopt -s no_empty_cmd_completion
 shopt -s checkwinsize
+set -o noclobber
 
 # keybinds
 bind '"\C-f":"fcd .\n"'
@@ -24,7 +27,7 @@ bind '"\C-l":"clear\n"'
 # history
 HISTCONTROL=ignoredups:erasedups
 shopt -s histappend
-PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
+# PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
 
 # prompt
 PS1='\[\033[01;36m\] ${CODENAME}・\[\033[01;37m\]\W\[\033[01;36m\] > \[\033[00m\]'
@@ -42,7 +45,18 @@ vxworks_env() {
     PS1="(vxworks) $PS1"
 }
 
-[ -f ~/.config/shell/commonalias ] && source ~/.config/shell/commonalias
+## emgo
+export EGCC=/usr/bin/arm-none-eabi-gcc
+export EGLD=/usr/bin/arm-none-eabi-ld
+export EGAR=/usr/bin/arm-none-eabi-ar
+export EGROOT=$HOME/Installs/emgo/egroot
+export EGPATH=$HOME/Installs/emgo/egpath
+
 [ -f ~/.config/shell/commonrc ] && source ~/.config/shell/commonrc
+[ -f ~/.config/shell/commonalias ] && source ~/.config/shell/commonalias
+
+[ -f ~/.secrets ] && source ~/.secrets
+
+alias fd=fdfind
 
 ufetch-popos

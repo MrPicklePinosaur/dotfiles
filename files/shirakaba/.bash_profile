@@ -20,4 +20,3 @@ export WM=""
 export FUZZY_DIRS="$HOME/Scripts/* $HOME/.bashrc $HOME/Repos/* $HOME/Installs/* $HOME/Downloads/*"
 
 [ -f ~/.config/shell/commonprofile ] && source ~/.config/shell/commonprofile
-[ -f ~/.bashrc ] && source ~/.bashrc
