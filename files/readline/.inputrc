@@ -9,6 +9,11 @@ set show-mode-in-prompt on
 set show-all-if-ambiguous on
 set show-all-if-unmodified on
 set page-completions off
+# set expand-tilde on
+set mark-modified-lines on
 
+set blink-matching-paren on
 set colored-completion-prefix on
 set colored-stats on
+
+

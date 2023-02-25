@@ -52,6 +52,9 @@ export EGAR=/usr/bin/arm-none-eabi-ar
 export EGROOT=$HOME/Installs/emgo/egroot
 export EGPATH=$HOME/Installs/emgo/egpath
 
+# fuzzy history search
+[ -f ~/Scripts/fzf_history ] && source ~/Scripts/fzf_history
+
 [ -f ~/.config/shell/commonrc ] && source ~/.config/shell/commonrc
 [ -f ~/.config/shell/commonalias ] && source ~/.config/shell/commonalias
 
