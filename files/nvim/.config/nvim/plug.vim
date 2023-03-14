@@ -26,7 +26,7 @@ Plug 'jupyter-vim/jupyter-vim'
 call plug#end()
 
 " fzf
-map <leader>F :FZF<cr>
+map <leader>F :GFiles<cr>
 map <leader>b :Buffers<cr>
 map <leader>t :Tags<cr>
 

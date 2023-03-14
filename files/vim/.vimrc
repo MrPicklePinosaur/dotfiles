@@ -25,6 +25,7 @@ set showcmd
 set title
 set autoread
 set cursorline "this is set only to enable color theme on current line number
+set autochdir
 
 set lazyredraw
 set ttyfast

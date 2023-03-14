@@ -4,10 +4,11 @@ nnoremap <silent> Ld <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <silent> LD <cmd>lua vim.lsp.buf.declaration()<CR>
 nnoremap <silent> Lr <cmd>lua vim.lsp.buf.references()<CR>
 nnoremap <silent> Li <cmd>lua vim.lsp.buf.implementation()<CR>
-nnoremap <silent> LR <cmd>lua vim.lsp.buf.rename({ async = true })<CR>
-nnoremap <silent> Lf <cmd>lua vim.lsp.buf.format()<CR>
+nnoremap <silent> LR <cmd>lua vim.lsp.buf.rename()<CR>
+nnoremap <silent> Lf <cmd>lua vim.lsp.buf.format({ async = true })<CR>
 nnoremap <silent> LF <cmd>lua vim.lsp.buf.range_formatting()<CR>
 nnoremap <silent> La <cmd>lua vim.lsp.buf.code_action({ apply = true })<CR>
+nnoremap <silent> Lq <cmd>lua vim.lsp.stop_client(vim.lsp.get_active_clients())<CR>
 nnoremap <silent> K <cmd>lua vim.lsp.buf.hover()<CR>
 nnoremap <silent> <C-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
 nnoremap <silent> <C-p> <cmd>lua vim.diagnostic.goto_prev()<CR>
