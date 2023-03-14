@@ -1,13 +1,17 @@
 
-nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
-nnoremap <silent> gD <cmd>lua vim.lsp.buf.declaration()<CR>
-nnoremap <silent> gr <cmd>lua vim.lsp.buf.references()<CR>
-nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation()<CR>
-nnoremap <silent> gR <cmd>lua vim.lsp.buf.rename()<CR>
+map L <nop>
+nnoremap <silent> Ld <cmd>lua vim.lsp.buf.definition()<CR>
+nnoremap <silent> LD <cmd>lua vim.lsp.buf.declaration()<CR>
+nnoremap <silent> Lr <cmd>lua vim.lsp.buf.references()<CR>
+nnoremap <silent> Li <cmd>lua vim.lsp.buf.implementation()<CR>
+nnoremap <silent> LR <cmd>lua vim.lsp.buf.rename({ async = true })<CR>
+nnoremap <silent> Lf <cmd>lua vim.lsp.buf.format()<CR>
+nnoremap <silent> LF <cmd>lua vim.lsp.buf.range_formatting()<CR>
+nnoremap <silent> La <cmd>lua vim.lsp.buf.code_action({ apply = true })<CR>
 nnoremap <silent> K <cmd>lua vim.lsp.buf.hover()<CR>
 nnoremap <silent> <C-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
-nnoremap <silent> <C-p> <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
-nnoremap <silent> <C-n> <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
+nnoremap <silent> <C-p> <cmd>lua vim.diagnostic.goto_prev()<CR>
+nnoremap <silent> <C-n> <cmd>lua vim.diagnostic.goto_next()<CR>
 
 lua << EOF
 local lspconfig = require'lspconfig'
@@ -25,10 +29,12 @@ lspconfig.pylsp.setup{}
 lspconfig.solargraph.setup{}
 lspconfig.zls.setup{}
 
--- disable virtual error 
+-- Diagonstic config
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     vim.lsp.diagnostic.on_publish_diagnostics, {
-        virtual_text = false
+        virtual_text = true,
+        signs = true,
+        underline = true
     }
 )
 EOF

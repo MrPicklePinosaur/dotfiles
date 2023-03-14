@@ -9,6 +9,7 @@
     b = branch
     c = commit -m
     ch = checkout
+    cl = clone
     p = push
     pu = pull
     l = log

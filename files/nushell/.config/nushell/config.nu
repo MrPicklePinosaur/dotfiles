@@ -12,10 +12,17 @@ source '~/.config/nushell/complete.nu'
 source '~/.config/nushell/keybindings.nu'
 source '~/.config/nushell/hooks.nu'
 
+echo `
+     __  ,
+ .--()°'.' Welcome to Nushell,
+'|, . ,'   based on the nu language,
+ !_-(_\    where all data is structured!
+`
+
 let-env config = {
   ls: {
     use_ls_colors: true
-    clickable_links: true
+    clickable_links: false
   }
   rm: {
     always_trash: false
@@ -24,7 +31,7 @@ let-env config = {
     abbreviations: false
   }
   table: {
-    mode: light # basic, compact, compact_double, light, thin, with_love, rounded, reinforced, heavy, none, other
+    mode: light # basic, compact, compact_double, light, thin, with_love, rounded, reinforced, heavy, none, othefalser
     index_mode: always # "always" show indexes, "never" show indexes, "auto" = show indexes when a table has "index" column
     trim: {
       methodology: wrapping # wrapping or truncating
@@ -54,7 +61,6 @@ let-env config = {
     try: {
       # border_color: 'red'
       # highlighted_color: 'blue'
-
       # reactive: false
     }
 
@@ -84,7 +90,6 @@ let-env config = {
 
     config: {
       cursor_color: {bg: 'yellow' fg: 'black' }
-
       # border_color: white
       # list_color: green
     }

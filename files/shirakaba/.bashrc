@@ -36,14 +36,15 @@ PS1='\[\033[01;36m\] ${CODENAME}・\[\033[01;37m\]\W\[\033[01;36m\] > \[\033[00m
 export PATH="$HOME/.local/bin:$HOME/Scripts:$PATH"
 
 ## vxworks
-export WR_ROOT="$HOME/Installs/wrsdk-vxworks7-qemu"
+export WR_ROOT="$HOME/Installs/wrsdk-vxworks7-custom"
 export WR_SHARED="$HOME/.cache/vxworks/opt"
-. "$HOME/.cargo/env"
 
 vxworks_env() {
     source $WR_ROOT/sdkenv.sh
     PS1="(vxworks) $PS1"
 }
+
+. "$HOME/.cargo/env"
 
 ## emgo
 export EGCC=/usr/bin/arm-none-eabi-gcc
@@ -60,6 +61,11 @@ export EGPATH=$HOME/Installs/emgo/egpath
 
 [ -f ~/.secrets ] && source ~/.secrets
 
+# temp add nvim to path
+export PATH="$HOME/Installs/nvim-linux64/bin:$PATH"
+
 alias fd=fdfind
 
 ufetch-popos
+
+# exec nu

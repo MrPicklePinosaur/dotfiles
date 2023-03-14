@@ -8,6 +8,7 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-surround'
 Plug 'justinmk/vim-sneak'
+Plug 'jiangmiao/auto-pairs'
 
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/cmp-nvim-lsp'

@@ -57,6 +57,12 @@ map <leader>l :bn<cr>
 map <leader>h :bp<cr>
 map <leader>d :bd<cr>
 
+" window related controls
+map <leader>v <C-w>v<cr>
+map <leader>L <C-w>l<cr>
+map <leader>H <C-w>h<cr>
+map <leader>D <C-w>q<cr>
+
 let g:netrw_liststyle = 3
 let g:netrw_banner = 0
 let g:netrw_winsize = 25
@@ -180,11 +186,10 @@ Plug 'sirver/ultisnips'
 Plug 'tpope/vim-commentary'
 Plug 'ap/vim-buftabline'
 Plug 'tpope/vim-surround'
-Plug 'lervag/vimtex', { 'for': 'tex' }
-Plug 'PietroPate/vim-tex-conceal', { 'for': 'tex' }
-" Plug 'takac/vim-hardtime'
-" Plug 'vimwiki/vimwiki'
 Plug 'justinmk/vim-sneak'
+" Plug 'lervag/vimtex', { 'for': 'tex' }
+" Plug 'PietroPate/vim-tex-conceal', { 'for': 'tex' }
+" Plug 'takac/vim-hardtime'
 endif
 
 call plug#end()
@@ -220,8 +225,11 @@ let g:buftabline_show = 1
 let g:hardtime_default_on = 1
 let g:hardtime_maxcount = 4
 
-" vimwiki
-let g:vimwiki_list = [{'path': '~/Data/vimwiki'}]
+" sneak
+map f <Plug>Sneak_f
+map F <Plug>Sneak_F
+map t <Plug>Sneak_t
+map T <Plug>Sneak_T
 
 " Run after plugins
 autocmd FileType * set formatoptions-=o
