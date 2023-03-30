@@ -19,4 +19,6 @@ export WM=""
 
 export FUZZY_DIRS="$HOME/Scripts/* $HOME/.bashrc $HOME/Repos/* $HOME/Installs/* $HOME/Downloads/*"
 
+systemctl --user import-environment DISPLAY XAUTHORITY
+
 [ -f ~/.config/shell/commonprofile ] && source ~/.config/shell/commonprofile

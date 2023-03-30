@@ -44,7 +44,11 @@ vxworks_env() {
     PS1="(vxworks) $PS1"
 }
 
+## cargo
 . "$HOME/.cargo/env"
+
+## ansible
+export ANSIBLE_NOCOWS=1
 
 ## emgo
 export EGCC=/usr/bin/arm-none-eabi-gcc
@@ -65,6 +69,7 @@ export EGPATH=$HOME/Installs/emgo/egpath
 export PATH="$HOME/Installs/nvim-linux64/bin:$PATH"
 
 alias fd=fdfind
+[ -f ~/Scripts/apt-alias ] && source ~/Scripts/apt-alias
 
 ufetch-popos
 
