@@ -31,6 +31,12 @@ Plug 'nvim-neo-tree/neo-tree.nvim'
 Plug 'MunifTanjim/nui.nvim'
 Plug 'nvim-lua/plenary.nvim'
 
+" other stuff
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'startup-nvim/startup.nvim'
+
+Plug 'MrPicklePinosaur/status.vim'
+
 call plug#end()
 
 " fzf

@@ -21,6 +21,9 @@ source $HOME/.config/nvim/lsp.vim
 source $HOME/.config/nvim/plug-config/cmp.vim
 source $HOME/.config/nvim/plug-config/magma.vim
 source $HOME/.config/nvim/plug-config/jupyter.vim
+source $HOME/.config/nvim/plug-config/telescope.vim
+source $HOME/.config/nvim/plug-config/neo-tree.vim
+source $HOME/.config/nvim/plug-config/startup.lua
 
 " lua << EOF
 " vim.o.ch = 0

@@ -25,7 +25,7 @@ set showcmd
 set title
 set autoread
 set cursorline "this is set only to enable color theme on current line number
-set autochdir
+" set autochdir
 
 set lazyredraw
 set ttyfast
@@ -86,13 +86,12 @@ setlocal spell
 set spelllang=en_us
 set spellcapcheck=
 
-" use s as prefix for spell check related commands
-" map s <nop>
-" map sf 1z=<cr>
-" map sn ]s
-" map sN [s
-" map sa zg
-" map sd zw
+" use <C-s> as prefix for spell check related commands
+map <C-s>f 1z=<cr>
+map <C-s>n ]s
+map <C-s>N [s
+map <C-s>a zg
+map <C-s>d zw
 
 " folding
 set foldmethod=manual
@@ -190,6 +189,7 @@ Plug 'tpope/vim-surround'
 Plug 'justinmk/vim-sneak'
 Plug 'lervag/vimtex', { 'for': 'tex' }
 Plug 'PietroPate/vim-tex-conceal', { 'for': 'tex' }
+Plug 'MrPicklePinosaur/status.vim'
 " Plug 'takac/vim-hardtime'
 endif
 

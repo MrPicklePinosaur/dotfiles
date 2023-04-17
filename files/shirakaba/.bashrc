@@ -71,6 +71,16 @@ export PATH="$HOME/Installs/nvim-linux64/bin:$PATH"
 alias fd=fdfind
 [ -f ~/Scripts/apt-alias ] && source ~/Scripts/apt-alias
 
+# github access token for ghcr auth
+export CR_PAT=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
+
+# adb
+if [ -d "$HOME/Installs/platform-tools" ] ; then
+     export PATH="$HOME/Installs/platform-tools:$PATH"
+fi
+
 ufetch-popos
 
 # exec nu
+clear
+shrs_example

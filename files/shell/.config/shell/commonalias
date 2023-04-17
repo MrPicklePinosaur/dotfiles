@@ -35,6 +35,7 @@ alias E="emacs"
 alias g="git"
 alias d="docker"
 alias dc="docker-compose"
+alias k="kubectl"
 
 alias z="$READER"
 alias b="$BROWSER"
