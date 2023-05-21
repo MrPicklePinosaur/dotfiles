@@ -49,7 +49,7 @@ set conceallevel=2
 let mapleader = ' '
 
 map <leader>w :w<cr>
-map <leader>q :wq<cr>
+map <leader>q :wqa<cr>
 
 " netrw stuff
 " map <leader>f :Lex<cr>

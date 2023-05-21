@@ -47,4 +47,10 @@ call plug#end()
 " override netrw
 map <leader>f :Neotree source=filesystem reveal=true position=right<cr>
 
+lua << EOF
+local statusline = require('statusline')
+statusline.tabline = false
+EOF
+
+set showtabline=2
 colorscheme catppuccin-macchiato
