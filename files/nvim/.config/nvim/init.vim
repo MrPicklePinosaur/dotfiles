@@ -15,9 +15,12 @@ source ~/.vimrc
 " clipboard
 set clipboard+=unnamedplus
 
+set mouse=
+
 " includes
 source $HOME/.config/nvim/plug.vim
 source $HOME/.config/nvim/lsp.vim
+" source $HOME/.config/nvim/plug-config/plug.lua
 source $HOME/.config/nvim/plug-config/cmp.vim
 source $HOME/.config/nvim/plug-config/magma.vim
 source $HOME/.config/nvim/plug-config/jupyter.vim

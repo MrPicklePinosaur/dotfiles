@@ -1,9 +1,11 @@
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fLr <cmd>Telescope lsp_references<cr>
+
+nnoremap <leader>F <cmd>Telescope find_files<cr>
+nnoremap <leader>g <cmd>Telescope live_grep<cr>
+nnoremap <leader>b <cmd>Telescope buffers<cr>
+nnoremap <leader>Lr <cmd>Telescope lsp_references<cr>
 
 lua << EOF
+
 require('telescope').setup{
   defaults = {
     -- Default configuration for telescope goes here:
@@ -15,7 +17,7 @@ require('telescope').setup{
         -- e.g. git_{create, delete, ...}_branch for the git_branches picker
         ["<C-h>"] = "which_key"
       }
-    }
+    },
   },
   pickers = {
     -- Default configuration for builtin pickers goes here:
@@ -25,6 +27,12 @@ require('telescope').setup{
     -- }
     -- Now the picker_config_key will be applied every time you call this
     -- builtin picker
+    find_files = {
+        hidden = "true",
+    },
+    live_grep = {
+        theme = "dropdown",
+    }
   },
   extensions = {
     -- Your extension configuration goes here:
@@ -32,6 +40,6 @@ require('telescope').setup{
     --   extension_config_key = value,
     -- }
     -- please take a look at the readme of the extension you want to configure
-  }
+  },
 }
 EOF

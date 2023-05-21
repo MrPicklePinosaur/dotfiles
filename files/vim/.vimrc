@@ -137,6 +137,10 @@ endif
 map <leader>e :e<cr>:echo "current file reloaded"<cr>
 map <leader>E :e!<cr>:echo "current file force reloaded"<cr>
 
+" move line
+map <C-J> :m +1<cr>
+map <C-K> :m -2<cr>
+
 " auto set syntax given filenames
 augroup syntaxhighlight
     autocmd!
@@ -163,9 +167,6 @@ au! Syntax shader source ~/.vim/syntax/glsl.vim
 au BufRead,BufNewFile *.shader set filetype=241
 au! Syntax 241 source ~/.vim/syntax/241.vim
 
-au BufRead,BufNewFile *.hs set filetype=haskell
-au! Syntax haskell source ~/.vim/syntax/haskell.vim
-
 " vim plug
 " this blob auto installs vim plug if it isnt already
 fun! s:VimPlugSetup()
@@ -189,7 +190,7 @@ Plug 'tpope/vim-surround'
 Plug 'justinmk/vim-sneak'
 Plug 'lervag/vimtex', { 'for': 'tex' }
 Plug 'PietroPate/vim-tex-conceal', { 'for': 'tex' }
-Plug 'MrPicklePinosaur/status.vim'
+" Plug 'MrPicklePinosaur/status.vim'
 " Plug 'takac/vim-hardtime'
 endif
 
