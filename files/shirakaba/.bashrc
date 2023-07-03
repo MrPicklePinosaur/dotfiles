@@ -16,6 +16,7 @@ set -o vi
 shopt -s cdable_vars
 shopt -s cdspell
 shopt -s extglob
+shopt -s autocd
 shopt -s no_empty_cmd_completion
 shopt -s checkwinsize
 set -o noclobber

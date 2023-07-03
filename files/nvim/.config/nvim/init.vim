@@ -20,13 +20,20 @@ set mouse=
 " includes
 source $HOME/.config/nvim/plug.vim
 source $HOME/.config/nvim/lsp.vim
-" source $HOME/.config/nvim/plug-config/plug.lua
+source $HOME/.config/nvim/plug-config/plug.lua
 source $HOME/.config/nvim/plug-config/cmp.vim
 source $HOME/.config/nvim/plug-config/magma.vim
 source $HOME/.config/nvim/plug-config/jupyter.vim
 source $HOME/.config/nvim/plug-config/telescope.vim
 source $HOME/.config/nvim/plug-config/neo-tree.vim
 source $HOME/.config/nvim/plug-config/startup.lua
+source $HOME/.config/nvim/plug-config/vimspector.vim
+source $HOME/.config/nvim/plug-config/toggleterm.vim
+
+if v:version >= 700
+  au BufLeave * let b:winview = winsaveview()
+  au BufEnter * if(exists('b:winview')) | call winrestview(b:winview) | endif
+endif
 
 " lua << EOF
 " vim.o.ch = 0

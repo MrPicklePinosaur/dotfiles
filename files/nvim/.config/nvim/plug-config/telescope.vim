@@ -1,9 +1,4 @@
 
-nnoremap <leader>F <cmd>Telescope find_files<cr>
-nnoremap <leader>g <cmd>Telescope live_grep<cr>
-nnoremap <leader>b <cmd>Telescope buffers<cr>
-nnoremap <leader>Lr <cmd>Telescope lsp_references<cr>
-
 lua << EOF
 
 require('telescope').setup{
@@ -43,3 +38,9 @@ require('telescope').setup{
   },
 }
 EOF
+
+nnoremap <leader>F <cmd>Telescope find_files<cr>
+nnoremap <leader>g <cmd>Telescope live_grep<cr>
+nnoremap <leader>b <cmd>Telescope buffers<cr>
+nnoremap <leader>Lr <cmd>Telescope lsp_references<cr>
+

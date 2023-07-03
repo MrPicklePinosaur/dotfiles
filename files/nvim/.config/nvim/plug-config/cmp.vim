@@ -29,9 +29,24 @@ cmp.setup({
   sources = cmp.config.sources({
     { name = 'ultisnips' }, -- For ultisnips users.
     { name = 'nvim_lsp' },
-  }, {
     { name = 'buffer' },
+    { name = 'path' },
+  }, {
   }),
+})
+
+cmp.setup.cmdline(':', {
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = cmp.config.sources({
+    { name = 'path' }
+  }, {
+    {
+      name = 'cmdline',
+      option = {
+        ignore_cmds = { 'Man', '!' }
+      }
+    }
+  })
 })
 
 -- Setup lspconfig.

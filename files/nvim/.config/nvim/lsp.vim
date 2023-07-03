@@ -49,5 +49,6 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
         underline = true
     }
 )
+
 EOF
 

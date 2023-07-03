@@ -59,10 +59,10 @@ map <leader>h :bp<cr>
 map <leader>d :bd<cr>
 
 " window related controls
-map <leader>v <C-w>v
+" map <leader>v <C-w>v
 map <leader>L <C-w>l
 map <leader>H <C-w>h
-map <leader>D <C-w>q
+" map <leader>D <C-w>q
 
 let g:netrw_liststyle = 3
 let g:netrw_banner = 0
