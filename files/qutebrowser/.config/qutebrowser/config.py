@@ -2,7 +2,7 @@
 config.load_autoconfig(False)
 
 # general
-c.zoom.default = "100%"
+c.zoom.default = "150%"
 
 # bindings
 config.bind('xb', 'config-cycle tabs.show always never')
@@ -37,7 +37,7 @@ c.content.blocking.method  = "both"
 
 # content rules
 c.content.geolocation                     = False
-c.content.autoplay                        = False
+c.content.autoplay                        = True
 c.content.notifications.enabled           = False
 c.content.desktop_capture                 = False
 c.content.media.audio_capture             = False

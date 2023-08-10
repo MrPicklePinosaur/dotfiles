@@ -29,6 +29,7 @@ source $HOME/.config/nvim/plug-config/neo-tree.vim
 source $HOME/.config/nvim/plug-config/startup.lua
 source $HOME/.config/nvim/plug-config/vimspector.vim
 source $HOME/.config/nvim/plug-config/toggleterm.vim
+source $HOME/.config/nvim/plug-config/treesitter.lua
 
 if v:version >= 700
   au BufLeave * let b:winview = winsaveview()

@@ -7,7 +7,8 @@ Plug 'tpope/vim-commentary'
 Plug 'ap/vim-buftabline'
 Plug 'tpope/vim-surround'
 Plug 'justinmk/vim-sneak'
-Plug 'jiangmiao/auto-pairs'
+" Plug 'jiangmiao/auto-pairs'
+Plug 'windwp/nvim-autopairs'
 
 " lsp
 Plug 'neovim/nvim-lspconfig'
@@ -30,6 +31,10 @@ Plug 'jupyter-vim/jupyter-vim'
 Plug 'nvim-neo-tree/neo-tree.nvim'
 Plug 'MunifTanjim/nui.nvim'
 Plug 'nvim-lua/plenary.nvim'
+
+" treesitter
+Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'windwp/nvim-ts-autotag'
 
 " theme
 Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
@@ -78,6 +83,7 @@ lua << EOF
 local statusline = require('statusline')
 statusline.tabline = false
 
+require("nvim-autopairs").setup {}
 EOF
 
 set showtabline=2

@@ -69,6 +69,10 @@ export EGPATH=$HOME/Installs/emgo/egpath
 # temp add nvim to path
 export PATH="$HOME/Installs/nvim-linux64/bin:$PATH"
 
+export PATH="$PATH:/home/pinosaur/.config/.foundry/bin"
+
+export PATH="$PATH:/home/pinosaur/.surrealdb"
+
 alias fd=fdfind
 [ -f ~/Scripts/apt-alias ] && source ~/Scripts/apt-alias
 
@@ -85,3 +89,4 @@ ufetch-popos
 # exec nu
 clear
 shrs_example
+
