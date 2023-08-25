@@ -18,6 +18,7 @@ set clipboard+=unnamedplus
 set mouse=
 
 " includes
+source $HOME/.config/nvim/plug.vim
 source $HOME/.config/nvim/lsp.vim
 source $HOME/.config/nvim/plug-config/cmp.vim
 source $HOME/.config/nvim/plug-config/copilot.lua
@@ -30,7 +31,6 @@ source $HOME/.config/nvim/plug-config/telescope.vim
 source $HOME/.config/nvim/plug-config/toggleterm.vim
 source $HOME/.config/nvim/plug-config/treesitter.lua
 source $HOME/.config/nvim/plug-config/vimspector.vim
-source $HOME/.config/nvim/plug.vim
 
 if v:version >= 700
   au BufLeave * let b:winview = winsaveview()
