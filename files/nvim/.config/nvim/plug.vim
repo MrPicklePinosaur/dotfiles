@@ -64,6 +64,12 @@ Plug 'famiu/bufdelete.nvim'
 
 Plug 'rlue/vim-barbaric'
 
+Plug 'kdheepak/lazygit.nvim'
+
+" copilot
+" Plug 'zbirenbaum/copilot.lua'
+" Plug 'zbirenbaum/copilot-cmp'
+
 call plug#end()
 
 " bdelete
@@ -77,6 +83,10 @@ map <leader>f :Neotree source=filesystem reveal=true position=right<cr>
 let g:vimspector_install_gadgets = [ 'CodeLLDB' ]
 
 " barbaric
+
+" lazygit
+
+nnoremap <leader>g :LazyGit<cr>
 
 " vim.api.nvim_set_keymap('n', ':', '<cmd>FineCmdline<CR>', {noremap = true})
 lua << EOF

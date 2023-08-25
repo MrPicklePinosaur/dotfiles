@@ -84,9 +84,22 @@ if [ -d "$HOME/Installs/platform-tools" ] ; then
      export PATH="$HOME/Installs/platform-tools:$PATH"
 fi
 
-ufetch-popos
+# ufetch-popos
 
 # exec nu
-clear
-shrs_example
+# clear
+# pinosh
 
+# auto start zellij
+# export ZELLIJ_AUTO_EXIT="false"
+# if [[ -z "$ZELLIJ" ]]; then
+#     if [[ "$ZELLIJ_AUTO_ATTACH" == "true" ]]; then
+#         zellij attach -c
+#     else
+#         zellij
+#     fi
+# 
+#     if [[ "$ZELLIJ_AUTO_EXIT" == "true" ]]; then
+#         exit
+#     fi
+# fi

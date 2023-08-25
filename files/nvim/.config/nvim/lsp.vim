@@ -40,6 +40,8 @@ lspconfig.rust_analyzer.setup{
 lspconfig.pylsp.setup{}
 lspconfig.solargraph.setup{}
 lspconfig.zls.setup{}
+-- npm install -g solidity-language-server
+lspconfig.solidity_ls.setup{}
 
 -- Diagonstic config
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(

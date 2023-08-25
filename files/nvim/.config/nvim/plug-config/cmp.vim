@@ -31,6 +31,7 @@ cmp.setup({
     { name = 'nvim_lsp' },
     { name = 'buffer' },
     { name = 'path' },
+    { name = "copilot", group_index = 2 },
   }, {
   }),
 })
