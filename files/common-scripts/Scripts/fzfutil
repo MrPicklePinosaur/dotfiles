@@ -8,6 +8,6 @@ fvi() {
 }
 fcd() {
     [ -z "$1" ] && search="$FUZZY_DIRS" || search="$1"
-    dname="$(find $search -type d \( -name '.git' -o -name 'node_modules' -o -name 'venv' \) -prune -o -type d | fzf)"
+    dname="$(fd . -t d $FUZZY_DIRS | fzf)"
     [ -z "$dname" ] || cd "$dname"
 }

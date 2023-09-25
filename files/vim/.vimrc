@@ -124,7 +124,9 @@ hi ColorColumn ctermbg=magenta
 call matchadd('ColorColumn', '\%81v', 100)
 
 " write with sudo
+if ! has('nvim')
 cmap w!! w !sudo tee > /dev/null %
+endif
 
 " reload vimrc
 if has('nvim')
@@ -214,7 +216,7 @@ map <localleader>sr :call UltiSnips#RefreshSnippets()<cr>:echo "Refreshed Snippe
  let g:tex_conceal='abdmgs'
  
  let g:vimtex_compiler_latexmk = {
-     \'build_dir': '/home/pinosaur/.cache/latexaux/',
+     \'out_dir': '/home/pinosaur/.cache/latexaux/',
  \}
 "     " \'options': [
 "     " \   '-shell-escape',
@@ -236,4 +238,4 @@ let g:hardtime_maxcount = 4
 " Run after plugins
 autocmd FileType * set formatoptions-=o
 
-colorscheme pino
+" colorscheme pino

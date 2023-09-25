@@ -58,6 +58,10 @@ export EGAR=/usr/bin/arm-none-eabi-ar
 export EGROOT=$HOME/Installs/emgo/egroot
 export EGPATH=$HOME/Installs/emgo/egpath
 
+## fzf
+
+FUZZY_DIRS="$HOME/School $HOME/Downloads $HOME/Repos"
+
 # fuzzy history search
 [ -f ~/Scripts/fzf_history ] && source ~/Scripts/fzf_history
 
@@ -83,6 +87,15 @@ export CR_PAT=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
 if [ -d "$HOME/Installs/platform-tools" ] ; then
      export PATH="$HOME/Installs/platform-tools:$PATH"
 fi
+
+# cs452 arm cross compiler
+export PATH="$PATH:/home/pinosaur/Installs/arm-gnu-toolchain-12.3.rel1-x86_64-aarch64-none-elf/bin"
+
+# cs343
+export PATH="$PATH:/home/pinosaur/Installs/uCPP/u++-7.0.0/bin"
+
+# zig
+export PATH="$PATH:/home/pinosaur/Installs/zig-linux-x86_64-0.11.0"
 
 # ufetch-popos
 

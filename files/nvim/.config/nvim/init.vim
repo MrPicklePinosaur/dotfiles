@@ -10,8 +10,6 @@ set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &packpath=&runtimepath
 source ~/.vimrc
 
-" toggle sign column
-
 " clipboard
 set clipboard+=unnamedplus
 
@@ -37,6 +35,3 @@ if v:version >= 700
   au BufEnter * if(exists('b:winview')) | call winrestview(b:winview) | endif
 endif
 
-" lua << EOF
-" vim.o.ch = 0
-" EOF

@@ -29,7 +29,7 @@ lspconfig.rust_analyzer.setup{
     settings = {
         ['rust-analyzer'] = {
             procMacro = {
-                enable = false
+                enable = true
             },
             checkOnSave = {
                 enable = false
@@ -42,6 +42,8 @@ lspconfig.solargraph.setup{}
 lspconfig.zls.setup{}
 -- npm install -g solidity-language-server
 lspconfig.solidity_ls.setup{}
+-- cargo install --git https://github.com/wgsl-analyzer/wgsl-analyzer wgsl_analyzer
+lspconfig.wgsl_analyzer.setup{}
 
 -- Diagonstic config
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
