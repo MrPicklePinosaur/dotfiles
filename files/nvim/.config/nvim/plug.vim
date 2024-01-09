@@ -27,8 +27,11 @@ Plug 'NoahTheDuke/vim-just'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'jupyter-vim/jupyter-vim'
 Plug 'kaarmu/typst.vim'
+" Plug 'MrPicklePinosaur/typst-conceal.vim'
 Plug 'lervag/vimtex', { 'for': 'tex' }
 Plug 'PietroPate/vim-tex-conceal', { 'for': 'tex' }
+Plug 'mfussenegger/nvim-jdtls'
+Plug 'rhaiscript/vim-rhai'
 
 " neotree (maybe too heavy)
 Plug 'nvim-neo-tree/neo-tree.nvim'
@@ -36,8 +39,8 @@ Plug 'MunifTanjim/nui.nvim'
 Plug 'nvim-lua/plenary.nvim'
 
 " treesitter
-Plug 'nvim-treesitter/nvim-treesitter'
-Plug 'windwp/nvim-ts-autotag'
+"Plug 'nvim-treesitter/nvim-treesitter'
+"Plug 'windwp/nvim-ts-autotag'
 
 " theme
 Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
@@ -101,3 +104,7 @@ set showtabline=2
 " colorscheme catppuccin-latte
 colorscheme catppuccin-macchiato
 
+" since zellij doesn't support undercurl at the moment, change spell hl effect
+hi SpellBad       ctermfg=white ctermbg=red cterm=standout
+hi SpellRare      ctermfg=white ctermbg=blue cterm=standout
+hi SpellLocal     ctermfg=white ctermbg=green cterm=standout

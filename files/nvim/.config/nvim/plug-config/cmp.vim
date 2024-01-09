@@ -32,6 +32,7 @@ cmp.setup({
     { name = 'buffer' },
     { name = 'path' },
     { name = "dictionary" },
+    { name = 'nvim_lsp_signature_help' },
     -- { name = "copilot", group_index = 2 },
   }, {
   }),

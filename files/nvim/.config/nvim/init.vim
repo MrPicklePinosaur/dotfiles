@@ -27,7 +27,7 @@ source $HOME/.config/nvim/plug-config/plug.lua
 source $HOME/.config/nvim/plug-config/startup.lua
 source $HOME/.config/nvim/plug-config/telescope.vim
 source $HOME/.config/nvim/plug-config/toggleterm.vim
-source $HOME/.config/nvim/plug-config/treesitter.lua
+" source $HOME/.config/nvim/plug-config/treesitter.lua
 source $HOME/.config/nvim/plug-config/vimspector.vim
 
 if v:version >= 700

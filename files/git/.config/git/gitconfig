@@ -6,7 +6,7 @@
     a = add
     d = diff
     s = status
-    b = branch
+    b = branch --show-current
     c = commit -m
     ch = checkout
     cl = clone

@@ -97,11 +97,17 @@ export PATH="$PATH:/home/pinosaur/Installs/uCPP/u++-7.0.0/bin"
 # zig
 export PATH="$PATH:/home/pinosaur/Installs/zig-linux-x86_64-0.11.0"
 
+# i dont care about gs
+alias gs="echo 'you typed \`gs\` instead of \`g s\` you goof'"
+
+[[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
+    . /usr/share/bash-completion/bash_completion
+
 # ufetch-popos
 
 # exec nu
 # clear
-# pinosh
+pinosh
 
 # auto start zellij
 # export ZELLIJ_AUTO_EXIT="false"
