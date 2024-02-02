@@ -2,16 +2,23 @@
 	defaultBranch = master
 [alias]
     i = init
-    ra = remote add github
+    ra = remote add
+    re = rebase
+    reo = rebase --onto
     a = add
+    au = add -u
     d = diff
     s = status
-    b = branch --show-current
+    b = branch
+    bc = branch --show-current
     c = commit -m
     ch = checkout
+    chb = checkout -b
     cl = clone
     p = push
+    pf = push -f
     pu = pull
-    l = log
+    l = log --decorate=short --pretty=oneline -n20
     m = merge
+    f = fetch origin
     amm = commit --amend --no-edit

@@ -1,0 +1,5 @@
+alias c="cd"
+alias l="exa"
+alias v="vim"
+alias V="nvim"
+alias g="git"

@@ -27,6 +27,10 @@ require('telescope').setup{
     },
     live_grep = {
         theme = "dropdown",
+        layout_strategy = 'center',
+        layout_config = {
+          width = 0.7
+        },
     }
   },
   extensions = {
