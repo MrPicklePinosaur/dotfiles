@@ -87,8 +87,7 @@ set spelllang=en_us
 set spellcapcheck=
 
 " use <C-s> as prefix for spell check related commands
-map <C-s>f 1z=<cr>
-map <C-s>n ]s
+map <C-s>f 1z=<cr> map <C-s>n ]s
 map <C-s>N [s
 map <C-s>a zg
 map <C-s>d zw
@@ -112,8 +111,8 @@ augroup END
 
 " abbrv / commands
 command -nargs=1 Syn :set syntax=<args>
-
 " View whitespace
+
 map <leader>s :set list!<cr>
 set listchars=tab:▸\ ,space:·,eol:¬
 set showbreak=>
@@ -154,8 +153,8 @@ augroup END
 augroup templates
     autocmd BufNewFile *.tex 0r ~/.vim/templates/skeleton.tex
     autocmd BufNewFile *.html 0r ~/.vim/templates/skeleton.html
-    autocmd BufNewFile *.rkt 0r ~/.vim/templates/skeleton.rkt
     autocmd BufNewFile *.xml 0r ~/.vim/templates/skeleton.xml
+    autocmd BufNewFile *.rkt 0r ~/.vim/templates/skeleton.rkt
     autocmd BufNewFile *.pl 0r ~/.vim/templates/skeleton.pl
 augroup END
 

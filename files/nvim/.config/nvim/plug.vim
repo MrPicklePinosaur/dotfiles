@@ -1,3 +1,16 @@
+" Plugin list
+
+" vim plug
+" this blob auto installs vim plug if it isnt already
+fun! s:VimPlugSetup()
+    if empty(glob('~/.vim/autoload/plug.vim'))
+        silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+        autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+    else
+        echo 'VimPlug is already installed'
+    endif
+endfun
+" command PlugSetup :call s:VimPlugSetup()
 
 call plug#begin()
 
@@ -20,18 +33,18 @@ Plug 'uga-rosa/cmp-dictionary'
 Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 
 " lsp servers / languages
-Plug 'ron-rs/ron.vim'
-Plug 'DingDean/wgsl.vim'
-Plug 'ziglang/zig.vim'
-Plug 'NoahTheDuke/vim-just'
-Plug 'neovimhaskell/haskell-vim'
-Plug 'jupyter-vim/jupyter-vim'
-Plug 'kaarmu/typst.vim'
+" Plug 'ron-rs/ron.vim'
+" Plug 'DingDean/wgsl.vim'
+" Plug 'ziglang/zig.vim'
+" Plug 'NoahTheDuke/vim-just'
+" Plug 'neovimhaskell/haskell-vim'
+" Plug 'jupyter-vim/jupyter-vim'
+" Plug 'kaarmu/typst.vim'
 " Plug 'MrPicklePinosaur/typst-conceal.vim'
-Plug 'lervag/vimtex', { 'for': 'tex' }
-Plug 'PietroPate/vim-tex-conceal', { 'for': 'tex' }
-Plug 'mfussenegger/nvim-jdtls'
-Plug 'rhaiscript/vim-rhai'
+" Plug 'lervag/vimtex', { 'for': 'tex' }
+" Plug 'PietroPate/vim-tex-conceal', { 'for': 'tex' }
+" Plug 'mfussenegger/nvim-jdtls'
+" Plug 'rhaiscript/vim-rhai'
 
 " neotree (maybe too heavy)
 Plug 'nvim-neo-tree/neo-tree.nvim'
@@ -45,20 +58,18 @@ Plug 'nvim-lua/plenary.nvim'
 " theme
 Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 
-" statusline (temp)
+" statusline
 Plug 'beauwilliams/statusline.lua'
 
 " utilities
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'startup-nvim/startup.nvim'
 Plug 'famiu/bufdelete.nvim'
-Plug 'rlue/vim-barbaric'
+" Plug 'rlue/vim-barbaric'
 
 " tool integrations
-Plug 'puremourning/vimspector'
 Plug 'kdheepak/lazygit.nvim'
 Plug 'lambdalisue/suda.vim'
-Plug 'akinsho/toggleterm.nvim'
 
 " copilot
 " Plug 'zbirenbaum/copilot.lua'
@@ -73,13 +84,9 @@ nnoremap <leader>d <cmd>lua require('bufdelete').bufdelete(0, true)<CR>
 " override netrw
 map <leader>f :Neotree source=filesystem reveal=true position=right<cr>
 
-" vimspector
-let g:vimspector_install_gadgets = [ 'CodeLLDB' ]
-
 " barbaric
 
 " lazygit
-
 nnoremap <leader>g :LazyGit<cr>
 
 " vimtex
@@ -87,6 +94,9 @@ let g:vimtex_compiler_latexmk = {
  \'out_dir': '/home/pinosaur/.cache/latexaux/',
 \}
 
+" suda vim
+
+cmap w!! SudaWrite
 
 " vim.api.nvim_set_keymap('n', ':', '<cmd>FineCmdline<CR>', {noremap = true})
 lua << EOF
@@ -96,15 +106,4 @@ statusline.tabline = false
 require("nvim-autopairs").setup {}
 EOF
 
-" suda vim
-cmap w!! SudaWrite
 
-
-set showtabline=2
-" colorscheme catppuccin-latte
-colorscheme catppuccin-macchiato
-
-" since zellij doesn't support undercurl at the moment, change spell hl effect
-hi SpellBad       ctermfg=white ctermbg=red cterm=standout
-hi SpellRare      ctermfg=white ctermbg=blue cterm=standout
-hi SpellLocal     ctermfg=white ctermbg=green cterm=standout

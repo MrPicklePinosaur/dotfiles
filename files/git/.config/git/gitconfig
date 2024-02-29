@@ -22,3 +22,4 @@
     m = merge
     f = fetch origin
     amm = commit --amend --no-edit
+    bl = blame
