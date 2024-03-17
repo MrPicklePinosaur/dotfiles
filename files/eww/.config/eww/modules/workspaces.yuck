@@ -1,12 +1,13 @@
+
+(deflisten workspaces :initial "[{}]" "scripts/workspaces.sh")
+(deflisten current_workspace :initial "1" "scripts/get_active_workspace.sh")
+
 (defwidget workspaces []
-    (eventbox :onscroll "scripts/change_active_workspace.sh {} ${current_workspace}"
-        (box :orientation "h" :space-evenly false :class "workspaces" :hexpand true
-            (for workspace in workspaces
-                (button
-                    :class "workspace ${current_workspace == workspace.id ? "current" : ""}"
-                    :onclick "hyprctl dispatch workspace ${workspace.id}"
-                    ""
-                )
+    (box :orientation "h" :space-evenly false :class "workspaces" :hexpand true
+        (for workspace in workspaces
+            (box
+                :class "workspace"
+                "${current_workspace == workspace.id ? '' : ''}"
             )
         )
     )
