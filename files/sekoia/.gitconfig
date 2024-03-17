@@ -1,0 +1,5 @@
+[include]
+    path = ~/.config/git/gitconfig
+[user]
+	email = mr.picklepinosaur@gmail.com
+	name = Daniel Liu

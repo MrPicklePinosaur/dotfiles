@@ -1,0 +1,2 @@
+(deflisten current_workspace :initial "1" "scripts/get_active_workspace.sh")
+(deflisten workspaces :initial "[{}]" "scripts/workspaces.sh")
