@@ -1,0 +1,17 @@
+
+(defpoll battery_level :interval "1m" "./scripts/battery.sh level")
+(defpoll battery_status :interval "1m" "./scripts/battery.sh stat")
+
+(defwidget bat []
+    (box :class "battery-container"
+        (circular-progress
+            :value battery_level
+            :class "battery-level battery-${battery_status}"
+            :thickness 3
+            (button 
+                :class "battery-button"
+                "󰧞"
+            )
+        )
+    )
+)

@@ -21,6 +21,7 @@
         )
 
         (box :orientation "h" :space-evenly false :halign "end"
+            (bat)
             (clock)
         )
     )

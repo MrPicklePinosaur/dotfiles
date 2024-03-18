@@ -2,7 +2,7 @@
 (defpoll calendar_day :initial 0 :interval "20h" "date +'%d'")
 (defpoll calendar_year :initial 0 :interval "20h" "date +'%Y'")
 
-(defvar calendar_open true)
+(defvar calendar_open false)
 
 (defwindow calendar
     :monitor 0

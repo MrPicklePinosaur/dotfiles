@@ -1,5 +1,5 @@
 (include "modules/bar.yuck")
-(include "modules/workspaces.yuck")
-
+(include "modules/battery.yuck")
 (include "modules/clock.yuck")
 (include "modules/calendar.yuck")
+(include "modules/workspaces.yuck")
