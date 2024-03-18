@@ -4,7 +4,7 @@
 (defwidget clock []
     (box
         (button
-            :onclick "$HOME/.config/eww/bar/scripts/pop calendar"
+            :onclick "eww update calendar_open=${calendar_open ? false : true}"
             :class "clock-button"
             (label :class "clock" :text date)
         )

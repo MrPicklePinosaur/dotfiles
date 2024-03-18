@@ -2,6 +2,8 @@
 (defpoll calendar_day :initial 0 :interval "20h" "date +'%d'")
 (defpoll calendar_year :initial 0 :interval "20h" "date +'%Y'")
 
+(defvar calendar_open true)
+
 (defwindow calendar
     :monitor 0
     :geometry (geometry
@@ -14,7 +16,9 @@
 )
 
 (defwidget calendar_container []
-    (box :class "calendar-container"
-        (calendar :class "calendar-inner" :day calendar_day :year calendar_year)
+    (expander :expanded calendar_open
+        (box :class "calendar-container"
+            (calendar :class "calendar-inner" :day calendar_day :year calendar_year)
+        )
     )
 )
