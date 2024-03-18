@@ -7,7 +7,7 @@
         (circular-progress
             :value battery_level
             :class "battery-level battery-${battery_status}"
-            :thickness 3
+            :thickness 2
             (button 
                 :class "battery-button"
                 "󰧞"

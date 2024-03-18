@@ -3,7 +3,7 @@
 
 (defpoll wifi_ssid :interval "1m" "./scripts/wifi.sh ssid")
 (defpoll wifi_status :interval "1m" "./scripts/wifi.sh stat")
-(defpoll wifi_icon :interval "1m" "./scripts/wifi.sh icon")
+(defpoll wifi_icon :interval "1m" :initial "?" "./scripts/wifi.sh icon")
 
 (defwidget wifi []
     (eventbox

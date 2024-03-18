@@ -1,6 +1,5 @@
 
 .battery-container {
-    margin-right: 1rem;
 }
 
 .battery-level {
@@ -10,10 +9,10 @@
     color: white;
 }
 .battery-charging {
-    color: green;
+    color: white;
 }
 .battery-full {
-    color: green;
+    color: white;
 }
 .battery-unknown {
     color: grey;
@@ -21,6 +20,6 @@
 
 .battery-button {
     font-size: 1rem;
-    margin: 0.4rem;
-    color: darkgrey;
+    margin: 0.2rem;
+    color: white;
 }

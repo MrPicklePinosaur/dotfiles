@@ -21,9 +21,10 @@
         )
 
         (box :orientation "h" :space-evenly false :halign "end"
+            (bat)
+            (sep)
             (wifi)
             (sep)
-            (bat)
             (clock)
         )
     )
