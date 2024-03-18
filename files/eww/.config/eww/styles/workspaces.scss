@@ -8,10 +8,15 @@
     &.current {
     }
 
+    &.empty {
+        color: grey;
+    }
+
 }
 
 .workspace:hover {
     background-color: mix($onPrimary, $onSurface, 70%);
+
     &.current {
         background-color: mix($primary, $onSurface, 70%);
     }

@@ -1,5 +1,9 @@
+* { all: unset; }
+ 
 @import "styles/lib.scss"
 @import "styles/colors.scss"
 
 @import "styles/bar.scss"
+@import "styles/calendar.scss"
+@import "styles/clock.scss"
 @import "styles/workspaces.scss"

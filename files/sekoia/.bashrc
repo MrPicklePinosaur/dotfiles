@@ -15,3 +15,5 @@ source ~/.config/shell/commonrc
 source ~/.config/shell/commonalias
 
 . "$HOME/.cargo/env"
+
+exec fish

@@ -1,9 +1,12 @@
-(defwidget clock []
-    (label :class "clock" :text {formattime(EWW_TIME, "%H:%M")})
-)
 
-(defwidget big_clock []
-    (box :class "big_clock_box" :orientation "h" :space-evenly false
-        (label :class "big_clock_label" :text {formattime(EWW_TIME, "%H:%M")})
+(defpoll date :interval "1m" "date +'%H:%M'") 
+
+(defwidget clock []
+    (box
+        (button
+            :onclick "$HOME/.config/eww/bar/scripts/pop calendar"
+            :class "clock-button"
+            (label :class "clock" :text date)
+        )
     )
 )

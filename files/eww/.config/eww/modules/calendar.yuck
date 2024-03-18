@@ -1,0 +1,20 @@
+
+(defpoll calendar_day :initial 0 :interval "20h" "date +'%d'")
+(defpoll calendar_year :initial 0 :interval "20h" "date +'%Y'")
+
+(defwindow calendar
+    :monitor 0
+    :geometry (geometry
+        :width "10%"
+        :height "10%"
+        :anchor "top right"
+    )
+    :wm-ignore true
+    (calendar_container)
+)
+
+(defwidget calendar_container []
+    (box :class "calendar-container"
+        (calendar :class "calendar-inner" :day calendar_day :year calendar_year)
+    )
+)

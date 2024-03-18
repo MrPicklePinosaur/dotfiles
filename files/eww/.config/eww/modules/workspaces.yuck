@@ -1,4 +1,3 @@
-
 (deflisten workspaces :initial "[{}]" "scripts/workspaces.sh")
 (deflisten current_workspace :initial "1" "scripts/get_active_workspace.sh")
 
@@ -6,7 +5,7 @@
     (box :orientation "h" :space-evenly false :class "workspaces" :hexpand true
         (for workspace in workspaces
             (box
-                :class "workspace"
+                :class "workspace ${workspace.windows == 0 ? "empty" : ""}"
                 "${current_workspace == workspace.id ? '' : ''}"
             )
         )

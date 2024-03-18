@@ -1,0 +1,28 @@
+
+.calendar-container {
+    @include window;
+    border-radius: 1rem;
+    font-size: 1rem;
+    margin-right: 1rem;
+}
+
+.calendar-inner {
+
+}
+
+calendar {
+}
+calendar.header {
+    font-weight: bold;
+}
+calendar.button {
+}
+calendar.highlight {
+    color: cyan;
+}
+calendar:selected {
+    background-color: white;
+    color: black;
+}
+calendar:indeterminate {
+}
