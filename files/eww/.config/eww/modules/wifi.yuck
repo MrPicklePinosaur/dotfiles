@@ -1,0 +1,26 @@
+
+(defvar wifi_show false)
+
+(defpoll wifi_ssid :interval "1m" "./scripts/wifi.sh ssid")
+(defpoll wifi_status :interval "1m" "./scripts/wifi.sh stat")
+(defpoll wifi_icon :interval "1m" "./scripts/wifi.sh icon")
+
+(defwidget wifi []
+    (eventbox
+        :onhover "eww update wifi_show=true"
+        :onhoverlost "eww update wifi_show=false"
+        (box
+            :class "wifi-container"
+            :space-evenly false
+            (button
+                :class "wifi-button wifi-status-${wifi_status}"
+                wifi_icon
+            )
+            (revealer
+                :reveal wifi_show
+                :transition "slideright"
+                (label :class "wifi-ssid" :text wifi_ssid)
+            )
+        )
+    )
+)

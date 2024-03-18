@@ -1,0 +1,6 @@
+
+(defwidget sep []
+    (box :class "seperator-container" :vexpand "false" :hexpand "false"
+        (label :class "separator" :text "|")
+    )
+)
