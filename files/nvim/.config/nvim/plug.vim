@@ -63,6 +63,7 @@ Plug 'beauwilliams/statusline.lua'
 
 " utilities
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-frecency.nvim'
 Plug 'startup-nvim/startup.nvim'
 Plug 'famiu/bufdelete.nvim'
 " Plug 'rlue/vim-barbaric'

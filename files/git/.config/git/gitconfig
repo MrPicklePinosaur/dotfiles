@@ -14,6 +14,7 @@
     c = commit -m
     ch = checkout
     chb = checkout -b
+    cp = cherry-pick
     cl = clone
     p = push
     pf = push -f
@@ -23,3 +24,5 @@
     f = fetch origin
     amm = commit --amend --no-edit
     bl = blame
+[core]
+    excludesFile = ~/.config/git/gitignore

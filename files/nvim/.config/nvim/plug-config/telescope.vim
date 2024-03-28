@@ -1,8 +1,14 @@
 
+" TODO make <leader>f open in current buffer and <leader>F open in new tab
+
 nnoremap <leader>F <cmd>Telescope find_files<cr>
 nnoremap <leader>G <cmd>Telescope live_grep<cr>
 nnoremap <leader>b <cmd>Telescope buffers<cr>
-nnoremap <leader>Lr <cmd>Telescope lsp_references<cr>
+
+" LSP
+nnoremap Lr <cmd>Telescope lsp_references<cr>
+nnoremap Ls <cmd>Telescope lsp_document_symbols<cr>
+nnoremap LS <cmd>Telescope lsp_workspace_symbols<cr>
 
 lua << EOF
 
@@ -39,6 +45,9 @@ require('telescope').setup{
     }
   },
   extensions = {
+    frecency = {
+
+    }
     -- Your extension configuration goes here:
     -- extension_name = {
     --   extension_config_key = value,

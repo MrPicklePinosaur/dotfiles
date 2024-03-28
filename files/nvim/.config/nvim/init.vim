@@ -61,13 +61,12 @@ vim.opt.showtabline       = 2
 -- vim.opt.autochdir         = true
 
 -- these two are know to cause slowdowns
--- vim.opt.relativenumber    = true
--- vim.opt.cursorline        = true
--- vim.opt.scrolloff         = 999
-
-vim.opt.relativenumber    = false
-vim.opt.cursorline        = false
-vim.opt.scrolloff         = 0
+vim.opt.relativenumber    = true
+vim.opt.cursorline        = true
+vim.opt.scrolloff         = 999
+-- vim.opt.relativenumber    = false
+-- vim.opt.cursorline        = false
+-- vim.opt.scrolloff         = 0
 
 -- file finding
 vim.opt.path              = '**'
