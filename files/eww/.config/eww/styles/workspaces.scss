@@ -1,0 +1,23 @@
+
+.workspace {
+    border-radius: 999rem;
+    margin: 0rem 0.3rem;
+    padding: 0rem;
+    transition: 0.3s;
+
+    &.current {
+    }
+
+    &.empty {
+        color: grey;
+    }
+
+}
+
+.workspace:hover {
+    background-color: mix($onPrimary, $onSurface, 70%);
+
+    &.current {
+        background-color: mix($primary, $onSurface, 70%);
+    }
+}

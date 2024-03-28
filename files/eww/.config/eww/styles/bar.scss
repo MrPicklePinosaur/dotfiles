@@ -1,0 +1,8 @@
+.bar-widget {
+    @include window;
+    border-radius: 999rem;
+    padding: 0.4rem 1rem;
+    margin-top: 0.5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}

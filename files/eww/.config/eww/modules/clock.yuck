@@ -1,0 +1,12 @@
+
+(defpoll date :interval "1m" "date +'%H:%M'") 
+
+(defwidget clock []
+    (box
+        (button
+            :onclick "eww update calendar_open=${calendar_open ? false : true}"
+            :class "clock-button"
+            (label :class "clock" :text date)
+        )
+    )
+)

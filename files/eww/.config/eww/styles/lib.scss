@@ -1,0 +1,7 @@
+@mixin window {
+    background-color: $surface;
+    padding: 1rem;
+    color: $onSurface;
+    // box-shadow: 0 0 4px 2px $shadow;
+    margin: 0.2rem;
+}
