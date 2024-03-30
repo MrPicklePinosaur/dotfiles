@@ -57,6 +57,7 @@ Plug 'nvim-lua/plenary.nvim'
 
 " theme
 Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
+Plug 'levouh/tint.nvim'
 
 " statusline
 Plug 'beauwilliams/statusline.lua'
@@ -70,6 +71,7 @@ Plug 'famiu/bufdelete.nvim'
 
 " tool integrations
 Plug 'kdheepak/lazygit.nvim'
+Plug 'lewis6991/gitsigns.nvim'
 Plug 'lambdalisue/suda.vim'
 
 " copilot
@@ -104,7 +106,9 @@ lua << EOF
 local statusline = require('statusline')
 statusline.tabline = false
 
-require("nvim-autopairs").setup {}
+require('nvim-autopairs').setup {}
+require('gitsigns').setup {}
+require('tint').setup {}
 EOF
 
 
