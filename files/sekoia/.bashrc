@@ -13,6 +13,7 @@ PS1='[\u@\h \W]\$ '
 
 source ~/.config/shell/commonrc
 source ~/.config/shell/commonalias
+source ~/.secrets
 
 . "$HOME/.cargo/env"
 

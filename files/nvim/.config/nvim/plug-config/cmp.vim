@@ -27,7 +27,7 @@ cmp.setup({
     ['<TAB>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
   }),
   sources = cmp.config.sources({
-    { name = 'ultisnips' }, -- For ultisnips users.
+    -- { name = 'ultisnips' }, -- For ultisnips users.
     { name = 'nvim_lsp' },
     { name = 'buffer' },
     { name = 'path' },

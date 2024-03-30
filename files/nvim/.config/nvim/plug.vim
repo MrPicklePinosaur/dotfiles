@@ -15,7 +15,7 @@ endfun
 call plug#begin()
 
 " general purpose
-Plug 'sirver/ultisnips'
+" Plug 'sirver/ultisnips'
 Plug 'tpope/vim-commentary'
 Plug 'ap/vim-buftabline'
 Plug 'tpope/vim-surround'
@@ -30,7 +30,7 @@ Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'uga-rosa/cmp-dictionary'
-Plug 'quangnguyen30192/cmp-nvim-ultisnips'
+" Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 
 " lsp servers / languages
 " Plug 'ron-rs/ron.vim'

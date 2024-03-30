@@ -3,5 +3,6 @@
 (include "modules/clock.yuck")
 (include "modules/calendar.yuck")
 (include "modules/seperator.yuck")
+(include "modules/volume.yuck")
 (include "modules/wifi.yuck")
 (include "modules/workspaces.yuck")
