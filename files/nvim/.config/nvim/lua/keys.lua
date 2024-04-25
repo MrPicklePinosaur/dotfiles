@@ -3,6 +3,8 @@ vim.g.mapleader = " "
 
 local k = vim.keymap
 
+
+
 -- editor
 k.set("n", "<leader>r", ":source ~/.config/nvim/init.vim<cr>:echo 'init.vim reloaded'<cr>")
 k.set("n", "<leader>e", ":e<cr>:echo 'current file reloaded'<cr>")
@@ -20,7 +22,13 @@ k.set("n", "<leader>q", ":qa<cr>", { desc = "close nvim" })
 -- buffers
 k.set("n", "<leader>l", ":bn<cr>", { desc = "move to next buffer" })
 k.set("n", "<leader>h", ":bp<cr>", { desc = "move to previous buffer" })
-k.set("n", "<leader>d", ":bd<cr>", { desc = "close buffer" })
+-- k.set("n", "<leader>d", ":bd<cr>", { desc = "close buffer" })
+
+-- tabs
+k.set("n", "<leader>tn", ":tabnew<cr>", { desc = "create a new tab" })
+k.set("n", "<leader>tl", ":tabnext<cr>", { desc = "move to the next tab" })
+k.set("n", "<leader>th", ":tabprevious<cr>", { desc = "move to the previous tab" })
+k.set("n", "<leader>td", ":tabclose<cr>", { desc = "close tab" })
 
 -- tabs
 -- k.set("n", "<leader>l", ":tabnext<cr>", { desc = "move to next tab" })

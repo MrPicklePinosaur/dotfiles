@@ -80,12 +80,11 @@ Plug 'lambdalisue/suda.vim'
 
 call plug#end()
 
-" bdelete
-nnoremap <leader>d <cmd>lua require('bufdelete').bufdelete(0, true)<CR>
-
 " neotree
 " override netrw
 map <leader>f :Neotree source=filesystem reveal=true position=right<cr>
+
+nnoremap <leader>d <cmd>lua require('bufdelete').bufdelete(0, true)<cr>
 
 " barbaric
 
