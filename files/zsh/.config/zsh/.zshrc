@@ -26,8 +26,9 @@ bindkey -v
 export KEYTIMEOUT=1
 
 source ~/.config/shell/commonrc
+source ~/.config/shell/commonalias
 
-ufetch-arch
+# eval "$(starship init zsh)"
 
 # Syntax highlight
 # source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

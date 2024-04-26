@@ -1,13 +1,40 @@
 layout {
     default_tab_template {
         pane size=1 borderless=true {
-            plugin location="file:$HOME/.config/zellij/plugins/zellij_blocks.wasm"
+            plugin location="file:~/.config/zellij/plugins/zjstatus.wasm" {
+                format_left  " Zellij (#[fg=bold]{session}) {mode}{tabs}"
+                format_right "{datetime}"
+                format_space ""
+
+                border_enabled  "false"
+                border_char     "─"
+                border_format   "#[fg=#6C7086]{char}"
+                border_position "top"
+
+                hide_frame_for_single_pane "false"
+
+                mode_normal        "#[fg=green,bold] NORMAL "
+                mode_scroll        "#[fg=orange,bold] SCROLL "
+                mode_enter_search  "#[fg=orange,bold] SEARCH "
+                mode_locked        "#[fg=magenta,bold] LOCKED "
+
+                tab_normal   "#[fg=#6C7086] {name} "
+                tab_active   "#[fg=white,bold] {name} "
+
+                datetime        "#[fg=#6C7086,bold] {format} "
+                datetime_format "%A, %d %b %Y %H:%M"
+                datetime_timezone "America/Los_Angelas"
+            }
         }
         children
     }
-    tab name="0" split_direction="vertical" { }
     tab name="1" split_direction="vertical" { }
     tab name="2" split_direction="vertical" { }
     tab name="3" split_direction="vertical" { }
     tab name="4" split_direction="vertical" { }
+    tab name="5" split_direction="vertical" { }
+    tab name="6" split_direction="vertical" { }
+    tab name="7" split_direction="vertical" { }
+    tab name="8" split_direction="vertical" { }
+    tab name="9" split_direction="vertical" { }
 }

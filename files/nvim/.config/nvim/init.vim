@@ -15,7 +15,7 @@ source $HOME/.config/nvim/plug.vim
 source $HOME/.config/nvim/lsp.vim
 source $HOME/.config/nvim/plug-config/cmp.vim
 source $HOME/.config/nvim/plug-config/copilot.lua
-source $HOME/.config/nvim/plug-config/jupyter.vim
+" source $HOME/.config/nvim/plug-config/jupyter.vim
 source $HOME/.config/nvim/plug-config/magma.vim
 source $HOME/.config/nvim/plug-config/neo-tree.vim
 source $HOME/.config/nvim/plug-config/startup.lua
@@ -33,7 +33,6 @@ if v:version >= 700
   au BufLeave * let b:winview = winsaveview()
   au BufEnter * if(exists('b:winview')) | call winrestview(b:winview) | endif
 endif
-
 
 set notimeout
 lua << EOF
@@ -91,3 +90,4 @@ require('keys')
 
 EOF
 
+let g:python3_host_prog = "/usr/bin/python3"

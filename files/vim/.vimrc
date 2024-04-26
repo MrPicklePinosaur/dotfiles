@@ -184,7 +184,7 @@ command PlugSetup :call s:VimPlugSetup()
 call plug#begin('~/.vim/plugged')
 
 if !has('nvim')
-Plug 'sirver/ultisnips'
+"Plug 'sirver/ultisnips'
 Plug 'tpope/vim-commentary'
 Plug 'ap/vim-buftabline'
 Plug 'tpope/vim-surround'
