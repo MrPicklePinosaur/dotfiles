@@ -68,11 +68,13 @@ Plug 'nvim-telescope/telescope-frecency.nvim'
 Plug 'startup-nvim/startup.nvim'
 Plug 'famiu/bufdelete.nvim'
 " Plug 'rlue/vim-barbaric'
+Plug 'pwntester/octo.nvim'
 
 " tool integrations
 Plug 'kdheepak/lazygit.nvim'
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'lambdalisue/suda.vim'
+Plug 'jackMort/ChatGPT.nvim'
 
 " copilot
 " Plug 'zbirenbaum/copilot.lua'

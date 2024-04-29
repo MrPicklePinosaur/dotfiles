@@ -3,3 +3,5 @@
 [user]
 	email = mr.picklepinosaur@gmail.com
 	name = Daniel Liu
+[core]
+    pager = delta

@@ -13,6 +13,7 @@ source ~/.vimrc
 " includes
 source $HOME/.config/nvim/plug.vim
 source $HOME/.config/nvim/lsp.vim
+source $HOME/.config/nvim/plug-config/chatgpt.lua
 source $HOME/.config/nvim/plug-config/cmp.vim
 source $HOME/.config/nvim/plug-config/copilot.lua
 " source $HOME/.config/nvim/plug-config/jupyter.vim
@@ -20,6 +21,7 @@ source $HOME/.config/nvim/plug-config/magma.vim
 source $HOME/.config/nvim/plug-config/neo-tree.vim
 source $HOME/.config/nvim/plug-config/startup.lua
 source $HOME/.config/nvim/plug-config/telescope.vim
+source $HOME/.config/nvim/plug-config/octo.lua
 " source $HOME/.config/nvim/plug-config/treesitter.lua
 
 " since zellij doesn't support undercurl at the moment, change spell hl effect

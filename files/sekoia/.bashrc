@@ -17,4 +17,6 @@ source ~/.secrets
 
 . "$HOME/.cargo/env"
 
+export QT_QPA_PLATFORM=xcb
+
 exec fish
