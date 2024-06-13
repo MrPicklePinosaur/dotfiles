@@ -29,8 +29,6 @@ hi SpellBad       ctermfg=white ctermbg=red cterm=standout
 hi SpellRare      ctermfg=white ctermbg=blue cterm=standout
 hi SpellLocal     ctermfg=white ctermbg=green cterm=standout
 
-colorscheme catppuccin-macchiato
-
 if v:version >= 700
   au BufLeave * let b:winview = winsaveview()
   au BufEnter * if(exists('b:winview')) | call winrestview(b:winview) | endif

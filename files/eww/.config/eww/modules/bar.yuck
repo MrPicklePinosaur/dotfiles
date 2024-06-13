@@ -18,6 +18,7 @@
         )
 
         (box :orientation "h" :space-evenly false :halign "center"
+            (title)
         )
 
         (box :orientation "h" :space-evenly false :halign "end"

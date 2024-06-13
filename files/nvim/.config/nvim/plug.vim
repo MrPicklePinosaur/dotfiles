@@ -39,8 +39,8 @@ Plug 'uga-rosa/cmp-dictionary'
 " Plug 'NoahTheDuke/vim-just'
 " Plug 'neovimhaskell/haskell-vim'
 " Plug 'jupyter-vim/jupyter-vim'
-" Plug 'kaarmu/typst.vim'
-" Plug 'MrPicklePinosaur/typst-conceal.vim'
+Plug 'kaarmu/typst.vim'
+Plug 'MrPicklePinosaur/typst-conceal.vim'
 " Plug 'lervag/vimtex', { 'for': 'tex' }
 " Plug 'PietroPate/vim-tex-conceal', { 'for': 'tex' }
 " Plug 'mfussenegger/nvim-jdtls'
@@ -57,6 +57,7 @@ Plug 'nvim-lua/plenary.nvim'
 
 " theme
 Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
+" Plug 'ellisonleao/gruvbox.nvim'
 Plug 'levouh/tint.nvim'
 
 " statusline
@@ -100,7 +101,14 @@ let g:vimtex_compiler_latexmk = {
 
 " suda vim
 
+" typst config
+let g:typst_pdf_viewer = 'zathura'
+
 cmap w!! SudaWrite
+
+
+set background=dark
+colorscheme catppuccin-macchiato
 
 " vim.api.nvim_set_keymap('n', ':', '<cmd>FineCmdline<CR>', {noremap = true})
 lua << EOF
@@ -110,6 +118,8 @@ statusline.tabline = false
 require('nvim-autopairs').setup {}
 require('gitsigns').setup {}
 require('tint').setup {}
+
 EOF
+
 
 

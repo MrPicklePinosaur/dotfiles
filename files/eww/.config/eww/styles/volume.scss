@@ -1,0 +1,24 @@
+.volume-widget {
+    @include window;
+    border-radius: 999rem;
+    padding: 0.6rem 0.6rem;
+    margin-top: 0.5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 5rem;
+}
+
+.volume-progress {
+    trough {
+        // min-width: 200px;
+        min-height: 1rem;
+        border-radius: 999rem;
+    }
+
+    trough progress {
+        background: white;
+        border-radius: 999rem;
+        min-height: 1rem;
+    }
+
+}

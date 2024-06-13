@@ -28,6 +28,7 @@ lspconfig.cssls.setup{}
 lspconfig.gopls.setup{}
 lspconfig.eslint.setup{}
 lspconfig.hls.setup{}
+lspconfig.pyright.setup{}
 lspconfig.rust_analyzer.setup{
     settings = {
         ['rust-analyzer'] = {
@@ -40,7 +41,7 @@ lspconfig.rust_analyzer.setup{
         }
     }
 }
-lspconfig.pylsp.setup{}
+-- lspconfig.pylsp.setup{}
 -- lspconfig.solargraph.setup{}
 lspconfig.zls.setup{}
 -- npm install -g solidity-language-server

@@ -1,4 +1,22 @@
 
-(defwidget volume []
-    ""
+(deflisten volume_level :initial "0" "./scripts/get_volume.sh")
+
+(defwindow volume
+    :monitor 0
+    :geometry (geometry :width "20%"
+                        :height "1%"
+                        :anchor "bottom center"
+                    )
+    :namespace "eww"
+    (volumebar)
+)
+
+(defwidget volumebar []
+    (box :class "volume-widget"
+        (progress
+            :class "volume-progress"
+            :orientation "h"
+            :value "${volume_level}"
+        )
+    )
 )
