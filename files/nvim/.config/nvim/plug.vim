@@ -41,8 +41,8 @@ Plug 'uga-rosa/cmp-dictionary'
 " Plug 'jupyter-vim/jupyter-vim'
 Plug 'kaarmu/typst.vim'
 Plug 'MrPicklePinosaur/typst-conceal.vim'
-" Plug 'lervag/vimtex', { 'for': 'tex' }
-" Plug 'PietroPate/vim-tex-conceal', { 'for': 'tex' }
+Plug 'lervag/vimtex', { 'for': 'tex' }
+Plug 'PietroPate/vim-tex-conceal', { 'for': 'tex' }
 " Plug 'mfussenegger/nvim-jdtls'
 " Plug 'rhaiscript/vim-rhai'
 

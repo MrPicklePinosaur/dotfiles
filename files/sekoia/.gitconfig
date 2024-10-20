@@ -5,3 +5,4 @@
 	name = Daniel Liu
 [core]
     ; pager = delta
+    excludesFile = ~/.gitignore

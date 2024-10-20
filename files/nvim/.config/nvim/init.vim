@@ -13,7 +13,7 @@ source ~/.vimrc
 " includes
 source $HOME/.config/nvim/plug.vim
 source $HOME/.config/nvim/lsp.vim
-source $HOME/.config/nvim/plug-config/chatgpt.lua
+" source $HOME/.config/nvim/plug-config/chatgpt.lua
 source $HOME/.config/nvim/plug-config/cmp.vim
 source $HOME/.config/nvim/plug-config/copilot.lua
 " source $HOME/.config/nvim/plug-config/jupyter.vim
@@ -57,6 +57,7 @@ vim.opt.lazyredraw        = true
 vim.opt.ttyfast           = true
 vim.opt.conceallevel      = 2 
 vim.opt.showtabline       = 2
+vim.opt.mouse             = ''
 -- vim.opt.autochdir         = true
 
 -- these two are know to cause slowdowns
@@ -87,7 +88,10 @@ vim.opt.mouse             =
 vim.opt.clipboard:append('unnamedplus')
 
 require('keys')
+require('autocmd')
 
 EOF
 
 let g:python3_host_prog = "/usr/bin/python3"
+
+
